@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Instrument Serif"', "Georgia", "serif"],
+        heading: ['"Outfit"', "Inter", "sans-serif"],
         body: ['"Outfit"', "Inter", "sans-serif"],
         sans: ['"Outfit"', "Inter", "sans-serif"],
+        display: ['"Instrument Serif"', "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",

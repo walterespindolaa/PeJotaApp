@@ -40,12 +40,7 @@ const Index = () => {
 
         {/* Navbar */}
         <nav className="relative z-20 flex justify-between items-center px-[6vw] py-6">
-          <div className="flex items-center gap-2.5">
-            <span className="grid place-items-center w-8 h-8 rounded-lg bg-blue-500 text-[#0c1620] text-sm font-bold">
-              PJ
-            </span>
-            <span className="text-white text-lg font-semibold tracking-tight">PeJota</span>
-          </div>
+          <img src="/logo-full-branca.png" alt="PeJota" className="h-9 w-auto" />
           <Link to="/auth">
             <Button variant="ghost" className="text-white font-medium hover:bg-white/10">
               Entrar

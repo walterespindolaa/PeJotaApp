@@ -190,7 +190,7 @@ export default function FloatingRail({ isAdmin, featureLoading, hasFeature, requ
             expanded ? "gap-2.5 px-4" : "justify-center px-2",
           )}
         >
-          <img src="/logo.png" alt="PeJota" className="w-8 h-8 rounded-lg object-contain flex-shrink-0" />
+          <img src="/logo-branca.png" alt="PeJota" className="w-8 h-8 rounded-lg object-contain flex-shrink-0" />
           {expanded && <span className="font-heading font-bold text-lg tracking-tight truncate">PeJota</span>}
         </button>
 
