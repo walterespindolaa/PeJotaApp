@@ -96,11 +96,11 @@ export default InfoTooltip;
 // ─── Predefined configs ───
 export const INFO_CONFIGS: Record<string, InfoTooltipConfig> = {
   atlas_score: {
-    title: "Atlas Score",
+    title: "PeJota Score",
     description: "Nota geral da sua saúde financeira, de 0 a 100. Combina 7 dimensões como reserva, disciplina, diversificação e planejamento de aposentadoria.",
     sections: [
       { title: "Como é calculado", content: "Cada dimensão (reserva, margem, disciplina, diversificação, aposentadoria, negócios e evolução) tem um peso proporcional. A nota final é a média ponderada." },
-      { title: "Por que importa", content: "O Atlas Score resume em um número se sua vida financeira está saudável, organizada e preparada para o futuro." },
+      { title: "Por que importa", content: "O PeJota Score resume em um número se sua vida financeira está saudável, organizada e preparada para o futuro." },
     ],
     tips: [
       "Complete sua reserva de emergência para ganhar pontos na dimensão Reserva.",

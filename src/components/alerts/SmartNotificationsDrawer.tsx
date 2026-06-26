@@ -71,7 +71,7 @@ const SmartNotificationsPopover = ({ paymentAlerts, onDismissPayment }: Props) =
         <div className="flex items-center justify-between px-4 py-3 border-b border-border/50 flex-shrink-0">
           <div className="flex items-center gap-2">
             <Bell className="h-4 w-4 text-primary" />
-            <p className="text-sm font-heading font-bold">Notificações Atlas</p>
+            <p className="text-sm font-heading font-bold">Notificações PeJota</p>
             {unreadCount > 0 && (
               <Badge variant="destructive" className="text-[9px] px-1.5 h-4">{unreadCount}</Badge>
             )}

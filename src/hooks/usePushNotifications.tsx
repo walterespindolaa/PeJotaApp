@@ -180,7 +180,7 @@ export function usePushNotifications() {
       const { data, error } = await supabase.functions.invoke("send-push", {
         body: {
           mode: "self",
-          title: "Atlas 🧭",
+          title: "PeJota 🧭",
           message: "Notificações push ativadas com sucesso!",
           url: "/dashboard",
         },

@@ -1,5 +1,5 @@
 /**
- * Atlas Score 2.0 — Real mathematical calculation engine
+ * PeJota Score 2.0 — Real mathematical calculation engine
  * Score 0–100 with 7 weighted pillars, weight redistribution for missing data,
  * drivers analysis, and detailed breakdown.
  * 5 Official Levels: Sobrevivência, Estabilização, Organização, Estrutura, Estratégico

@@ -6,7 +6,7 @@ import { logError } from "@/lib/log";
 import { computePlanState, type AccessState } from "@/lib/planState";
 
 /**
- * Estados de acesso da plataforma Atlas:
+ * Estados de acesso da plataforma PeJota:
  *
  * trial_active      → usuário de trial, dentro de 7 dias. Acesso total.
  * trial_expired     → trial vencido, não pagou. Carência 30 dias (Dashboard + Planejamento).

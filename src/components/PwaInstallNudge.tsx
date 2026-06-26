@@ -61,9 +61,9 @@ export default function PwaInstallNudge() {
         {step === "ask" && (
           <>
             <DialogHeader className="text-left">
-              <DialogTitle className="font-heading text-lg">Deixe o Atlas à mão</DialogTitle>
+              <DialogTitle className="font-heading text-lg">Deixe o PeJota à mão</DialogTitle>
               <DialogDescription className="text-sm">
-                Você já adicionou o Atlas à tela inicial do seu celular? Assim você abre como um app, em um toque.
+                Você já adicionou o PeJota à tela inicial do seu celular? Assim você abre como um app, em um toque.
               </DialogDescription>
             </DialogHeader>
             <div className="flex flex-col gap-2 pt-2">
@@ -108,7 +108,7 @@ export default function PwaInstallNudge() {
               <DialogTitle className="font-heading text-lg">Adicionar no iPhone</DialogTitle>
             </DialogHeader>
             <div className="rounded-xl bg-primary/5 border border-primary/15 px-3 py-2.5 mb-1">
-              <p className="text-xs text-foreground/80">Abra o Atlas pelo Safari para conseguir adicionar.</p>
+              <p className="text-xs text-foreground/80">Abra o PeJota pelo Safari para conseguir adicionar.</p>
             </div>
             {renderSteps(stepIcons, [
               "Toque no botão Compartilhar (quadrado com seta para cima) na barra do Safari.",

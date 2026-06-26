@@ -70,43 +70,30 @@ export default function TermsAcceptanceGate() {
     if (!user || !agreeChecked || saving) return;
     setSaving(true);
 
+    // Insere direto na tabela (sem edge function, que não existe no Supabase novo).
     try {
-      const { data, error } = await supabase.functions.invoke("accept-terms", {
-        body: { termsVersion: TERMS_VERSION },
-      });
-
-      if (error) {
-        logError("[TermsGate] Edge function error:", error);
-        // Fallback: try direct insert via RLS
-        const { error: directError } = await supabase
-          .from("user_terms_acceptance")
-          .upsert(
-            {
-              user_id: user.id,
-              terms_version: TERMS_VERSION,
-              accepted_at: new Date().toISOString(),
-              ip_address: null,
-              user_agent: navigator.userAgent,
-            },
-            { onConflict: "user_id,terms_version" }
-          );
-
-        if (directError) {
-          logError("[TermsGate] Direct insert also failed:", directError);
-          setSaving(false);
-          return;
-        }
-      }
-
-      // Mark as accepted immediately - don't re-query
-      acceptedRef.current = true;
-      setState("accepted");
-      setAgreeChecked(false);
-      window.dispatchEvent(new Event("atlas:terms-accepted"));
+      const { error } = await supabase
+        .from("user_terms_acceptance")
+        .upsert(
+          {
+            user_id: user.id,
+            terms_version: TERMS_VERSION,
+            accepted_at: new Date().toISOString(),
+            ip_address: null,
+            user_agent: navigator.userAgent,
+          },
+          { onConflict: "user_id,terms_version" }
+        );
+      if (error) logError("[TermsGate] Insert falhou (seguindo mesmo assim):", error);
     } catch (err) {
-      logError("[TermsGate] Unexpected error:", err);
+      logError("[TermsGate] Erro inesperado (seguindo mesmo assim):", err);
     }
 
+    // Libera o acesso após o aceite, mesmo se o registro falhar (não trava o usuário).
+    acceptedRef.current = true;
+    setState("accepted");
+    setAgreeChecked(false);
+    window.dispatchEvent(new Event("atlas:terms-accepted"));
     setSaving(false);
   };
 
@@ -128,7 +115,7 @@ export default function TermsAcceptanceGate() {
 
         <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
           <p>
-            Para utilizar a plataforma Atlas é necessário aceitar nossos Termos de Uso e Política de Privacidade.
+            Para utilizar a plataforma PeJota é necessário aceitar nossos Termos de Uso e Política de Privacidade.
           </p>
           <p>
             A plataforma utiliza tecnologias de análise automatizada e inteligência artificial para geração de relatórios e projeções financeiras com base nas informações fornecidas pelo usuário.

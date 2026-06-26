@@ -10,7 +10,7 @@ const STATUS_CONFIG: Record<PushStatus, { label: string; icon: React.ReactNode; 
   loading: { label: "Verificando...", icon: <Bell className="h-4 w-4 animate-pulse" />, color: "text-muted-foreground", description: "Verificando status das notificações..." },
   unsupported: { label: "Não suportado", icon: <AlertTriangle className="h-4 w-4" />, color: "text-warning", description: "Seu navegador ou dispositivo não suporta notificações push." },
   denied: { label: "Bloqueadas", icon: <BellOff className="h-4 w-4" />, color: "text-destructive", description: "As notificações foram bloqueadas. Para reativar, altere nas configurações do navegador." },
-  active: { label: "Ativadas", icon: <BellRing className="h-4 w-4" />, color: "text-success", description: "Você receberá notificações de lembretes, alertas e novidades do Atlas." },
+  active: { label: "Ativadas", icon: <BellRing className="h-4 w-4" />, color: "text-success", description: "Você receberá notificações de lembretes, alertas e novidades do PeJota." },
   inactive: { label: "Desativadas", icon: <BellOff className="h-4 w-4" />, color: "text-muted-foreground", description: "Ative para receber lembretes e alertas importantes." },
 };
 
@@ -24,7 +24,7 @@ export default function NotificationSettings() {
   const handleActivate = async () => {
     const ok = await subscribe();
     if (ok) {
-      toast({ title: "Notificações ativadas!", description: "Você agora receberá alertas do Atlas." });
+      toast({ title: "Notificações ativadas!", description: "Você agora receberá alertas do PeJota." });
     } else if (status === "denied") {
       toast({ title: "Permissão negada", description: "Altere nas configurações do navegador.", variant: "destructive" });
     }
@@ -78,7 +78,7 @@ export default function NotificationSettings() {
           <div className="flex items-start gap-2 p-3 rounded-xl bg-warning/5 border border-warning/20">
             <Smartphone className="h-4 w-4 text-warning flex-shrink-0 mt-0.5" />
             <p className="text-xs text-muted-foreground">
-              No iPhone, instale o Atlas na tela de início primeiro. Depois, ative as notificações nas configurações do app.
+              No iPhone, instale o PeJota na tela de início primeiro. Depois, ative as notificações nas configurações do app.
             </p>
           </div>
         )}

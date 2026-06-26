@@ -277,7 +277,7 @@ const RelatorioVida = () => {
           <div className="flex items-center gap-3">
             <div className="p-3 rounded-2xl bg-primary/10"><FileText className="h-7 w-7 text-primary" strokeWidth={1.5} /></div>
             <div>
-              <h1 className="text-2xl font-heading font-bold">Estratégia de Subida | Atlas</h1>
+              <h1 className="text-2xl font-heading font-bold">Estratégia de Subida | PeJota</h1>
               {userName && <p className="text-sm text-muted-foreground font-medium">{userName}</p>}
               <p className="text-muted-foreground text-xs">Seus objetivos, o tempo para alcançá-los e os ajustes necessários na rotina.</p>
             </div>
@@ -316,7 +316,7 @@ const RelatorioVida = () => {
 
       {(content || loading) && (
         <div id="report-content">
-          <AtlasReportHeader title="Estratégia de Subida | Atlas" userName={userName} />
+          <AtlasReportHeader title="Estratégia de Subida | PeJota" userName={userName} />
           <AIReportDisclaimer />
 
           {/* Executive Summary */}

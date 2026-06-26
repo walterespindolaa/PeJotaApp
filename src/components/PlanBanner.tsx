@@ -20,11 +20,11 @@ const PlanBanner = () => {
         <div className="flex-1">
           <p className="font-semibold text-foreground">
             {isFull
-              ? `Seu plano Atlas expira em ${daysUntilFullExpires} dia${daysUntilFullExpires !== 1 ? "s" : ""}.`
-              : "Seu plano Atlas expirou recentemente."}
+              ? `Seu plano PeJota expira em ${daysUntilFullExpires} dia${daysUntilFullExpires !== 1 ? "s" : ""}.`
+              : "Seu plano PeJota expirou recentemente."}
           </p>
           <p className="text-xs text-muted-foreground mt-0.5">
-            Renove agora para manter o acesso completo ao Atlas.
+            Renove agora para manter o acesso completo ao PeJota.
           </p>
         </div>
         <Button size="sm" className="h-8 text-xs gap-1.5 flex-shrink-0" onClick={() => navigate("/dashboard/planos")}>

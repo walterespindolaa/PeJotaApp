@@ -39,10 +39,10 @@ function tutorialEmbed(id: string): string | undefined {
 const SECTIONS: GuideSection[] = [
   {
     id: "boas-vindas",
-    title: "Bem-vindo ao Atlas",
+    title: "Bem-vindo ao PeJota",
     icon: Sparkles,
-    description: "O que é o Atlas — seu segundo cérebro financeiro — e como aproveitar o tutorial.",
-    topics: ["O que o Atlas resolve", "Os três planos: Essencial, Pro e Elite", "Por onde começar"],
+    description: "O que é o PeJota — seu segundo cérebro financeiro — e como aproveitar o tutorial.",
+    topics: ["O que o PeJota resolve", "Os três planos: Essencial, Pro e Elite", "Por onde começar"],
   },
   {
     id: "configuracao",
@@ -68,10 +68,10 @@ const SECTIONS: GuideSection[] = [
   },
   {
     id: "analises-chat",
-    title: "Análises e Atlas Chat",
+    title: "Análises e PeJota Chat",
     icon: BarChart3,
-    description: "Atlas Score, a tela de Análises e o assistente que conhece seus dados.",
-    topics: ["Atlas Score (7 pilares)", "Análises: KPIs, Diagnóstico, Para Onde Vai…", "Atlas Chat"],
+    description: "PeJota Score, a tela de Análises e o assistente que conhece seus dados.",
+    topics: ["PeJota Score (7 pilares)", "Análises: KPIs, Diagnóstico, Para Onde Vai…", "PeJota Chat"],
   },
   {
     id: "planejamento-estrategico",
@@ -84,13 +84,13 @@ const SECTIONS: GuideSection[] = [
     id: "planejamento-financeiro",
     title: "Planejamento Financeiro",
     icon: TrendingUp,
-    description: "Aposentadoria, Objetivos, Investimentos, Bens, Seguros e a Análise Atlas.",
-    topics: ["Aposentadoria (3 cenários)", "Objetivos de Vida", "Investimentos", "Bens e Imóveis", "Proteção e Seguros", "Análise Atlas"],
+    description: "Aposentadoria, Objetivos, Investimentos, Bens, Seguros e a Análise PeJota.",
+    topics: ["Aposentadoria (3 cenários)", "Objetivos de Vida", "Investimentos", "Bens e Imóveis", "Proteção e Seguros", "Análise PeJota"],
     badge: "Pro",
   },
   {
     id: "metodo-atlas",
-    title: "Método Atlas",
+    title: "Método PeJota",
     icon: Mountain,
     description: "Os 5 relatórios estratégicos — 4 gerados por IA sobre seus dados.",
     topics: ["Vista da Montanha", "Base da Montanha", "Estratégia de Subida", "Controle da Jornada", "Guia da Jornada"],
@@ -98,7 +98,7 @@ const SECTIONS: GuideSection[] = [
   },
   {
     id: "negocios",
-    title: "Atlas Negócios",
+    title: "PeJota Negócios",
     icon: Building2,
     description: "Financeiro PJ separado e conectado ao pessoal.",
     topics: ["Múltiplas empresas", "Regras de alocação", "Previsão de caixa e simulador", "Clientes: Receita Prevista vs Confirmada", "Histórico PJ→PF", "Score de saúde da empresa"],
@@ -108,7 +108,7 @@ const SECTIONS: GuideSection[] = [
     id: "educacao",
     title: "Educação e fechamento",
     icon: GraduationCap,
-    description: "Os cursos dentro do Atlas e por onde começar.",
+    description: "Os cursos dentro do PeJota e por onde começar.",
     topics: ["Grupo Educação no menu", "Comece pelo Organização na Prática", "A estante cresce conforme o plano"],
   },
 ];
@@ -196,7 +196,7 @@ const ComecarPorAqui = () => {
         </div>
         <div className="space-y-1.5">
           <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/70 font-heading font-semibold">
-            Guia do Atlas
+            Guia do PeJota
           </p>
           <h1 className="text-2xl md:text-3xl font-heading font-bold">Comece por aqui</h1>
         </div>

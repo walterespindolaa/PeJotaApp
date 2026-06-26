@@ -20,20 +20,20 @@ const AwaitingPaymentScreen = () => {
           </div>
 
           <h2 className="text-xl font-heading font-bold text-foreground mb-3">
-            Bem-vindo ao Atlas!
+            Bem-vindo ao PeJota!
           </h2>
 
           <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
             Para começar a usar a plataforma, ative seu plano.
             <br />
-            Escolha entre Atlas Essencial, Pro ou Elite e desbloqueie seu planejamento financeiro completo.
+            Escolha entre PeJota Essencial, Pro ou Elite e desbloqueie seu planejamento financeiro completo.
           </p>
 
           <div className="flex flex-col gap-3">
             <a href={STRIPE_ESSENCIAL_URL} target="_blank" rel="noopener noreferrer">
               <Button className="w-full rounded-xl gap-2">
                 <Sparkles className="h-4 w-4" />
-                Ativar Atlas Essencial – R$15,90
+                Ativar PeJota Essencial – R$15,90
               </Button>
             </a>
             <Button

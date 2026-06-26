@@ -155,7 +155,7 @@ export default function PropostaNegocioPublica() {
           )}
         </div>
 
-        <p className="text-center text-[10px] text-muted-foreground mt-4">Proposta gerada via Atlas</p>
+        <p className="text-center text-[10px] text-muted-foreground mt-4">Proposta gerada via PeJota</p>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { Users, UserPlus, Crown, Pencil, Eye } from "lucide-react";
 /**
  * Equipe e acessos — membros da empresa e seus papéis.
  * Origem: company_members (role: owner | editor | viewer) + RPCs de convite
- * já existentes no Atlas. Dados de exemplo por enquanto.
+ * já existentes no PeJota. Dados de exemplo por enquanto.
  */
 
 type Papel = "owner" | "editor" | "viewer";

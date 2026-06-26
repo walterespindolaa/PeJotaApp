@@ -21,7 +21,7 @@ export interface AtlasQuote {
 const FALLBACK: AtlasQuote = {
   id: "fallback",
   text: "Planejamento financeiro não é prever o futuro. É construir opções para ele.",
-  author: "Equipe Atlas",
+  author: "Equipe PeJota",
   category: "general",
 };
 

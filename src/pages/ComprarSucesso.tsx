@@ -36,7 +36,7 @@ const ComprarSucesso = () => {
             <div className="mt-5 flex items-start gap-3 rounded-2xl bg-[#F5EDE0]/60 p-4 text-left">
               <Mail className="mt-0.5 h-5 w-5 shrink-0 text-[#E07856]" />
               <p className="text-sm leading-relaxed text-[#0A0A0B]/75">
-                Enviamos um e-mail com o link para criar sua senha e acessar o Atlas.
+                Enviamos um e-mail com o link para criar sua senha e acessar o PeJota.
                 <strong className="text-[#0A0A0B]"> Não esqueça de checar a caixa de spam/promoções</strong> —
                 se encontrar lá, marque como "não é spam" para receber os próximos avisos. O e-mail pode levar
                 alguns minutos para chegar.

@@ -131,7 +131,7 @@ const queryClient = new QueryClient({
 
 const PageLoader = () => (
   <div className="min-h-screen flex flex-col items-center justify-center bg-[#F4F1EC]">
-    <img src="/logo.png" alt="Atlas" className="w-16 h-16 mb-4 animate-pulse" />
+    <img src="/logo.png" alt="PeJota" className="w-16 h-16 mb-4 animate-pulse" />
     <div className="h-1 w-32 bg-[#E0D9CC] rounded-full overflow-hidden">
       <div className="h-full w-1/2 bg-[#4A4035] rounded-full animate-[shimmer_1.2s_ease-in-out_infinite]" />
     </div>

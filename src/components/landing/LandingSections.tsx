@@ -60,7 +60,7 @@ function InstallSection() {
               Na palma da mão ou na tela grande.
             </h2>
             <p className="mb-8" style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>
-              O Atlas é um PWA — instale direto no celular sem precisar de App Store.
+              O PeJota é um PWA — instale direto no celular sem precisar de App Store.
             </p>
 
             <div className="flex flex-col gap-3 mb-6">

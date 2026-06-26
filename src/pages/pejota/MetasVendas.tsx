@@ -6,7 +6,7 @@ export default function MetasVendas() {
     <PejotaModuleShell
       title="Metas de vendas"
       description="Metas mensais de receita, resultado e vendas, comparadas com o realizado."
-      reuse="Adapta a tela Metas do Atlas + transplante do Zephyr (monthly_goals → business_goals). Compara target × realizado do fluxo de caixa."
+      reuse="Adapta a tela Metas do PeJota + transplante do Zephyr (monthly_goals → business_goals). Compara target × realizado do fluxo de caixa."
       status="planejado"
       icon={Target}
     />

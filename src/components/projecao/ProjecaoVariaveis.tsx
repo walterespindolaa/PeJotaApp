@@ -17,7 +17,7 @@ interface Props {
 
 const HINTS: Record<string, string> = {
   idadeAtual: "Idade usada como ponto de partida da projeção.",
-  aposentadoria: "Idade em que o Atlas passa a considerar o início da fase de usufruto e renda passiva.",
+  aposentadoria: "Idade em que o PeJota passa a considerar o início da fase de usufruto e renda passiva.",
   patrimonioInicial: "Valor total do patrimônio financeiro usado como base da projeção.",
   rendaMensal: "Renda mensal desejada para manter seu padrão de vida. Na aposentadoria, esse valor será sacado do patrimônio.",
   poupancaMensal: "Valor médio que sobra para investir ou acumular por mês dentro da simulação.",

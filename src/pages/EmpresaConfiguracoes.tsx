@@ -57,7 +57,7 @@ export default function EmpresaConfiguracoes() {
   }, [company, loadMembers]);
 
   if (!company) {
-    return <div className="max-w-3xl mx-auto py-10 text-center text-sm text-muted-foreground">Selecione uma empresa no Atlas Negócios primeiro.</div>;
+    return <div className="max-w-3xl mx-auto py-10 text-center text-sm text-muted-foreground">Selecione uma empresa no PeJota Negócios primeiro.</div>;
   }
   const isOwner = company.user_id === user?.id;
   const controlsStock = companyControlsStock(company);
@@ -125,12 +125,12 @@ export default function EmpresaConfiguracoes() {
     window.location.href = res.url;
   };
 
-  const waMsg = lastInvite ? `Oi ${lastInvite.name}! Você foi convidado para acessar o ${company.name} no Atlas. Crie sua senha e entre por aqui: ${lastInvite.url}` : "";
+  const waMsg = lastInvite ? `Oi ${lastInvite.name}! Você foi convidado para acessar o ${company.name} no PeJota. Crie sua senha e entre por aqui: ${lastInvite.url}` : "";
 
   return (
     <div className="space-y-5 animate-fade-in max-w-3xl mx-auto">
       <div className="space-y-3">
-        <button onClick={() => navigate("/dashboard/negocios")} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" />Voltar ao Atlas Negócios</button>
+        <button onClick={() => navigate("/dashboard/negocios")} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" />Voltar ao PeJota Negócios</button>
         <div className="flex items-center gap-3">
           <span className="grid place-items-center w-11 h-11 rounded-xl bg-primary/10 flex-shrink-0"><Building2 className="h-5 w-5 text-primary" /></span>
           <div>
@@ -230,7 +230,7 @@ export default function EmpresaConfiguracoes() {
                   </div>
                   <label className="flex items-center gap-2 text-[11px] text-muted-foreground cursor-pointer">
                     <input type="checkbox" checked={restrictInvite} onChange={e => setRestrictInvite(e.target.checked)} className="accent-primary" />
-                    Acesso só ao Atlas Negócios (não vê o resto do app)
+                    Acesso só ao PeJota Negócios (não vê o resto do app)
                   </label>
                 </div>
 
@@ -242,7 +242,7 @@ export default function EmpresaConfiguracoes() {
                       <Button size="sm" className="flex-1 gap-1.5" onClick={() => { navigator.clipboard?.writeText(waMsg); toast({ title: "Mensagem copiada", description: "Cole no WhatsApp da pessoa." }); }}><Copy className="h-4 w-4" />Copiar mensagem</Button>
                       <a href={`https://wa.me/?text=${encodeURIComponent(waMsg)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 rounded-lg border border-border text-sm hover:bg-muted/50"><MessageCircle className="h-4 w-4 text-success" />WhatsApp</a>
                     </div>
-                    <p className="text-[10px] text-muted-foreground">A pessoa abre o link → cria a senha → entra direto no Atlas Negócios. O link vale por 72h.</p>
+                    <p className="text-[10px] text-muted-foreground">A pessoa abre o link → cria a senha → entra direto no PeJota Negócios. O link vale por 72h.</p>
                     <button onClick={() => setLastInvite(null)} className="text-[11px] text-muted-foreground hover:text-foreground underline">ok, fechar</button>
                   </div>
                 )}

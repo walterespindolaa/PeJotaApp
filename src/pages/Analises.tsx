@@ -682,12 +682,12 @@ const Analises = () => {
         </Card>
       )}
 
-      {/* ═══ 2. Diagnóstico do Atlas ═══ */}
-      <SectionTitle icon={Compass} label="Diagnóstico do Atlas" />
+      {/* ═══ 2. Diagnóstico do PeJota ═══ */}
+      <SectionTitle icon={Compass} label="Diagnóstico do PeJota" />
       <Card className="shadow-soft border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
         <CardHeader className="pb-3">
           <CardTitle className="text-base font-heading flex items-center gap-2">
-            <FileText className="h-4 w-4 text-primary" /> Diagnóstico do Atlas
+            <FileText className="h-4 w-4 text-primary" /> Diagnóstico do PeJota
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
@@ -1315,7 +1315,7 @@ const Analises = () => {
           {/* Direcionamento acionável */}
           <div className="p-3 rounded-lg bg-primary/5 border border-primary/10">
             <p className="text-xs text-foreground leading-relaxed">
-              <span className="font-heading font-bold text-primary">Leitura do Atlas: </span>
+              <span className="font-heading font-bold text-primary">Leitura do PeJota: </span>
               {pGrauCompromisso > 70
                 ? `Seu mês atual está em ${pGrauCompromisso.toFixed(0)}% — acima da zona saudável (70%). Comece revendo a categoria "${categoriaMaisPesada?.name ?? "maior"}" e os parcelamentos ativos; são as duas alavancas mais rápidas.`
                 : pGrauCompromisso > 50

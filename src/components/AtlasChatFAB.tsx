@@ -197,7 +197,7 @@ export default function AtlasChatFAB({ initialQuestion }: { initialQuestion?: st
       <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-muted/50 flex-shrink-0">
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-primary" />
-          <span className="text-sm font-heading font-semibold">Assistente Atlas</span>
+          <span className="text-sm font-heading font-semibold">Assistente PeJota</span>
         </div>
         <div className="flex items-center gap-1">
           {isMobile && (
@@ -324,7 +324,7 @@ export default function AtlasChatFAB({ initialQuestion }: { initialQuestion?: st
       {!open && !isMobile && (
         <button
           onClick={() => setOpen(true)}
-          aria-label="Abrir Assistente Atlas"
+          aria-label="Abrir Assistente PeJota"
           className="fixed z-50 h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-[0_4px_20px_-4px_hsl(var(--primary)/0.4)] hover:shadow-[0_6px_28px_-4px_hsl(var(--primary)/0.5)] backdrop-blur-sm transition-all duration-200 flex items-center justify-center hover:scale-105 active:scale-95"
           style={{
             bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))",

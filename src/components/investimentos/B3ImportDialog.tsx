@@ -270,7 +270,7 @@ export default function B3ImportDialog({ open, onOpenChange }: Props) {
               <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5 flex-shrink-0" />
               <p className="text-xs text-amber-900 leading-relaxed">
                 <span className="font-semibold">A B3 não exporta o preço médio de compra.</span>{" "}
-                Atlas usa o preço de fechamento atual como preço médio inicial. Para ter rentabilidade
+                PeJota usa o preço de fechamento atual como preço médio inicial. Para ter rentabilidade
                 histórica correta, ajuste o preço médio de cada ativo após a importação (ou edite a
                 coluna "PM" na tabela de preview antes de confirmar).
               </p>

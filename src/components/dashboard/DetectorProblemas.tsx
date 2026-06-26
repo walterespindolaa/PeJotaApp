@@ -149,7 +149,7 @@ export default function DetectorProblemas({ companyId, refreshKey, mesRef }: Pro
     const contextMsg = `Explique estes alertas financeiros empresariais em linguagem simples (máx 120 palavras). Sugira ações práticas. Não invente números.
 Alertas detectados:
 ${alertsContext}
-Fonte: dados empresariais do mês atual registrados no Atlas Negócios. Sem promessas financeiras.`;
+Fonte: dados empresariais do mês atual registrados no PeJota Negócios. Sem promessas financeiras.`;
 
     try {
       const { data: { session } } = await supabase.auth.getSession();

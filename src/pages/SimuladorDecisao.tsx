@@ -26,7 +26,7 @@ import AIReportDisclaimer from "@/components/legal/AIReportDisclaimer";
 const DECISION_TYPES = [
   {
     value: "comprar_imovel", label: "Comprar imóvel", icon: Home, color: "text-info", bg: "bg-info/10",
-    description: "Simule o impacto de adquirir um imóvel. O Atlas calcula parcela (PMT com juros compostos), custo de oportunidade da entrada e impacto no fluxo mensal.",
+    description: "Simule o impacto de adquirir um imóvel. O PeJota calcula parcela (PMT com juros compostos), custo de oportunidade da entrada e impacto no fluxo mensal.",
     impactType: "Patrimônio, reserva e fluxo de caixa",
     valorLabel: "Valor total do imóvel",
     valorHint: "Informe o valor completo do imóvel que pretende comprar.",
@@ -38,7 +38,7 @@ const DECISION_TYPES = [
   },
   {
     value: "trocar_carro", label: "Trocar carro", icon: Car, color: "text-amber-500", bg: "bg-amber-500/10",
-    description: "Simule o impacto de trocar de veículo. O Atlas calcula depreciação anual, parcela de financiamento e custo de oportunidade da entrada.",
+    description: "Simule o impacto de trocar de veículo. O PeJota calcula depreciação anual, parcela de financiamento e custo de oportunidade da entrada.",
     impactType: "Patrimônio e reserva de emergência",
     valorLabel: "Valor total do veículo",
     valorHint: "Informe o preço completo do carro que pretende comprar.",
@@ -50,7 +50,7 @@ const DECISION_TYPES = [
   },
   {
     value: "aumentar_padrao", label: "Aumento de padrão de vida", icon: TrendingUp, color: "text-primary", bg: "bg-primary/10",
-    description: "Simule o que acontece se suas despesas mensais aumentarem. O Atlas calcula o impacto linear e o custo de oportunidade com juros compostos.",
+    description: "Simule o que acontece se suas despesas mensais aumentarem. O PeJota calcula o impacto linear e o custo de oportunidade com juros compostos.",
     impactType: "Orçamento, poupança e objetivos",
     valorLabel: "Quanto a mais por mês?",
     valorHint: "Valor adicional que será acrescido às suas despesas mensais atuais.",
@@ -62,7 +62,7 @@ const DECISION_TYPES = [
   },
   {
     value: "viagem", label: "Viagem", icon: Plane, color: "text-success", bg: "bg-success/10",
-    description: "Simule o impacto financeiro de uma viagem. O Atlas calcula o efeito na reserva e o custo de oportunidade do valor gasto (FV = PV × (1+r)^n).",
+    description: "Simule o impacto financeiro de uma viagem. O PeJota calcula o efeito na reserva e o custo de oportunidade do valor gasto (FV = PV × (1+r)^n).",
     impactType: "Reserva e patrimônio",
     valorLabel: "Custo total da viagem",
     valorHint: "Valor completo estimado incluindo passagens, hospedagem e gastos.",
@@ -74,7 +74,7 @@ const DECISION_TYPES = [
   },
   {
     value: "novo_filho", label: "Novo filho", icon: Baby, color: "text-pink-500", bg: "bg-pink-500/10",
-    description: "Simule o impacto de ter um filho nas suas finanças. O Atlas projeta custo acumulado e o custo de oportunidade com FV = PMT × ((1+r)^n − 1) / r.",
+    description: "Simule o impacto de ter um filho nas suas finanças. O PeJota projeta custo acumulado e o custo de oportunidade com FV = PMT × ((1+r)^n − 1) / r.",
     impactType: "Orçamento mensal e planejamento de longo prazo",
     valorLabel: "Aumento estimado de despesas mensais",
     valorHint: "Quanto a mais você estima gastar por mês com o novo filho.",
@@ -86,7 +86,7 @@ const DECISION_TYPES = [
   },
   {
     value: "empreender", label: "Empreender / abrir negócio", icon: Briefcase, color: "text-amber-600", bg: "bg-amber-600/10",
-    description: "Simule o impacto de investir em um negócio próprio. O Atlas calcula saída de capital, reserva necessária e custo de oportunidade.",
+    description: "Simule o impacto de investir em um negócio próprio. O PeJota calcula saída de capital, reserva necessária e custo de oportunidade.",
     impactType: "Patrimônio, reserva e risco",
     valorLabel: "Investimento inicial necessário",
     valorHint: "Capital total que você precisará investir para começar o negócio.",
@@ -98,7 +98,7 @@ const DECISION_TYPES = [
   },
   {
     value: "reduzir_renda", label: "Redução de renda", icon: IncomeDown, color: "text-destructive", bg: "bg-destructive/10",
-    description: "Simule o que acontece se sua renda cair. O Atlas calcula o deficit mensal e quantos meses até esgotar a reserva.",
+    description: "Simule o que acontece se sua renda cair. O PeJota calcula o deficit mensal e quantos meses até esgotar a reserva.",
     impactType: "Margem, poupança e reserva",
     valorLabel: "Quanto sua renda vai diminuir por mês?",
     valorHint: "Valor que será reduzido da sua renda mensal atual.",
@@ -110,7 +110,7 @@ const DECISION_TYPES = [
   },
   {
     value: "antecipar_aposentadoria", label: "Antecipar aposentadoria", icon: Umbrella, color: "text-info", bg: "bg-info/10",
-    description: "Simule o impacto de parar de trabalhar antes do previsto. O Atlas calcula patrimônio necessário pela regra dos 4% e compara com seu patrimônio atual.",
+    description: "Simule o impacto de parar de trabalhar antes do previsto. O PeJota calcula patrimônio necessário pela regra dos 4% e compara com seu patrimônio atual.",
     impactType: "Patrimônio projetado e sustentabilidade",
     valorLabel: "Renda mensal desejada na aposentadoria",
     valorHint: "Quanto você gostaria de receber por mês quando parar de trabalhar.",
@@ -587,7 +587,7 @@ const SimuladorDecisao = () => {
                       Como essa decisão impacta sua vida?
                     </p>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Os números acima mostram o impacto matemático. A IA do Atlas pode interpretar o que isso significa pra suas metas, seu padrão de vida e seus próximos passos.
+                      Os números acima mostram o impacto matemático. A IA do PeJota pode interpretar o que isso significa pra suas metas, seu padrão de vida e seus próximos passos.
                     </p>
                   </div>
                   <Button onClick={() => requestAiAnalysis()} className="gap-2">

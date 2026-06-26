@@ -732,7 +732,7 @@ export default function FaturaImportTab({ onImportComplete }: Props) {
               <div className="flex items-start gap-2 mt-4 px-4" onClick={e => e.stopPropagation()}>
                 <Checkbox id="lgpd-consent" checked={lgpdConsent} onCheckedChange={v => setLgpdConsent(!!v)} />
                 <label htmlFor="lgpd-consent" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
-                  Autorizo o Atlas a processar esta fatura para classificar transações financeiras. Nenhum dado pessoal será armazenado pela IA ou usado para treinamento.
+                  Autorizo o PeJota a processar esta fatura para classificar transações financeiras. Nenhum dado pessoal será armazenado pela IA ou usado para treinamento.
                 </label>
               </div>
             </div>
@@ -754,7 +754,7 @@ export default function FaturaImportTab({ onImportComplete }: Props) {
           <CreditCard className="h-12 w-12 mx-auto mb-3 text-muted-foreground/20" />
           <p className="text-sm text-muted-foreground">Nenhuma fatura importada ainda.</p>
           <p className="text-xs text-muted-foreground mt-1">
-            Envie sua primeira fatura para que o Atlas organize automaticamente suas despesas.
+            Envie sua primeira fatura para que o PeJota organize automaticamente suas despesas.
           </p>
         </div>
       )}
@@ -766,7 +766,7 @@ export default function FaturaImportTab({ onImportComplete }: Props) {
               <Sparkles className="h-10 w-10 text-primary" />
             </div>
             <div className="text-center space-y-2">
-              <p className="text-lg font-semibold text-foreground">Atlas está analisando sua fatura…</p>
+              <p className="text-lg font-semibold text-foreground">PeJota está analisando sua fatura…</p>
               <div className="flex flex-col gap-1.5 mt-4">
                 {ORDERED_STEPS.map(s => {
                   const isActive = s === step;

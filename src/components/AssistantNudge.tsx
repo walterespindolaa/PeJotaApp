@@ -92,7 +92,7 @@ export default function AssistantNudge({ chatOpen, onOpenChat }: Props) {
   return (
     <button
       onClick={handleClick}
-      aria-label="Abrir Assistente Atlas"
+      aria-label="Abrir Assistente PeJota"
       className="fixed z-50 left-0 right-0 mx-auto w-fit lg:left-auto lg:right-6 lg:mx-0 flex items-center gap-2 px-3 py-2 rounded-2xl bg-primary text-primary-foreground shadow-[0_4px_20px_-4px_hsl(var(--primary)/0.4)] animate-in slide-in-from-bottom-2 fade-in duration-300 hover:scale-105 transition-transform max-w-[240px]"
       style={{
         bottom: "calc(5rem + env(safe-area-inset-bottom, 0px))",

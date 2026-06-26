@@ -165,7 +165,7 @@ export default function MobileBottomNav({ onOpenChat, hasCompany = false, menuGr
             <Menu className="h-5 w-5" />
           </button>
         )}
-        <button aria-label="Atlas IA" onClick={() => { setSheet(null); onOpenChat(); }} className={iconBtn(false)}>
+        <button aria-label="PeJota IA" onClick={() => { setSheet(null); onOpenChat(); }} className={iconBtn(false)}>
           <Sparkles className="h-5 w-5" />
         </button>
         <button aria-label="Home" onClick={() => go("/dashboard")} className={iconBtn(isHome)}>

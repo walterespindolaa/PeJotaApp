@@ -40,7 +40,7 @@ export default function ScreensAccordion() {
               />
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/85 to-transparent" />
               {on && (
-                <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#f2ab0c] text-[#2a1c02]">Atlas</span>
+                <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#f2ab0c] text-[#2a1c02]">PeJota</span>
               )}
               <div
                 className={`absolute left-1/2 -translate-x-1/2 text-white transition-all duration-300 ${

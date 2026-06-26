@@ -45,7 +45,7 @@ export default function Historico() {
     const margin = 14;
     const now = new Date();
     pdf.setFontSize(14); pdf.setFont("helvetica", "bold");
-    pdf.text("Atlas — Histórico de Movimentações", margin, 16);
+    pdf.text("PeJota — Histórico de Movimentações", margin, 16);
     pdf.setFontSize(9); pdf.setFont("helvetica", "normal");
     pdf.text(`Gerado em: ${now.toLocaleString("pt-BR")} · Período: ${periodoLabel}`, margin, 23);
     pdf.text(

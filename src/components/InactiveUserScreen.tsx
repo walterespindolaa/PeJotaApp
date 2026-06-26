@@ -17,7 +17,7 @@ const InactiveUserScreen = () => {
         Sua conta foi desativada por inatividade
       </h1>
       <p className="text-muted-foreground max-w-md mb-8 leading-relaxed">
-        Seus dados continuam salvos na plataforma. Ative um plano para recuperar o acesso completo ao Atlas.
+        Seus dados continuam salvos na plataforma. Ative um plano para recuperar o acesso completo ao PeJota.
       </p>
       <Button size="lg" onClick={() => navigate("/dashboard/planos")}>
         Reativar acesso

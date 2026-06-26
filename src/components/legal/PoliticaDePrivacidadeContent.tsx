@@ -63,7 +63,7 @@ const PoliticaDePrivacidadeContent = () => {
         <p>
           Solicitações relacionadas à privacidade e ao tratamento de dados pessoais, bem como o exercício
           dos direitos previstos na LGPD, podem ser feitas diretamente ao nosso Encarregado de Dados (DPO)
-          pelo e-mail <a href="mailto:privacidade@useatlasapp.com" className="underline">privacidade@useatlasapp.com</a>.
+          pelo e-mail <a href="mailto:privacidade@usepejotaapp.com" className="underline">privacidade@usepejotaapp.com</a>.
         </p>
       </section>
     </>

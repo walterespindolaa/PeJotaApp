@@ -48,9 +48,9 @@ function formatPlanLabel(u: UserRow): string {
   if (plan_tier === "full" && access_state === "active") {
     const expLabel = full_expires_at ? ` (expira ${fmtDate(full_expires_at)})` : "";
     const inheritedLabel = u.household_inheritance ? ` • Herdado de ${u.household_inheritance.owner_name}` : "";
-    return `Atlas FULL${expLabel}${inheritedLabel}`;
+    return `PeJota FULL${expLabel}${inheritedLabel}`;
   }
-  if (access_state === "trial") return "Trial 7 dias (Atlas)";
+  if (access_state === "trial") return "Trial 7 dias (PeJota)";
   if (access_state === "grace") return "Grace (acesso parcial)";
   if (access_state === "restricted") return "Restrito";
   return plan_tier || "—";
@@ -206,7 +206,7 @@ const AdminUsers = () => {
       : `\n🔗 Email de ativação enviado para o usuário.`;
     return `Olá, ${createdResult.name} 👋
 
-Seu acesso ao Atlas foi criado com sucesso.
+Seu acesso ao PeJota foi criado com sucesso.
 
 📧 Email: ${createdResult.email}${linkLine}${expiryLine}
 

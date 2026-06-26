@@ -7,7 +7,7 @@ interface AtlasReportClosingProps {
 }
 
 /**
- * Standard Atlas closing card for all reports.
+ * Standard PeJota closing card for all reports.
  * Shows institutional quote (dynamic) + logo + optional "Próximo Movimento".
  */
 export default function AtlasReportClosing({ category = "general", proximoMovimento }: AtlasReportClosingProps) {
@@ -17,7 +17,7 @@ export default function AtlasReportClosing({ category = "general", proximoMovime
     <Card className="shadow-card rounded-2xl bg-gradient-to-br from-[hsl(var(--primary)/0.05)] to-[hsl(var(--accent)/0.08)] border-primary/10 mt-6">
       <CardContent className={`py-10 px-8 ${proximoMovimento ? "space-y-5" : ""}`}>
         <div className="flex items-center gap-6">
-          <img src="/logo.png" alt="Atlas" className="w-14 h-14 rounded-2xl object-contain shrink-0" />
+          <img src="/logo.png" alt="PeJota" className="w-14 h-14 rounded-2xl object-contain shrink-0" />
           <div>
             <p className="text-base italic text-foreground/80 font-medium leading-relaxed">
               "{quote.text}"

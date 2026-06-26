@@ -75,7 +75,7 @@ const FeatureGate = ({ featureKey, moduleName, moduleDescription, benefits, chil
 
           <p className="text-xs text-muted-foreground mb-5">
             Disponível no plano{" "}
-            <span className="font-semibold text-primary">{requiredPlan?.name || "Atlas Pro"}</span>.
+            <span className="font-semibold text-primary">{requiredPlan?.name || "PeJota Pro"}</span>.
           </p>
 
           <div className="flex flex-col gap-2.5">

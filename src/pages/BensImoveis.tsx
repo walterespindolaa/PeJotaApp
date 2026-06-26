@@ -371,7 +371,7 @@ const BensImoveis = () => {
           <AlertDialogHeader>
             <AlertDialogTitle>Parcela do financiamento</AlertDialogTitle>
             <AlertDialogDescription>
-              A parcela{pendingFin ? ` de ${fmt(pendingFin.parcela)}` : ""}/mês deste financiamento já está lançada nas suas despesas? Se ainda não, o Atlas pode lançar pra você como despesa recorrente — assim ela entra no seu orçamento mensal automaticamente (em Organiza → Dívidas).
+              A parcela{pendingFin ? ` de ${fmt(pendingFin.parcela)}` : ""}/mês deste financiamento já está lançada nas suas despesas? Se ainda não, o PeJota pode lançar pra você como despesa recorrente — assim ela entra no seu orçamento mensal automaticamente (em Organiza → Dívidas).
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

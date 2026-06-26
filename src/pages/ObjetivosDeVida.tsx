@@ -350,7 +350,7 @@ const ObjetivosDeVida = () => {
           <p className="text-muted-foreground text-[15px] leading-relaxed">
             Neste espaço você pode registrar seus sonhos e planos para o futuro.
             Liste seus objetivos financeiros de curto, médio e longo prazo — como viagens, carro, imóvel, faculdade e outros projetos importantes.
-            O Atlas calcula automaticamente quanto você precisa guardar por mês para transformar esses planos em realidade.
+            O PeJota calcula automaticamente quanto você precisa guardar por mês para transformar esses planos em realidade.
           </p>
         </div>
         <div className="flex items-center gap-3 flex-wrap">
@@ -487,13 +487,13 @@ const ObjetivosDeVida = () => {
                 </div>
                 {form.aporte_automatico && (
                   <div className="space-y-3">
-                    {/* Atlas suggestion */}
+                    {/* PeJota suggestion */}
                     <div className="rounded-lg bg-primary/5 border border-primary/15 p-3.5 flex items-center gap-3">
                       <div className="p-2 rounded-lg bg-primary/10">
                         <Sparkles className="h-4 w-4 text-primary" strokeWidth={1.5} />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-[11px] text-muted-foreground">Sugestão do Atlas</p>
+                        <p className="text-[11px] text-muted-foreground">Sugestão do PeJota</p>
                         <p className="text-lg font-heading font-bold text-primary">
                           {fmt(sugestaoAporte)}<span className="text-xs font-normal text-muted-foreground ml-1">/ mês</span>
                         </p>
@@ -514,7 +514,7 @@ const ObjetivosDeVida = () => {
                         <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${!form.aporte_custom ? "border-primary" : "border-muted-foreground/40"}`}>
                           {!form.aporte_custom && <div className="w-2 h-2 rounded-full bg-primary" />}
                         </div>
-                        Usar valor sugerido pelo Atlas
+                        Usar valor sugerido pelo PeJota
                       </button>
                       <button
                         type="button"

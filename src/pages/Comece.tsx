@@ -24,9 +24,9 @@ interface CouponData {
 }
 
 const PLAN_LABELS: Record<string, string> = {
-  atlas_essencial: "Atlas Essencial",
-  atlas_pro: "Atlas Pro",
-  atlas_elite: "Atlas Elite",
+  atlas_essencial: "PeJota Essencial",
+  atlas_pro: "PeJota Pro",
+  atlas_elite: "PeJota Elite",
 };
 
 const PLANS = [
@@ -162,14 +162,14 @@ const Comece = () => {
   return (
     <>
     <SEO
-      title="Comece com o Atlas | Crie sua conta e organize suas finanças"
-      description="Crie sua conta Atlas em minutos. Escolha seu plano, aplique cupons de parceiros e comece a organizar sua vida financeira."
+      title="Comece com o PeJota | Crie sua conta e organize suas finanças"
+      description="Crie sua conta PeJota em minutos. Escolha seu plano, aplique cupons de parceiros e comece a organizar sua vida financeira."
       path="/comece"
     />
     <div className="min-h-screen relative overflow-hidden flex items-center justify-center py-16 px-6 md:px-10">
-      {/* Fundo: ilustração Atlas (mesma do /auth) — retrato no mobile, paisagem no desktop */}
-      <div className="absolute inset-0 bg-cover bg-center md:hidden" style={{ backgroundImage: "url('/images/auth-bg-mobile.webp')" }} aria-hidden="true" />
-      <div className="absolute inset-0 bg-cover bg-center hidden md:block" style={{ backgroundImage: "url('/images/auth-bg-desktop.webp')" }} aria-hidden="true" />
+      {/* Fundo: fundo PeJota — retrato no mobile, paisagem no desktop */}
+      <div className="absolute inset-0 bg-cover bg-center md:hidden" style={{ background: '#0c1620' }} aria-hidden="true" />
+      <div className="absolute inset-0 bg-cover bg-center hidden md:block" style={{ background: 'linear-gradient(135deg,#0c1620,#1a5e91)' }} aria-hidden="true" />
       {/* Gradiente de legibilidade (texto/painel à esquerda) */}
       <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.12) 100%)" }} aria-hidden="true" />
       <Link to="/" className="absolute top-7 left-7 z-20 flex items-center gap-2 text-sm font-body hover:opacity-70 transition-opacity" style={{ color: "rgba(255,255,255,0.7)" }}>
@@ -329,7 +329,7 @@ const Comece = () => {
                     id="trial-coupon" type="text" value={couponCode}
                     onChange={e => { const val = e.target.value.toUpperCase(); setCouponCode(val); setCouponValid(null); setCouponInfo(""); setCouponData(null); }}
                     onBlur={() => validateCoupon(couponCode)}
-                    placeholder="ATLAS30OFF"
+                    placeholder="PEJOTA30"
                     className={`border-[#E0D9CC] bg-white focus-visible:ring-[#B68A3F]/40 placeholder:text-[#C4B9A4] rounded-xl h-11 text-sm font-mono tracking-wider ${couponValid === true ? "border-green-500 bg-green-50/30" : couponValid === false ? "border-red-400" : ""}`}
                   />
                   {couponValid === true && couponInfo && (

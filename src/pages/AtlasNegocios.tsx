@@ -522,7 +522,7 @@ const AtlasNegocios = () => {
           <div className="flex items-center gap-3 flex-1 min-w-0">
             <div className="p-2 rounded-xl bg-primary/10"><Briefcase className="h-6 w-6 text-primary" /></div>
             <div className="min-w-0 flex-1">
-              <h1 className="text-lg font-heading font-bold truncate">{selected?.name || "Atlas Negócios"}</h1>
+              <h1 className="text-lg font-heading font-bold truncate">{selected?.name || "PeJota Negócios"}</h1>
               <p className="text-[11px] text-muted-foreground">
                 {selected ? BUSINESS_TYPE_LABELS[selected.business_type as keyof typeof BUSINESS_TYPE_LABELS] || selected.business_type : ""}
               </p>
@@ -876,9 +876,9 @@ const AtlasNegocios = () => {
         />
       )}
 
-      {/* ── Diagnóstico do Atlas ── */}
+      {/* ── Diagnóstico do PeJota ── */}
       <div>
-        <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/50 font-heading font-semibold mb-3 px-1">Diagnóstico do Atlas</p>
+        <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/50 font-heading font-semibold mb-3 px-1">Diagnóstico do PeJota</p>
         <DiagnosticoAtlas companyId={selected?.id} refreshKey={dataVersion} mesRef={mesRef} />
       </div>
 
@@ -904,9 +904,9 @@ const AtlasNegocios = () => {
         />
       </div>
 
-      {/* ── Assistente Atlas ── */}
+      {/* ── Assistente PeJota ── */}
       <div>
-        <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/50 font-heading font-semibold mb-3 px-1">Assistente Atlas</p>
+        <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/50 font-heading font-semibold mb-3 px-1">Assistente PeJota</p>
         <AssistenteAtlasCard onOpenChat={onOpenChat || (() => {})} />
       </div>
 

@@ -73,7 +73,7 @@ export default function ProjecaoInsights(props: Props) {
       <CardHeader className="pb-3">
         <CardTitle className="text-sm font-heading flex items-center gap-2">
           <Lightbulb className="h-4 w-4 text-amber-500" />
-          Insights do Atlas
+          Insights do PeJota
         </CardTitle>
         <p className="text-[10px] text-muted-foreground">Interpretações automáticas da sua projeção.</p>
       </CardHeader>

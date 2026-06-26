@@ -213,7 +213,7 @@ const DashboardLayout = () => {
           {/* Hambúrguer movido para a barra inferior (MobileBottomNav). */}
           {/* Logo centralizado de forma absoluta — fica no meio real da tela, independente da largura dos lados */}
           <button type="button" onClick={() => { navigate("/dashboard"); scrollToTop(); }} aria-label="Ir para o dashboard" className="absolute left-1/2 -translate-x-1/2 focus:outline-none">
-            <img src={isHome ? "/images/atlas-logo-branca.webp" : "/logo.png"} alt="PeJota" className="w-7 h-7 rounded-lg object-contain" />
+            <img src={isHome ? "/logo.png" : "/logo.png"} alt="PeJota" className="w-7 h-7 rounded-lg object-contain" />
           </button>
           <div className="flex-1" />
           <PlanBadge />

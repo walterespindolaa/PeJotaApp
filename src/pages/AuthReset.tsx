@@ -197,8 +197,8 @@ const AuthReset = () => {
       <div className="relative z-10 w-full max-w-md mx-6 animate-fade-in">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-3">
-            <img src="/logo.png" alt="Atlas" className="w-10 h-10 rounded-lg object-contain" />
-            <span className="text-xl font-heading font-bold" style={{ color: "#4A4035" }}>Atlas</span>
+            <img src="/logo.png" alt="PeJota" className="w-10 h-10 rounded-lg object-contain" />
+            <span className="text-xl font-heading font-bold" style={{ color: "#4A4035" }}>PeJota</span>
           </div>
           <p className="text-sm font-body" style={{ color: "#8B7D6B" }}>Defina sua nova senha</p>
         </div>

@@ -23,7 +23,7 @@ type RailGroup =
    PeJota — navegação 100% PJ (multiempresa).
    Rotas marcadas /dashboard/negocios apontam pro hub do negócio
    até a tela dedicada ser construída (Fase 1+). As demais já têm
-   tela própria herdada do Atlas e serão adaptadas pro contexto PJ.
+   tela própria herdada do PeJota e serão adaptadas pro contexto PJ.
    ───────────────────────────────────────────────────────────── */
 const GROUPS: RailGroup[] = [
   { kind: "direct", key: "dashboard", label: "Dashboard", icon: Home, to: "/dashboard" },

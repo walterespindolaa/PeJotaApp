@@ -125,7 +125,7 @@ function MenuItem({
      instead of NavLink's function-className (which Radix can't merge). */
   if (collapsed || locked) {
     const tooltipText = locked
-      ? `${item.label} — ${lockLabel || "Atlas Pro"}`
+      ? `${item.label} — ${lockLabel || "PeJota Pro"}`
       : item.label;
 
     return (

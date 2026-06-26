@@ -64,7 +64,7 @@ export function normalizeInstitution(b3Name: string | null | undefined): string 
 export type B3Candidate = {
   id: string; // local UUID for table key
   source_aba: string;
-  tipo: string; // Atlas tipo
+  tipo: string; // PeJota tipo
   classe: string;
   nome: string;
   ticker: string | null;

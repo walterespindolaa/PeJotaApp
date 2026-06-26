@@ -7,9 +7,9 @@ const TermosDeUsoContent = () => {
     <>
       <section className="space-y-3">
         <h2 className="text-xl font-heading font-semibold">SOBRE A PLATAFORMA</h2>
-        <p>O Atlas é uma plataforma tecnológica destinada à organização financeira, planejamento patrimonial e visualização de dados financeiros pessoais ou empresariais.</p>
+        <p>O PeJota é uma plataforma tecnológica destinada à organização financeira, planejamento patrimonial e visualização de dados financeiros pessoais ou empresariais.</p>
         <p>A plataforma disponibiliza ferramentas de análise, projeção e organização financeira com base nas informações inseridas pelo próprio usuário.</p>
-        <p>O Atlas não realiza gestão de recursos, consultoria financeira individualizada, administração de investimentos ou intermediação de operações financeiras.</p>
+        <p>O PeJota não realiza gestão de recursos, consultoria financeira individualizada, administração de investimentos ou intermediação de operações financeiras.</p>
       </section>
 
       <section className="space-y-3">
@@ -35,12 +35,12 @@ const TermosDeUsoContent = () => {
       <section className="space-y-3">
         <h2 className="text-xl font-heading font-semibold">RESPONSABILIDADE DO USUÁRIO</h2>
         <p>O usuário é responsável pela veracidade, precisão e atualização das informações inseridas na plataforma.</p>
-        <p>O Atlas não se responsabiliza por decisões tomadas com base em dados incorretos ou incompletos fornecidos pelo usuário.</p>
+        <p>O PeJota não se responsabiliza por decisões tomadas com base em dados incorretos ou incompletos fornecidos pelo usuário.</p>
       </section>
 
       <section className="space-y-3">
         <h2 className="text-xl font-heading font-semibold">LIMITAÇÃO DE RESPONSABILIDADE</h2>
-        <p>Em nenhuma hipótese o Atlas ou seus responsáveis poderão ser responsabilizados por:</p>
+        <p>Em nenhuma hipótese o PeJota ou seus responsáveis poderão ser responsabilizados por:</p>
         <ul className="list-disc pl-6 space-y-1">
           <li>perdas financeiras</li>
           <li>lucros cessantes</li>
@@ -52,13 +52,13 @@ const TermosDeUsoContent = () => {
 
       <section className="space-y-3">
         <h2 className="text-xl font-heading font-semibold">DISPONIBILIDADE DA PLATAFORMA</h2>
-        <p>O Atlas se esforça para manter a plataforma disponível e segura, porém não garante disponibilidade ininterrupta.</p>
+        <p>O PeJota se esforça para manter a plataforma disponível e segura, porém não garante disponibilidade ininterrupta.</p>
         <p>Podem ocorrer interrupções temporárias para manutenção, atualização ou falhas técnicas.</p>
       </section>
 
       <section className="space-y-3">
         <h2 className="text-xl font-heading font-semibold">ALTERAÇÕES DOS TERMOS</h2>
-        <p>O Atlas poderá atualizar estes termos a qualquer momento.</p>
+        <p>O PeJota poderá atualizar estes termos a qualquer momento.</p>
         <p>Quando isso ocorrer, os usuários poderão ser solicitados a aceitar uma nova versão para continuar utilizando a plataforma.</p>
       </section>
 

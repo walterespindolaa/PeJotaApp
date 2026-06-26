@@ -208,7 +208,7 @@ const DashboardHome = () => {
     [skips]
   );
 
-  // Atlas Score 2.0
+  // PeJota Score 2.0
   const dateRange = useMemo(() => getDateRange(period, customRange), [period, customRange]);
   const { result: atlasResult, loading: atlasLoading, scoreInputs: atlasInputs, evolution3m } = useAtlasScore({
     userId: user?.id,
@@ -489,7 +489,7 @@ const DashboardHome = () => {
   const dashboardContent = (
     <div className="space-y-8 animate-fade-in">
       {/* PlanBanner is rendered in DashboardLayout — not duplicated here */}
-      {/* Hero mobile — saudação + Atlas Score */}
+      {/* Hero mobile — saudação + PeJota Score */}
       <DashboardHero
         greetingName={greetingName}
         greetingEmoji={greetingEmoji}
@@ -785,7 +785,7 @@ const DashboardHome = () => {
             </div>
           </div>
 
-          {/* LINHA 2 — Planejamento (desktop): Objetivos · Patrimônio · Aposentadoria, acima do Atlas Score */}
+          {/* LINHA 2 — Planejamento (desktop): Objetivos · Patrimônio · Aposentadoria, acima do PeJota Score */}
           {acesso_planejamento_360 ? (
             <div className="hidden lg:grid grid-cols-3 gap-3">
               {/* Seus objetivos */}
@@ -846,12 +846,12 @@ const DashboardHome = () => {
             <div className="hidden lg:block rounded-2xl border border-border/60 bg-card p-5 shadow-sm text-center">
               <div className="w-10 h-10 rounded-xl bg-primary/10 grid place-items-center mx-auto mb-3"><Lock className="h-5 w-5 text-primary" /></div>
               <div className="text-sm font-heading font-bold text-foreground mb-1">{t("dh.plan_completo")}</div>
-              <p className="text-xs text-muted-foreground mb-3">Objetivos, patrimônio e aposentadoria num só lugar — no Atlas Pro.</p>
+              <p className="text-xs text-muted-foreground mb-3">Objetivos, patrimônio e aposentadoria num só lugar — no PeJota Pro.</p>
               <button onClick={() => navigate("/dashboard/planos")} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-heading font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity">{t("dh.conhecer_pro")} <ArrowRight className="h-3.5 w-3.5" /></button>
             </div>
           )}
 
-          {/* LINHA 3 — Atlas Score (+ Visão Futura/Radar) · engajamento (2 colunas) */}
+          {/* LINHA 3 — PeJota Score (+ Visão Futura/Radar) · engajamento (2 colunas) */}
           <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-4 items-start">
             {/* ── Coluna principal ── */}
             <div className="space-y-6 min-w-0">
@@ -963,7 +963,7 @@ const DashboardHome = () => {
                 )}
               </div>
 
-              {/* Pergunte ao Atlas — com o aviso/insight do Atlas integrado acima do input */}
+              {/* Pergunte ao PeJota — com o aviso/insight do PeJota integrado acima do input */}
               <div className="rounded-2xl bg-card border border-border/60 p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
                   <Sparkles className="h-4 w-4 text-primary" />
@@ -1165,13 +1165,13 @@ const DashboardHome = () => {
         </div>
       )}
 
-      {/* Comunidade do Atlas no WhatsApp */}
+      {/* Comunidade do PeJota no WhatsApp */}
       <a
         href="https://chat.whatsapp.com/Ei3DaA0OIFH6UasHWaMrfR"
         target="_blank"
         rel="noopener noreferrer"
         className="block group"
-        aria-label="Entrar na comunidade do Atlas no WhatsApp"
+        aria-label="Entrar na comunidade do PeJota no WhatsApp"
       >
         <Card className="border-border/30 shadow-none bg-card/60 rounded-2xl transition-colors hover:bg-card/80 hover:border-[#25D366]/40">
           <CardContent className="py-4 px-5 flex items-center gap-4">

@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { computeAtlasScore, getAtlasLevel, type AtlasScoreInputs } from "@/lib/atlasScore";
 
 /**
- * Testes do motor de cálculo do Atlas Score (src/lib/atlasScore.ts).
+ * Testes do motor de cálculo do PeJota Score (src/lib/atlasScore.ts).
  * Cobre: 0 dados, dados máximos, valores negativos, e um caso realista
  * com score calculado à mão (pesos × score de cada pilar).
  */
@@ -34,7 +34,7 @@ const zeroInputs = (): AtlasScoreInputs => ({
   empresaMesesComLucro: 0,
 });
 
-describe("Atlas Score — casos de borda", () => {
+describe("PeJota Score — casos de borda", () => {
   it("0 dados → score 0, nível Sobrevivência, todos pilares sem_dados", () => {
     const r = computeAtlasScore(zeroInputs());
     expect(r.score).toBe(0);
@@ -77,7 +77,7 @@ describe("Atlas Score — casos de borda", () => {
   });
 });
 
-describe("Atlas Score — caso realista (verificado à mão)", () => {
+describe("PeJota Score — caso realista (verificado à mão)", () => {
   // Pilares (sem empresa, pesos base somam 1.0):
   //   reserva 0.20, margem 0.15, disciplina 0.10, alocação 0.15, aposentadoria 0.25, evolução 0.15
   // Scores esperados:

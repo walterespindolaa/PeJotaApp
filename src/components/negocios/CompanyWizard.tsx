@@ -93,7 +93,7 @@ export default function CompanyWizard({ open, onOpenChange, onCreate }: Props) {
 
         {step === 1 && (
           <div className="space-y-3 pt-1">
-            <p className="text-sm text-muted-foreground">Qual o tipo do negócio? Isso já organiza o Atlas pro seu nicho.</p>
+            <p className="text-sm text-muted-foreground">Qual o tipo do negócio? Isso já organiza o PeJota pro seu nicho.</p>
             <div className="grid grid-cols-1 gap-2 max-h-[46vh] overflow-y-auto pr-1">
               {TYPES.map(t => {
                 const Icon = TYPE_ICONS[t];

@@ -9,7 +9,7 @@ import { Palette, Moon, Sun, Monitor, Check } from "lucide-react";
 
 
 const SIDEBAR_THEMES = [
-  { id: "default", label: "Azul Atlas", hsl: "206 64% 20%", category: "Institucionais" },
+  { id: "default", label: "Azul PeJota", hsl: "206 64% 20%", category: "Institucionais" },
   { id: "white", label: "Off-white", hsl: "36 30% 96%", textHsl: "210 25% 15%", category: "Soft" },
   { id: "gray", label: "Cinza Quente", hsl: "30 8% 28%", category: "Institucionais" },
   { id: "olive", label: "Verde Oliva", hsl: "90 20% 26%", category: "Institucionais" },
@@ -26,7 +26,7 @@ const SIDEBAR_THEMES = [
 ];
 
 const ACCENT_THEMES = [
-  { id: "default", label: "Azul Atlas", hsl: "206 70% 34%" },
+  { id: "default", label: "Azul PeJota", hsl: "206 70% 34%" },
   { id: "olive", label: "Verde Oliva", hsl: "90 30% 42%" },
   { id: "moss", label: "Verde Musgo", hsl: "149 53% 33%" },
   { id: "terra", label: "Terracota", hsl: "8 56% 47%" },

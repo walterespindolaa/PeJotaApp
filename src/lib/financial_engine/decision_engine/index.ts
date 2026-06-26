@@ -1,5 +1,5 @@
 /**
- * Motor de Decisão Financeira do Atlas
+ * Motor de Decisão Financeira do PeJota
  * Roteador central que despacha para o módulo correto por tipo de decisão.
  */
 

@@ -1,7 +1,7 @@
 /* ============================================================
    PeJota — Fórmulas e engines de cálculo PRESERVADAS
    ------------------------------------------------------------
-   REGRA DE OURO: nenhuma fórmula/estrutura de cálculo do Atlas
+   REGRA DE OURO: nenhuma fórmula/estrutura de cálculo do PeJota
    é apagada. Mesmo quando a TELA é removida (ex.: aposentadoria,
    carteira de investimentos), o motor de cálculo continua aqui,
    pronto para reaproveitar/adaptar ao contexto PJ.

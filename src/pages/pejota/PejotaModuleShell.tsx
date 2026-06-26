@@ -7,7 +7,7 @@ type Status = "planejado" | "em-construcao" | "reaproveitado";
 interface Props {
   title: string;
   description?: string;
-  /** De onde a funcionalidade vem (Atlas / Zephyr / Novo) */
+  /** De onde a funcionalidade vem (PeJota / Zephyr / Novo) */
   reuse?: string;
   status?: Status;
   icon?: React.ElementType;
@@ -22,7 +22,7 @@ const STATUS_LABEL: Record<Status, string> = {
 
 /**
  * Carcaça (shell) padrão dos módulos do PeJota.
- * Mantém cabeçalho, origem (o que reaproveitamos do Atlas/Zephyr) e estado,
+ * Mantém cabeçalho, origem (o que reaproveitamos do PeJota/Zephyr) e estado,
  * para irmos preenchendo cada módulo parte por parte.
  */
 export default function PejotaModuleShell({

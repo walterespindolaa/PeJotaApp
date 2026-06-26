@@ -147,7 +147,7 @@ const AnaliseAtlasContent = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h1 className="text-2xl font-heading font-bold flex items-center gap-2">
-            <Mountain className="h-6 w-6 text-primary" /> Análise Atlas
+            <Mountain className="h-6 w-6 text-primary" /> Análise PeJota
           </h1>
           <p className="text-muted-foreground text-sm mt-1">{periodCfg.title}</p>
         </div>
@@ -384,10 +384,10 @@ const AnaliseAtlasContent = () => {
         </>
       )}
 
-      {/* ═══ 5. Atlas Score com Trajetória ═══ */}
+      {/* ═══ 5. PeJota Score com Trajetória ═══ */}
       {scoreFiltered.length >= 2 && (
         <>
-          <SectionTitle icon={Award} label="Atlas Score" />
+          <SectionTitle icon={Award} label="PeJota Score" />
           {(() => {
             const first = scoreFiltered[0];
             const last = scoreFiltered[scoreFiltered.length - 1];
@@ -404,7 +404,7 @@ const AnaliseAtlasContent = () => {
               <Card className="shadow-soft">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base font-heading flex items-center gap-2">
-                    <Award className="h-4 w-4 text-primary" /> Trajetória do seu Atlas Score
+                    <Award className="h-4 w-4 text-primary" /> Trajetória do seu PeJota Score
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -534,14 +534,14 @@ const AnaliseAtlasContent = () => {
 
 const FEATURE_CONFIG = {
   icon: Mountain,
-  title: "Análise Atlas",
+  title: "Análise PeJota",
   subtitle: "Sua vida financeira em 360°, conectada",
   items: [
     "Sua reserva vai aguentar seu estilo de vida",
     "Você ganha dinheiro enquanto dorme?",
     "Suas metas batem com sua realidade",
     "Sua aposentadoria cabe no seu mês",
-    "Trajetória do seu Atlas Score com causas",
+    "Trajetória do seu PeJota Score com causas",
     "Simulação: impacto de quitar parcelamentos nas metas",
     "Sua inflação pessoal vs IPCA oficial",
   ],

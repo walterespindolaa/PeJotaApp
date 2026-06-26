@@ -6,7 +6,7 @@ export default function Exportacoes() {
     <PejotaModuleShell
       title="Exportações"
       description="Exporte relatórios e lançamentos em PDF e Excel."
-      reuse="Reaproveita a infra de export do Atlas (jsPDF + XLSX já instalados)."
+      reuse="Reaproveita a infra de export do PeJota (jsPDF + XLSX já instalados)."
       status="reaproveitado"
       icon={Download}
     />

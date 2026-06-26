@@ -86,7 +86,7 @@ const MODULES: CourseModule[] = [
     id: "mod7", label: "Módulo 7", title: "Plano de Ação e Consistência", description: "Checklist final, rebalanceamento, carteiras-modelo e por que a consistência vence a inteligência.", icon: Shield,
     lessons: [
       { id: "7-1", title: "Checklist final", videoUrl: "https://iframe.mediadelivery.net/embed/635986/3be1119e-cac3-46da-a5f1-e148ff8db417" },
-      { id: "7-2", title: "O Atlas na sua jornada", videoUrl: "https://iframe.mediadelivery.net/embed/635986/0ddaaa55-e892-4128-8d4c-0b46e3914a4b" },
+      { id: "7-2", title: "O PeJota na sua jornada", videoUrl: "https://iframe.mediadelivery.net/embed/635986/0ddaaa55-e892-4128-8d4c-0b46e3914a4b" },
       { id: "7-3", title: "Rebalanceamento prático", videoUrl: "https://iframe.mediadelivery.net/embed/635986/a00110c1-7f9a-4613-94ca-168cc1c755dd" },
       { id: "7-4", title: "Carteiras-modelo", videoUrl: "https://iframe.mediadelivery.net/embed/635986/97b50251-687c-480d-afec-58a31b6e012c" },
       { id: "7-5", title: "Como o pessimismo empobrece", videoUrl: "https://iframe.mediadelivery.net/embed/635986/5646f53e-3cef-406b-89de-f5228764e407" },
@@ -171,7 +171,7 @@ function PreLaunchScreen() {
         </div>
         <div className="space-y-1.5">
           <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/70 font-heading font-semibold">
-            Investimentos Atlas
+            Investimentos PeJota
           </p>
           <h1 className="text-2xl md:text-3xl font-heading font-bold">Plano da Liberdade</h1>
         </div>
@@ -344,7 +344,7 @@ const PlanoLiberdade = () => {
         </div>
         <div className="space-y-1.5">
           <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/70 font-heading font-semibold">
-            Investimentos Atlas
+            Investimentos PeJota
           </p>
           <h1 className="text-2xl md:text-3xl font-heading font-bold">Plano da Liberdade</h1>
         </div>

@@ -34,7 +34,7 @@ const ShaderBackground: React.FC<ShaderBackgroundProps> = ({
     const vec4 gridColor = vec4(0.35);
     const float scale = 5.0;
     // PeJota — verde vivo (#26d167)
-    const vec4 lineColor = vec4(0.15, 0.82, 0.40, 1.0);
+    const vec4 lineColor = vec4(0.184, 0.545, 1.0, 1.0);
     const float minLineWidth = 0.01;
     const float maxLineWidth = 0.2;
     const float lineSpeed = 1.0 * overallSpeed;
@@ -76,9 +76,9 @@ const ShaderBackground: React.FC<ShaderBackgroundProps> = ({
       space.y += random(space.x * warpFrequency + iTime * warpSpeed) * warpAmplitude * (0.5 + horizontalFade);
       space.x += random(space.y * warpFrequency + iTime * warpSpeed + 2.0) * warpAmplitude * horizontalFade;
       vec4 lines = vec4(0.0);
-      // PeJota — gradiente verde escuro (#04190f -> #244629)
-      vec4 bgColor1 = vec4(0.015, 0.098, 0.059, 1.0);
-      vec4 bgColor2 = vec4(0.102, 0.255, 0.149, 1.0);
+      // PeJota — gradiente verde escuro (#0c1620 -> #1a5e91)
+      vec4 bgColor1 = vec4(0.078, 0.188, 0.290, 1.0);
+      vec4 bgColor2 = vec4(0.102, 0.369, 0.569, 1.0);
       for(int l = 0; l < linesPerGroup; l++) {
         float normalizedLineIndex = float(l) / float(linesPerGroup);
         float offsetTime = iTime * offsetSpeed;

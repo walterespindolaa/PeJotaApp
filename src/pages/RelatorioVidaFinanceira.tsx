@@ -374,7 +374,7 @@ const RelatorioVidaFinanceira = () => {
                 <div className="w-full h-3 rounded-full bg-muted overflow-hidden">
                   <div className={`h-full rounded-full ${progressColor} transition-all`} style={{ width: `${score}%` }} />
                 </div>
-                <p className="text-xs text-muted-foreground mt-2">Atlas Score · {new Date(atlasScore.snapshot_date).toLocaleDateString("pt-BR")}</p>
+                <p className="text-xs text-muted-foreground mt-2">PeJota Score · {new Date(atlasScore.snapshot_date).toLocaleDateString("pt-BR")}</p>
               </div>
             </div>
           </div>
@@ -429,7 +429,7 @@ const RelatorioVidaFinanceira = () => {
         <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
           <Clock className="h-3.5 w-3.5" /> Última atualização: {new Date(generatedAt).toLocaleString("pt-BR")}
           <span className="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-medium">
-            <Sparkles className="h-2.5 w-2.5" /> Gerado por IA | Atlas
+            <Sparkles className="h-2.5 w-2.5" /> Gerado por IA | PeJota
           </span>
         </div>
       )}
@@ -455,12 +455,12 @@ const RelatorioVidaFinanceira = () => {
           {/* Cover */}
           <Card className="shadow-card rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 border-primary/10 mb-6">
             <CardContent className="py-10 text-center">
-              <img src="/logo.png" alt="Atlas" className="w-14 h-14 mx-auto mb-3 rounded-2xl object-contain" />
+              <img src="/logo.png" alt="PeJota" className="w-14 h-14 mx-auto mb-3 rounded-2xl object-contain" />
               <h2 className="text-2xl font-heading font-bold text-foreground mb-1">Base da Montanha</h2>
               {userName && <p className="text-lg text-foreground/70 font-medium">{userName}</p>}
               <p className="text-sm text-muted-foreground mt-1">{today}</p>
               <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                <Sparkles className="h-3 w-3" /> Gerado por IA · Atlas
+                <Sparkles className="h-3 w-3" /> Gerado por IA · PeJota
               </div>
             </CardContent>
           </Card>
@@ -493,7 +493,7 @@ const RelatorioVidaFinanceira = () => {
                 <KPICard icon={BarChart3} label="Pat. Financeiro" value={fmtBRL(patFin)} color="text-info" />
                 <KPICard icon={Shield} label="Reserva" value={`${mesesReserva.toFixed(1)} meses`} color={mesesReserva >= 6 ? "text-success" : mesesReserva >= 3 ? "text-warning" : "text-destructive"} />
                 <KPICard icon={BadgePercent} label="Gap IF" value={fmtBRL(gapIF)} color={gapIF === 0 ? "text-success" : "text-warning"} />
-                <KPICard icon={Star} label="Score Atlas" value={atlasScore ? `${atlasScore.score}/100` : "—"} color="text-primary" />
+                <KPICard icon={Star} label="Score PeJota" value={atlasScore ? `${atlasScore.score}/100` : "—"} color="text-primary" />
               </div>
 
               {/* Semáforo Visual */}

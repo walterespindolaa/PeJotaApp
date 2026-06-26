@@ -12,7 +12,7 @@ const NotFound = () => {
 
   return (
     <>
-    <SEO title="Página não encontrada | Atlas" description="A página que você procura não existe ou foi movida. Volte ao início para continuar navegando no Atlas." path="/404" noindex />
+    <SEO title="Página não encontrada | PeJota" description="A página que você procura não existe ou foi movida. Volte ao início para continuar navegando no PeJota." path="/404" noindex />
     <div className="flex min-h-screen items-center justify-center bg-muted">
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>

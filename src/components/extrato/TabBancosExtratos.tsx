@@ -558,7 +558,7 @@ function TabBancosExtratosContent() {
                     Todas as {reviewItems.length} transações deste extrato já foram importadas anteriormente.
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    Se você precisa reimportar, primeiro apague as transações correspondentes em Organiza &gt; Receitas ou Despesas. O Atlas liberará automaticamente a reimportação.
+                    Se você precisa reimportar, primeiro apague as transações correspondentes em Organiza &gt; Receitas ou Despesas. O PeJota liberará automaticamente a reimportação.
                   </p>
                 </div>
               </div>

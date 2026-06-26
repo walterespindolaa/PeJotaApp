@@ -55,14 +55,14 @@ const AtlasScore = ({ result, loading, recommendations = [], achievements = [], 
           <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 text-center lg:text-left">
             {/* Title — mobile (topo) */}
             <div className="lg:hidden">
-              <h3 className="text-base font-heading font-bold">Atlas Score</h3>
+              <h3 className="text-base font-heading font-bold">PeJota Score</h3>
               <p className="text-[11px] text-muted-foreground/60 font-body">
                 Reserva, margem, disciplina, futuro e patrimônio.
               </p>
             </div>
 
             {/* Progress Ring — clickable for explanation */}
-            <div className="relative cursor-pointer flex-shrink-0" onClick={() => setShowInfo(true)} title="Ver explicação do Atlas Score">
+            <div className="relative cursor-pointer flex-shrink-0" onClick={() => setShowInfo(true)} title="Ver explicação do PeJota Score">
               {!loading && (() => {
                 const lvl = LEVEL_RING_ICONS[levelIndex] ?? LEVEL_RING_ICONS[0];
                 return (
@@ -104,7 +104,7 @@ const AtlasScore = ({ result, loading, recommendations = [], achievements = [], 
             <div className="flex flex-col items-center lg:items-start gap-3 w-full lg:flex-1">
               {/* Title — desktop */}
               <div className="hidden lg:block">
-                <h3 className="text-base font-heading font-bold">Atlas Score</h3>
+                <h3 className="text-base font-heading font-bold">PeJota Score</h3>
                 <p className="text-[11px] text-muted-foreground/60 font-body">
                   Reserva, margem, disciplina, futuro e patrimônio.
                 </p>

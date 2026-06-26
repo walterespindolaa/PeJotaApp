@@ -72,7 +72,7 @@ export default function PWAInstallPrompt() {
 
         <div className="flex-1 min-w-0">
           <p className="text-sm font-heading font-semibold text-foreground leading-tight">
-            Instalar Atlas
+            Instalar PeJota
           </p>
           {showIOS ? (
             <p className="text-xs text-muted-foreground mt-1 leading-snug font-body">

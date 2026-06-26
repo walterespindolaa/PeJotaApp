@@ -123,7 +123,7 @@ const RelatoriosMensais = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h1 className="text-2xl font-heading font-bold flex items-center gap-2">
-            <Lightbulb className="h-6 w-6 text-primary" /> Guia da Jornada | Atlas
+            <Lightbulb className="h-6 w-6 text-primary" /> Guia da Jornada | PeJota
           </h1>
           <p className="text-muted-foreground text-sm mt-1">Prioridades claras, próximos passos e recomendações objetivas para sua vida financeira.</p>
         </div>
@@ -146,12 +146,12 @@ const RelatoriosMensais = () => {
         <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
           <Clock className="h-3.5 w-3.5" /> Última atualização IA: {new Date(generatedAt).toLocaleString("pt-BR")}
           <span className="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-medium">
-            <Sparkles className="h-2.5 w-2.5" /> Gerado por IA | Atlas
+            <Sparkles className="h-2.5 w-2.5" /> Gerado por IA | PeJota
           </span>
         </div>
       )}
 
-      <AtlasReportHeader title="Guia da Jornada | Atlas" />
+      <AtlasReportHeader title="Guia da Jornada | PeJota" />
       <AIReportDisclaimer />
 
       {/* Compact executive summary — 6 essential cards */}

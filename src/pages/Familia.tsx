@@ -58,9 +58,9 @@ function getAvatarColor(name: string): string {
 }
 
 const PLAN_LABELS: Record<string, string> = {
-  essencial: "Atlas Essencial",
-  pro: "Atlas Pro",
-  elite: "Atlas Elite",
+  essencial: "PeJota Essencial",
+  pro: "PeJota Pro",
+  elite: "PeJota Elite",
   free: "Sem plano ativo",
 };
 
@@ -217,7 +217,7 @@ const Familia = () => {
       if (result?.status === "email_already_exists") {
         toast({
           title: "E-mail já cadastrado",
-          description: "Este e-mail já possui uma conta no Atlas. Peça ao usuário para fazer login com ele.",
+          description: "Este e-mail já possui uma conta no PeJota. Peça ao usuário para fazer login com ele.",
           variant: "destructive",
         });
         return;

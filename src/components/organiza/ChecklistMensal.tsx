@@ -19,7 +19,7 @@ const DEFAULT_ITEMS = [
 ];
 
 const SUGESTOES = [
-  "Revisei meu Score do Atlas",
+  "Revisei meu Score do PeJota",
   "Conversei sobre as finanças do mês",
   "Separei comprovantes importantes",
 ];

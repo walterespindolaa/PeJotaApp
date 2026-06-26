@@ -249,13 +249,13 @@ export default function CenariosChart({
         </Card>
       </div>
 
-      {/* Bloco educativo — Como o Atlas calcula */}
+      {/* Bloco educativo — Como o PeJota calcula */}
       <Card className="shadow-soft rounded-2xl">
         <CardContent className="p-5 space-y-3">
-          <h4 className="font-heading font-bold text-sm flex items-center gap-2"><BookOpen className="h-4 w-4" />Como o Atlas calcula essas projeções</h4>
+          <h4 className="font-heading font-bold text-sm flex items-center gap-2"><BookOpen className="h-4 w-4" />Como o PeJota calcula essas projeções</h4>
           <div className="text-sm text-muted-foreground space-y-2">
             <p>
-              O Atlas usa quatro informações principais para projetar o futuro do seu patrimônio: o <strong>patrimônio atual</strong>, o <strong>quanto você poupa por mês</strong>, a <strong>taxa de retorno real dos seus investimentos</strong> (já descontada a inflação) e a <strong>idade em que você pretende se aposentar</strong>.
+              O PeJota usa quatro informações principais para projetar o futuro do seu patrimônio: o <strong>patrimônio atual</strong>, o <strong>quanto você poupa por mês</strong>, a <strong>taxa de retorno real dos seus investimentos</strong> (já descontada a inflação) e a <strong>idade em que você pretende se aposentar</strong>.
             </p>
             <p>
               <strong>Fase de acumulação</strong> — Da sua idade atual até a aposentadoria, o patrimônio cresce com dois motores: os aportes mensais que você faz e os rendimentos que o dinheiro gera sozinho (juros compostos). Quanto mais cedo e constante forem os aportes, maior o efeito dos juros compostos ao longo do tempo.

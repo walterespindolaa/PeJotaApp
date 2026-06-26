@@ -101,7 +101,7 @@ export default function InsightRapido({ inline = false }: { inline?: boolean }) 
   if (loading) return null;
   if (insights.length === 0) return null;
 
-  // Modo compacto: notas/linhas (sem card próprio) — usado dentro do "Pergunte ao Atlas".
+  // Modo compacto: notas/linhas (sem card próprio) — usado dentro do "Pergunte ao PeJota".
   if (inline) {
     return (
       <div className="space-y-1.5 mb-3">
@@ -129,7 +129,7 @@ export default function InsightRapido({ inline = false }: { inline?: boolean }) 
       <CardContent className="pt-5 pb-4 px-5 space-y-3">
         <div className="flex items-center gap-2">
           <Lightbulb className="h-4 w-4 text-primary" />
-          <h3 className="font-heading font-bold text-sm">Insight Rápido do Atlas</h3>
+          <h3 className="font-heading font-bold text-sm">Insight Rápido do PeJota</h3>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

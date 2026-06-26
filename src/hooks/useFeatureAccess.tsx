@@ -116,7 +116,7 @@ export const useFeatureAccess = (): FeatureAccessState => {
       setUserPlan(currentPlan);
       setUserFeatures(currentPlan ? (fbp[currentPlan.id] || []) : []);
 
-      // Membro de empresa ganha acesso ao Atlas Negócios (o dono paga o assento)
+      // Membro de empresa ganha acesso ao PeJota Negócios (o dono paga o assento)
       const { count } = await supabase.from("company_members" as any).select("id", { count: "exact", head: true }).eq("user_id", user.id);
       setIsCompanyMember((count || 0) > 0);
 

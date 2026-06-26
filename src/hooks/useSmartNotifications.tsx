@@ -300,7 +300,7 @@ export const useSmartNotifications = () => {
     }
 
     if (economia > 0) {
-      // Valor futuro de uma anuidade mensal por 240 meses, a 5% a.a. real (premissa Atlas).
+      // Valor futuro de uma anuidade mensal por 240 meses, a 5% a.a. real (premissa PeJota).
       const acum20anos = calcFVAnuidade(economia, taxaAnualParaMensal(FINANCIAL_PREMISES.retorno_real_medio), 240);
       notifs.push({
         id: "oport-crescimento", category: "oportunidade", icon: "🚀",

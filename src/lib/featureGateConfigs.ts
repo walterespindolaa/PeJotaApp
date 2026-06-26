@@ -115,8 +115,8 @@ export const FEATURE_GATE_CONFIGS: Record<string, FeatureGateConfig> = {
   },
   atlas_negocios: {
     featureKey: "atlas_negocios",
-    moduleName: "Atlas Negócios",
-    moduleDescription: "Integre sua empresa ao seu planejamento patrimonial.\n\nO Atlas Negócios conecta o fluxo financeiro da sua empresa com sua vida financeira pessoal. Você passa a enxergar quanto sua empresa realmente gera de riqueza e como transformar lucro em construção de riqueza pessoal.\n\nEmpreender deixa de ser apenas gerar faturamento e passa a ser construir patrimônio.\n\nDisponível nos planos Pro e Elite.",
+    moduleName: "PeJota Negócios",
+    moduleDescription: "Integre sua empresa ao seu planejamento patrimonial.\n\nO PeJota Negócios conecta o fluxo financeiro da sua empresa com sua vida financeira pessoal. Você passa a enxergar quanto sua empresa realmente gera de riqueza e como transformar lucro em construção de riqueza pessoal.\n\nEmpreender deixa de ser apenas gerar faturamento e passa a ser construir patrimônio.\n\nDisponível nos planos Pro e Elite.",
     benefits: [
       "Quanto sua empresa realmente gera de riqueza",
       "Quanto pode retirar com segurança",
@@ -144,7 +144,7 @@ export const FEATURE_GATE_CONFIGS: Record<string, FeatureGateConfig> = {
     benefits: [
       "Curso completo Plano da Liberdade",
       "Aulas e trilhas financeiras exclusivas",
-      "Conteúdos premium do Atlas",
+      "Conteúdos premium do PeJota",
       "Do controle financeiro à independência",
       "Acesso vitalício ao conteúdo do plano",
     ],

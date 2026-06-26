@@ -24,17 +24,17 @@ interface PlanoMeta {
 
 const PLAN_META: Record<PlanoSlug, PlanoMeta> = {
   essencial: {
-    name: "Atlas Essencial",
+    name: "PeJota Essencial",
     price: "R$ 15,90",
     desc: "Controle financeiro e organização da vida financeira.",
   },
   pro: {
-    name: "Atlas Pro",
+    name: "PeJota Pro",
     price: "R$ 24,90",
-    desc: "Planejamento financeiro completo + automações + Atlas Negócios + Mapa do Futuro.",
+    desc: "Planejamento financeiro completo + automações + PeJota Negócios + Mapa do Futuro.",
   },
   elite: {
-    name: "Atlas Elite",
+    name: "PeJota Elite",
     price: "R$ 32,90",
     desc: "Tudo do Pro + educação financeira premium e conteúdos exclusivos.",
   },
@@ -169,7 +169,7 @@ const Comprar = () => {
 
           <div className="relative z-10 flex h-full flex-col p-8 text-[#F5F1E8] sm:p-10">
             <Link to="/" className="inline-block">
-              <img src="/images/atlas-logo-branca.webp" alt="Atlas" className="h-10 w-auto" />
+              <img src="/images/atlas-logo-branca.webp" alt="PeJota" className="h-10 w-auto" />
             </Link>
 
             <div className="mt-8 flex-1">
@@ -292,7 +292,7 @@ const Comprar = () => {
               />
               {errors.email
                 ? <p className="mt-1 text-xs text-red-600">{errors.email}</p>
-                : <p className="mt-1 text-xs text-[#8E8B82]">É com este e-mail que sua conta será criada e acessada. Se você já tem conta no Atlas, use o mesmo e-mail.</p>}
+                : <p className="mt-1 text-xs text-[#8E8B82]">É com este e-mail que sua conta será criada e acessada. Se você já tem conta no PeJota, use o mesmo e-mail.</p>}
             </div>
 
             <div>
@@ -347,9 +347,9 @@ const Comprar = () => {
                   checked={aceitoMarketing}
                   onCheckedChange={(v) => setAceitoMarketing(v === true)}
                   className="mt-0.5 border-[#8E8B82]/50 data-[state=checked]:border-[#1a1a2e] data-[state=checked]:bg-[#1a1a2e]"
-                  aria-label="Receber dicas e novidades do Atlas"
+                  aria-label="Receber dicas e novidades do PeJota"
                 />
-                <span>Quero receber dicas e novidades do Atlas (opcional)</span>
+                <span>Quero receber dicas e novidades do PeJota (opcional)</span>
               </label>
             </div>
 

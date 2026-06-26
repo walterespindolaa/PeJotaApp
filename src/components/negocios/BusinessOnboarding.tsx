@@ -22,7 +22,7 @@ export default function BusinessOnboarding({ onCreateFirst }: Props) {
         <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
           <Briefcase className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-2xl font-heading font-bold">Atlas Negócios</h1>
+        <h1 className="text-2xl font-heading font-bold">PeJota Negócios</h1>
         <p className="text-muted-foreground text-sm max-w-md mx-auto">
           Organize as finanças da sua empresa de forma simples. Sem termos complicados — apenas o que você precisa saber.
         </p>

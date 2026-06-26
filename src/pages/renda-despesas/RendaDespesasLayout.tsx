@@ -114,7 +114,7 @@ const RendaDespesasLayout = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-heading font-bold tracking-tight">
-            Atlas <span className="text-muted-foreground font-normal">|</span> {t("org.titulo")}
+            PeJota <span className="text-muted-foreground font-normal">|</span> {t("org.titulo")}
           </h1>
           <p className="text-muted-foreground text-sm mt-1">{t("org.subtitulo")}</p>
         </div>

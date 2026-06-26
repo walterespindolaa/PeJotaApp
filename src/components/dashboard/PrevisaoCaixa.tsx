@@ -101,7 +101,7 @@ Saldo mensal médio: R$ ${forecast.saldoMensal.toFixed(0)}
 Projeção 30 dias: R$ ${forecast.caixa30.toFixed(0)}
 Projeção 60 dias: R$ ${forecast.caixa60.toFixed(0)}
 Projeção 90 dias: R$ ${forecast.caixa90.toFixed(0)}
-Fonte: dados empresariais dos últimos 3 meses registrados no Atlas Negócios.
+Fonte: dados empresariais dos últimos 3 meses registrados no PeJota Negócios.
 Se o caixa ficará negativo, sugira reduzir despesas ou aumentar receita. Sem promessas financeiras.`;
 
     try {

@@ -301,7 +301,7 @@ const TabDividas = ({ fixas, dividas, mesAno, mesFechado, onAdd, onUpdate, onDel
                       />
                     </div>
                   </div>
-                  <p className="text-[10px] text-muted-foreground">Use o valor original do contrato e a taxa (estão no contrato/informe do banco). O Atlas calcula a parcela da sua posição atual, o saldo devedor e a amortização até o fim.</p>
+                  <p className="text-[10px] text-muted-foreground">Use o valor original do contrato e a taxa (estão no contrato/informe do banco). O PeJota calcula a parcela da sua posição atual, o saldo devedor e a amortização até o fim.</p>
                 </>
               )}
 

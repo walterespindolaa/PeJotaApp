@@ -29,7 +29,7 @@ export const PLAN_FEATURES: PlanFeatureGroup[] = [
     { label: "Lançamentos", essencial: true, pro: true, elite: true },
     { label: "Calendário de Pagamentos", essencial: true, pro: true, elite: true },
     { label: "Análises", essencial: true, pro: true, elite: true },
-    { label: "Assistente Atlas (IA)", essencial: true, pro: true, elite: true },
+    { label: "Assistente PeJota (IA)", essencial: true, pro: true, elite: true },
   ]},
   { group: "Automação Financeira", items: [
     { label: "Fatura do Cartão", essencial: false, pro: true, elite: true },
@@ -59,7 +59,7 @@ export const PLAN_FEATURES: PlanFeatureGroup[] = [
     { label: "Bens e Imóveis", essencial: false, pro: true, elite: true },
     { label: "Renda Passiva com FIIs (em breve)", essencial: false, pro: false, elite: true },
   ]},
-  { group: "Atlas Negócios", items: [
+  { group: "PeJota Negócios", items: [
     { label: "Controle Financeiro Empresarial", essencial: false, pro: true, elite: true },
     { label: "Fluxo de Caixa Empresarial", essencial: false, pro: true, elite: true },
     { label: "Análise Financeira do Negócio", essencial: false, pro: true, elite: true },
@@ -77,9 +77,9 @@ export const PLAN_FEATURES: PlanFeatureGroup[] = [
 ];
 
 const plans = [
-  { slug: "essencial", name: "Atlas Essencial", price: "R$ 15,90", icon: Zap, color: "text-success", desc: "Controle financeiro e organização da vida financeira.", url: STRIPE_ESSENCIAL_URL },
-  { slug: "pro", name: "Atlas Pro", price: "R$ 24,90", icon: Sparkles, color: "text-primary", desc: "Planejamento financeiro completo + automações + Atlas Negócios + Mapa do Futuro.", url: STRIPE_PRO_URL },
-  { slug: "elite", name: "Atlas Elite", price: "R$ 32,90", icon: Crown, color: "text-amber-500", desc: "Tudo do Pro + educação financeira premium e conteúdos exclusivos.", highlight: "Inclui acesso ao Plano da Liberdade e conteúdos educacionais exclusivos", url: STRIPE_ELITE_URL },
+  { slug: "essencial", name: "PeJota Essencial", price: "R$ 15,90", icon: Zap, color: "text-success", desc: "Controle financeiro e organização da vida financeira.", url: STRIPE_ESSENCIAL_URL },
+  { slug: "pro", name: "PeJota Pro", price: "R$ 24,90", icon: Sparkles, color: "text-primary", desc: "Planejamento financeiro completo + automações + PeJota Negócios + Mapa do Futuro.", url: STRIPE_PRO_URL },
+  { slug: "elite", name: "PeJota Elite", price: "R$ 32,90", icon: Crown, color: "text-amber-500", desc: "Tudo do Pro + educação financeira premium e conteúdos exclusivos.", highlight: "Inclui acesso ao Plano da Liberdade e conteúdos educacionais exclusivos", url: STRIPE_ELITE_URL },
 ];
 
 const PlanoComparacao = () => {
@@ -228,7 +228,7 @@ const PlanoComparacao = () => {
                   {plans.map(p => (
                     <th key={p.slug} className="p-3 text-center font-heading font-semibold text-foreground/80 w-1/5">
                       <span className="hidden sm:inline">{p.name}</span>
-                      <span className="sm:hidden text-xs">{p.name.replace("Atlas ", "")}</span>
+                      <span className="sm:hidden text-xs">{p.name.replace("PeJota ", "")}</span>
                     </th>
                   ))}
                 </tr>

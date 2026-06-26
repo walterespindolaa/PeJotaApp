@@ -153,7 +153,7 @@ function LockedScreen() {
           </div>
 
           <p className="text-xs text-muted-foreground mb-5">
-            Disponível no plano <span className="font-semibold text-primary">Atlas Pro</span>.
+            Disponível no plano <span className="font-semibold text-primary">PeJota Pro</span>.
           </p>
 
           <div className="flex flex-col gap-2.5">
@@ -258,7 +258,7 @@ function PreLaunchScreen() {
         </div>
         <div className="space-y-1.5">
           <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/70 font-heading font-semibold">
-            Educação Atlas
+            Educação PeJota
           </p>
           <h1 className="text-2xl md:text-3xl font-heading font-bold">Manual do Dinheiro</h1>
         </div>
@@ -437,7 +437,7 @@ const ManualDoDinheiro = () => {
         </div>
         <div className="space-y-1.5">
           <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/70 font-heading font-semibold">
-            Educação Atlas
+            Educação PeJota
           </p>
           <h1 className="text-2xl md:text-3xl font-heading font-bold">Manual do Dinheiro</h1>
         </div>

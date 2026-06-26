@@ -38,7 +38,7 @@ const TrialUrgencyPopup = () => {
           <DialogDescription className="text-sm pt-2">
             {daysRemainingTrial === 0
               ? "Hoje é o último dia do seu período de teste completo."
-              : `Faltam ${daysRemainingTrial} dia${daysRemainingTrial > 1 ? "s" : ""} para perder acesso aos módulos estratégicos do Atlas.`}
+              : `Faltam ${daysRemainingTrial} dia${daysRemainingTrial > 1 ? "s" : ""} para perder acesso aos módulos estratégicos do PeJota.`}
           </DialogDescription>
         </DialogHeader>
 

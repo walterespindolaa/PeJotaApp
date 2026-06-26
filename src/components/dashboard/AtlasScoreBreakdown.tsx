@@ -91,7 +91,7 @@ const AtlasScoreBreakdown = ({ open, onOpenChange, result, recommendations = [],
       <DialogContent className="sm:max-w-lg w-full rounded-3xl p-0 overflow-hidden">
         <div className="max-h-[80vh] overflow-y-auto overscroll-contain">
           <DialogHeader className="p-6 pb-4 text-left">
-            <DialogTitle className="font-heading text-lg">Como calculamos o Atlas Score</DialogTitle>
+            <DialogTitle className="font-heading text-lg">Como calculamos o PeJota Score</DialogTitle>
             <DialogDescription className="text-xs text-muted-foreground">
               Score final = soma ponderada dos pilares. Pilares sem dados têm peso redistribuído.
             </DialogDescription>
@@ -248,7 +248,7 @@ const AtlasScoreBreakdown = ({ open, onOpenChange, result, recommendations = [],
               </div>
               <p className={`text-xs font-heading font-bold mt-1 ${color}`}>{label}</p>
               <p className="text-[10px] text-muted-foreground/50 mt-2 font-body">
-                Atlas Score = Σ (peso_i × score_i). Pilares sem dados são excluídos e os pesos redistribuídos.
+                PeJota Score = Σ (peso_i × score_i). Pilares sem dados são excluídos e os pesos redistribuídos.
               </p>
             </div>
           </div>

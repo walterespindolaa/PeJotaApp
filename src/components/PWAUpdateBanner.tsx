@@ -46,7 +46,7 @@ export default function PWAUpdateBanner() {
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-heading font-semibold text-foreground leading-tight">
-            Nova versão do Atlas disponível
+            Nova versão do PeJota disponível
           </p>
           <p className="text-xs text-muted-foreground mt-1 leading-snug font-body">
             Atualize agora pra acessar as melhorias mais recentes.

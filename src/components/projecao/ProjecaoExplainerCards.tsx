@@ -4,7 +4,7 @@ import { Brain, BarChart3, Shuffle } from "lucide-react";
 const cards = [
   {
     icon: Brain,
-    title: "Como o Atlas projeta seu futuro",
+    title: "Como o PeJota projeta seu futuro",
     items: ["Patrimônio atual", "Renda e poupança mensal", "Retorno esperado e inflação", "Eventos e metas de vida"],
   },
   {

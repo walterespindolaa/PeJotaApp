@@ -180,7 +180,7 @@ export default function BusinessEstoque({ companyId, categorias = [] }: { compan
               <li><span className="font-semibold text-foreground">1. Cadastre os insumos (matéria-prima)</span> — o que você compra pra produzir: farinha, ovo, embalagem… com o custo e quanto tem em estoque.</li>
               <li><span className="font-semibold text-foreground">2. Cadastre os produtos</span> — o que você vende: bolo, marmita, etc.</li>
               <li><span className="font-semibold text-foreground">3. Monte a ficha técnica de cada produto</span> — quanto de cada insumo 1 unidade do produto usa (ex.: 1 bolo = 200g de farinha + 3 ovos). É a ficha técnica que liga o insumo ao produto.</li>
-              <li><span className="font-semibold text-foreground">4. Registre a venda</span> — o Atlas calcula o custo, sugere o preço pela sua margem e <span className="font-medium text-foreground">baixa os insumos automaticamente</span> conforme a ficha técnica.</li>
+              <li><span className="font-semibold text-foreground">4. Registre a venda</span> — o PeJota calcula o custo, sugere o preço pela sua margem e <span className="font-medium text-foreground">baixa os insumos automaticamente</span> conforme a ficha técnica.</li>
             </ol>
             <p className="text-[11px] text-muted-foreground mt-2">Assim você sempre sabe quanto custa produzir, quantas unidades dá pra fazer com o estoque atual e a hora de repor.</p>
           </CardContent>

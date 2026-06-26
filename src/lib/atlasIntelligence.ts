@@ -1,5 +1,5 @@
 /**
- * Atlas Intelligence Layer — Isolated calculation engine
+ * PeJota Intelligence Layer — Isolated calculation engine
  * Score 2.0 with 7 dimensions, gamification, and advisor logic
  * NOTE: The official score computation is in atlasScore.ts (computeAtlasScore).
  * simulateDecision now delegates to that engine for consistency.
@@ -281,7 +281,7 @@ export interface SimulationResult {
 }
 
 /**
- * Simulate a financial decision using the OFFICIAL Atlas Score engine (atlasScore.ts).
+ * Simulate a financial decision using the OFFICIAL PeJota Score engine (atlasScore.ts).
  * This ensures the simulator produces scores identical to the dashboard.
  */
 export function simulateDecision(

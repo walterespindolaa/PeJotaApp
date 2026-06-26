@@ -414,10 +414,10 @@ const Perfil = () => {
       <Card className="shadow-soft border-dashed">
         <CardHeader>
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Atlas" className="w-10 h-10 rounded-xl object-contain" />
+            <img src="/logo.png" alt="PeJota" className="w-10 h-10 rounded-xl object-contain" />
             <div>
               <CardTitle className="font-heading">{t("perfil.transforme_app")}</CardTitle>
-              <p className="text-xs text-muted-foreground">Atlas</p>
+              <p className="text-xs text-muted-foreground">PeJota</p>
             </div>
           </div>
         </CardHeader>
@@ -459,12 +459,12 @@ const Perfil = () => {
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="rounded-xl border border-border bg-muted/30 px-3 py-3 space-y-2">
-            <p className="text-sm text-muted-foreground">Você pode baixar uma cópia dos seus dados pessoais armazenados no Atlas (direito de portabilidade — LGPD).</p>
+            <p className="text-sm text-muted-foreground">Você pode baixar uma cópia dos seus dados pessoais armazenados no PeJota (direito de portabilidade — LGPD).</p>
             <Button variant="outline" className="gap-2" onClick={handleExportData} disabled={exporting}>
               <Download className="h-4 w-4" /> {exporting ? "Preparando…" : "Baixar meus dados (LGPD)"}
             </Button>
           </div>
-          <p className="text-sm text-muted-foreground">Excluir sua conta apaga permanentemente seus dados do Atlas. Esta ação não pode ser desfeita.</p>
+          <p className="text-sm text-muted-foreground">Excluir sua conta apaga permanentemente seus dados do PeJota. Esta ação não pode ser desfeita.</p>
           <div className="rounded-xl border border-warning/40 bg-warning/10 px-3 py-2 text-xs text-foreground flex items-start gap-2">
             <AlertTriangle className="h-4 w-4 text-warning flex-shrink-0 mt-0.5" />
             <span>Tem uma assinatura ativa? <strong>Cancele a assinatura antes</strong> de excluir a conta — a exclusão não cancela a cobrança automaticamente.</span>

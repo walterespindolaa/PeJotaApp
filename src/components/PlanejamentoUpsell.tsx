@@ -26,7 +26,7 @@ const PlanejamentoUpsell = () => {
             Quer transformar seus dados em estratégia?
           </p>
           <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-            Desbloqueie o Atlas Pro e tenha acesso a:
+            Desbloqueie o PeJota Pro e tenha acesso a:
           </p>
           <ul className="text-xs text-muted-foreground space-y-1 mb-3">
             <li className="flex items-center gap-1.5">

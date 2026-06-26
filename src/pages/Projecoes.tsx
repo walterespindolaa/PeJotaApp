@@ -80,7 +80,7 @@ const Projecoes = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h1 className="text-xl sm:text-2xl font-heading font-bold flex items-center gap-2">
-            <Landmark className="h-6 w-6 text-primary" /> Controle da Jornada | Atlas
+            <Landmark className="h-6 w-6 text-primary" /> Controle da Jornada | PeJota
           </h1>
           <p className="text-muted-foreground text-sm mt-1">Fluxo de caixa, padrões de gastos e oportunidades de melhoria.</p>
         </div>
@@ -103,12 +103,12 @@ const Projecoes = () => {
         <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
           <Clock className="h-3.5 w-3.5" /> Última atualização IA: {new Date(generatedAt).toLocaleString("pt-BR")}
           <span className="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-medium">
-            <Sparkles className="h-2.5 w-2.5" /> Gerado por IA | Atlas
+            <Sparkles className="h-2.5 w-2.5" /> Gerado por IA | PeJota
           </span>
         </div>
       )}
 
-      <AtlasReportHeader title="Controle da Jornada | Atlas" />
+      <AtlasReportHeader title="Controle da Jornada | PeJota" />
       <AIReportDisclaimer />
 
       {/* AI BLOCK 1 — Panorama do Fluxo de Caixa */}

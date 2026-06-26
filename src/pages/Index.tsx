@@ -10,8 +10,8 @@ const Index = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#04190f]">
-        <div className="h-6 w-6 border-2 border-white/20 border-t-emerald-400 rounded-full animate-spin" />
+      <div className="min-h-screen flex items-center justify-center bg-[#0c1620]">
+        <div className="h-6 w-6 border-2 border-white/20 border-t-blue-500 rounded-full animate-spin" />
       </div>
     );
   }
@@ -34,14 +34,14 @@ const Index = () => {
           className="absolute inset-0 z-10 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to right, rgba(4,25,15,0.78), rgba(4,25,15,0.45) 60%, rgba(4,25,15,0.25))",
+              "linear-gradient(to right, rgba(12,22,32,0.78), rgba(12,22,32,0.45) 60%, rgba(12,22,32,0.25))",
           }}
         />
 
         {/* Navbar */}
         <nav className="relative z-20 flex justify-between items-center px-[6vw] py-6">
           <div className="flex items-center gap-2.5">
-            <span className="grid place-items-center w-8 h-8 rounded-lg bg-emerald-400 text-[#04190f] text-sm font-bold">
+            <span className="grid place-items-center w-8 h-8 rounded-lg bg-blue-500 text-[#0c1620] text-sm font-bold">
               PJ
             </span>
             <span className="text-white text-lg font-semibold tracking-tight">PeJota</span>
@@ -57,7 +57,7 @@ const Index = () => {
         <main className="relative z-20 flex-1 flex items-center px-[6vw] py-12">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-7 bg-white/10 border border-white/15 backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
               <span className="text-[11px] font-semibold text-white/90 uppercase tracking-[1.5px]">
                 Gestão financeira para PJ
               </span>
@@ -80,7 +80,7 @@ const Index = () => {
             <div className="flex flex-wrap items-center gap-3">
               <Link to="/auth">
                 <Button
-                  className="h-auto py-3.5 px-7 rounded-xl text-[15px] font-bold bg-emerald-400 text-[#04190f] hover:bg-emerald-300 transition-all hover:scale-[1.03]"
+                  className="h-auto py-3.5 px-7 rounded-xl text-[15px] font-bold bg-blue-500 text-[#0c1620] hover:bg-blue-400 transition-all hover:scale-[1.03]"
                 >
                   Acessar plataforma <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

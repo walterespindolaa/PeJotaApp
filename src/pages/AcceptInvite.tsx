@@ -79,11 +79,11 @@ export default function AcceptInvite() {
 
   return (
     <>
-    <SEO title="Aceitar convite | Atlas" description="Valide seu convite para participar de um household no Atlas e comece a compartilhar o planejamento financeiro." path="/aceitar-convite" noindex />
+    <SEO title="Aceitar convite | PeJota" description="Valide seu convite para participar de um household no PeJota e comece a compartilhar o planejamento financeiro." path="/aceitar-convite" noindex />
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="max-w-md w-full">
         <CardHeader>
-          <CardTitle>Atlas</CardTitle>
+          <CardTitle>PeJota</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           {state.kind === "loading" && (

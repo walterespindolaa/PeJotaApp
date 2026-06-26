@@ -262,7 +262,7 @@ export default function RelatorioSecoesAvancadas({
           passada não é garantia de resultados futuros, e os resultados projetados não são líquidos de impostos, taxas ou
           custos. Estratégias de alocação e diversificação não garantem lucro nem protegem contra perdas. As projeções
           assumem reinvestimento dos rendimentos e contribuições ao final de cada período. A inflação é estimada com base
-          no IPCA. O Atlas não se responsabiliza por decisões tomadas com base neste material. Consulte um profissional
+          no IPCA. O PeJota não se responsabiliza por decisões tomadas com base neste material. Consulte um profissional
           habilitado antes de tomar decisões financeiras.
         </p>
       </SectionCard>

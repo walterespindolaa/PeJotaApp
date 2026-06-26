@@ -15,7 +15,7 @@ import { type Company, companyControlsStock, NICHOS } from "@/hooks/useCompanies
 interface Member { user_id: string; email: string | null; name: string | null; role: string; }
 const MEMBER_ERR: Record<string, string> = {
   not_owner: "Só o dono pode adicionar membros.",
-  user_not_found: "Essa pessoa precisa ter uma conta no Atlas primeiro.",
+  user_not_found: "Essa pessoa precisa ter uma conta no PeJota primeiro.",
   self: "Você já é o dono desta empresa.",
   limit: "Limite de 10 usuários atingido.",
   no_seats: "Sem assento disponível — compre um assento pra adicionar mais usuários.",
@@ -242,9 +242,9 @@ export default function CompanySettingsDialog({ open, onOpenChange, company, onU
             </div>
             <label className="flex items-center gap-2 text-[11px] text-muted-foreground cursor-pointer">
               <input type="checkbox" checked={restrictInvite} onChange={e => setRestrictInvite(e.target.checked)} className="accent-primary" />
-              Acesso só ao Atlas Negócios (a pessoa não vê o resto do app)
+              Acesso só ao PeJota Negócios (a pessoa não vê o resto do app)
             </label>
-            <p className="text-[11px] text-muted-foreground">Se a pessoa ainda não tem conta, o Atlas cria uma e envia um e-mail pra ela criar a senha e acessar.</p>
+            <p className="text-[11px] text-muted-foreground">Se a pessoa ainda não tem conta, o PeJota cria uma e envia um e-mail pra ela criar a senha e acessar.</p>
 
             {/* Assentos pagos */}
             <div className="rounded-lg border border-border/60 bg-muted/30 p-2.5 space-y-2">

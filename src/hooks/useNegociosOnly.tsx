@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 
-// Indica se o usuário atual tem acesso restrito só ao Atlas Negócios.
+// Indica se o usuário atual tem acesso restrito só ao PeJota Negócios.
 export function useNegociosOnly() {
   const { user } = useAuth();
   const [restricted, setRestricted] = useState(false);

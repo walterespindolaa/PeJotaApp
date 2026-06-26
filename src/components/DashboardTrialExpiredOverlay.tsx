@@ -27,20 +27,20 @@ const DashboardTrialExpiredOverlay = ({ children }: { children: React.ReactNode 
             </div>
 
             <h2 className="text-xl font-heading font-bold text-foreground mb-3">
-              Seu acesso completo ao Atlas terminou
+              Seu acesso completo ao PeJota terminou
             </h2>
 
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
               Seus dados continuam seguros na plataforma.
               <br />
-              Ative um plano para desbloquear relatórios estratégicos, projeções financeiras e todos os módulos do Atlas.
+              Ative um plano para desbloquear relatórios estratégicos, projeções financeiras e todos os módulos do PeJota.
             </p>
 
             <div className="flex flex-col gap-3">
               <a href={STRIPE_ESSENCIAL_URL} target="_blank" rel="noopener noreferrer">
                 <Button className="w-full rounded-xl gap-2">
                   <Sparkles className="h-4 w-4" />
-                  Ativar Atlas Essencial – R$15,90
+                  Ativar PeJota Essencial – R$15,90
                 </Button>
               </a>
               <Button

@@ -196,7 +196,7 @@ Total de lançamentos no período: ${transactions.length}
           <div className="bg-muted/50 rounded-xl p-3 space-y-1">
             <div className="flex items-center gap-1.5">
               <Sparkles className="h-3.5 w-3.5 text-primary" />
-              <span className="text-xs font-heading font-semibold">Análise do Atlas</span>
+              <span className="text-xs font-heading font-semibold">Análise do PeJota</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-line">{aiResponse}</p>
             <p className="text-[9px] text-muted-foreground italic inline-flex items-center gap-1"><AlertTriangle className="h-2.5 w-2.5 flex-shrink-0" />Análise informativa. Consulte seu contador para decisões fiscais.</p>

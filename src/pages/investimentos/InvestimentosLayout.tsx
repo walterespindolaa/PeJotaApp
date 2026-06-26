@@ -121,7 +121,7 @@ export default function InvestimentosLayout() {
       }
 
       pdf.setFontSize(16); pdf.setFont("helvetica", "bold");
-      pdf.text("Atlas", margin, 18);
+      pdf.text("PeJota", margin, 18);
       pdf.setFontSize(10); pdf.setFont("helvetica", "normal");
       pdf.text(`Relatório de Investimentos — ${periodoLabel}`, margin, 25);
       pdf.text(`Gerado em: ${now.toLocaleString("pt-BR")}`, margin, 31);

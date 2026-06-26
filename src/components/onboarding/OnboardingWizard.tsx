@@ -404,12 +404,12 @@ export default function OnboardingWizard() {
             </div>
           )}
 
-          {/* Step 4 — Revelação do Atlas Score */}
+          {/* Step 4 — Revelação do PeJota Score */}
           {step === 4 && (
             <div className="space-y-6 text-center">
               <div className="flex items-center justify-center gap-2 text-primary">
                 <Sparkles className="h-5 w-5" />
-                <span className="text-xs font-heading font-semibold uppercase tracking-[0.15em]">Atlas Score</span>
+                <span className="text-xs font-heading font-semibold uppercase tracking-[0.15em]">PeJota Score</span>
               </div>
 
               {scoreLoading && !scoreResult ? (

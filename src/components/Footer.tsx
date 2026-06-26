@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-border/40 py-6 mt-8">
       <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-        <p>© {ano} Atlas</p>
+        <p>© {ano} PeJota</p>
         <nav className="flex items-center gap-4">
           <Link to="/termos-de-uso" className="hover:text-foreground transition-colors">
             Termos de Uso

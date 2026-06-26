@@ -42,7 +42,7 @@ export default function PushPermissionPrompt() {
       markConverted();
       toast({
         title: "Notificações ativadas!",
-        description: "Você receberá alertas importantes do Atlas.",
+        description: "Você receberá alertas importantes do PeJota.",
       });
     } else {
       // User denied at browser level
@@ -79,11 +79,11 @@ export default function PushPermissionPrompt() {
                 <Smartphone className="h-5 w-5 text-primary" />
               </div>
               <h3 className="text-sm font-heading font-bold text-foreground pr-6">
-                Instale o Atlas no iPhone
+                Instale o PeJota no iPhone
               </h3>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Para receber notificações no iPhone, primeiro instale o Atlas na tela de início:
+              Para receber notificações no iPhone, primeiro instale o PeJota na tela de início:
             </p>
             <ol className="text-xs text-muted-foreground space-y-2 pl-1">
               <li className="flex items-start gap-2">
@@ -96,7 +96,7 @@ export default function PushPermissionPrompt() {
               </li>
               <li className="flex items-start gap-2">
                 <Bell className="h-4 w-4 flex-shrink-0 text-primary mt-0.5" />
-                <span>Abra o Atlas pelo ícone e ative as notificações</span>
+                <span>Abra o PeJota pelo ícone e ative as notificações</span>
               </li>
             </ol>
             <Button variant="outline" size="sm" className="w-full mt-2" onClick={dismiss}>
@@ -111,11 +111,11 @@ export default function PushPermissionPrompt() {
                 <BellRing className="h-5 w-5 text-primary" />
               </div>
               <h3 className="text-sm font-heading font-bold text-foreground pr-6">
-                Ative os lembretes do Atlas
+                Ative os lembretes do PeJota
               </h3>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Receba alertas sobre metas, vencimentos, lembretes e novidades do Atlas. Você pode desativar quando quiser.
+              Receba alertas sobre metas, vencimentos, lembretes e novidades do PeJota. Você pode desativar quando quiser.
             </p>
             <div className="flex gap-2 pt-1">
               <Button

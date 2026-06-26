@@ -6,7 +6,7 @@ import { logError } from "@/lib/log";
 
 type ReportType = "planejamento_360" | "financeiro" | "conselheiro" | "diagnostico_atlas";
 
-// Capa de PDF por relatório (Método Atlas). Suba os arquivos em public/images/capas/.
+// Capa de PDF por relatório (Método PeJota). Suba os arquivos em public/images/capas/.
 // Faz fallback pra capa padrão e depois pra capa pintada caso o arquivo não exista.
 const DEFAULT_COVER = "/images/atlas_report_cover.webp";
 const COVER_BY_TYPE: Record<ReportType, string> = {
@@ -161,7 +161,7 @@ export function useReportPersistence(reportType: ReportType) {
   }, [user, reportType, toast]);
 
   /**
-   * Universal Atlas PDF export with:
+   * Universal PeJota PDF export with:
    * - Cover page (atlas_report_cover.png)
    * - Section-by-section rendering with smart page breaks
    * - Slicing for oversized sections
@@ -229,7 +229,7 @@ export function useReportPersistence(reportType: ReportType) {
         pdf.rect(0, 0, pageW, pageH, "F");
         pdf.setTextColor(255, 255, 255);
         pdf.setFontSize(32);
-        pdf.text("ATLAS", pageW / 2, pageH / 2 - 20, { align: "center" });
+        pdf.text("PEJOTA", pageW / 2, pageH / 2 - 20, { align: "center" });
         pdf.setFontSize(14);
         pdf.text("Relatório Premium", pageW / 2, pageH / 2 + 5, { align: "center" });
       }

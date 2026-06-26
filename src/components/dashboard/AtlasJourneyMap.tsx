@@ -87,7 +87,7 @@ const AtlasJourneyMap = ({ open, onOpenChange, currentScore, currentLevelIndex, 
         <DialogHeader className="p-6 pb-0 text-left">
           <DialogTitle className="font-heading text-lg flex items-center gap-2">
             <Mountain className="h-5 w-5 text-primary" />
-            Jornada Atlas
+            Jornada PeJota
           </DialogTitle>
           <DialogDescription className="text-xs text-muted-foreground">
             Sua evolução financeira em 5 níveis. Score atual: <span className="font-bold text-foreground">{currentScore}</span>

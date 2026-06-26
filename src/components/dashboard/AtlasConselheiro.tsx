@@ -20,7 +20,7 @@ const AtlasConselheiro = ({ recommendations }: Props) => {
   return (
     <div>
       <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground/50 font-heading font-semibold mb-3 px-1 flex items-center gap-1.5">
-        <Brain className="h-3.5 w-3.5" />Recomendações do Atlas
+        <Brain className="h-3.5 w-3.5" />Recomendações do PeJota
       </p>
       <Card className="border-border/30 shadow-none bg-card/60 rounded-2xl">
         <CardContent className="p-5">

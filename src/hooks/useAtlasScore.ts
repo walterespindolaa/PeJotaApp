@@ -238,13 +238,13 @@ export function useAtlasScore({ userId, periodStart, periodEnd, visaoPessoa = "c
 
       setLoading(false);
     } catch (err) {
-      logError("Atlas Score computation error:", err);
+      logError("PeJota Score computation error:", err);
       if (retryCount < 2) {
         const delay = 1000 * Math.pow(2, retryCount);
         setTimeout(() => compute(retryCount + 1), delay);
         return;
       }
-      setError("Erro ao calcular seu Atlas Score.");
+      setError("Erro ao calcular seu PeJota Score.");
       setResult(null);
       setScoreInputs(null);
       setLoading(false);

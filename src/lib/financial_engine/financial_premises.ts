@@ -1,5 +1,5 @@
 /**
- * Premissas econômicas globais para o motor financeiro do Atlas.
+ * Premissas econômicas globais para o motor financeiro do PeJota.
  * Valores padrão que podem ser sobrepostos por premissas do usuário.
  */
 

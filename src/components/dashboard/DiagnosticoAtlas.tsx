@@ -84,7 +84,7 @@ Margem: ${s.margem.toFixed(1)}%
 Receita mês anterior: R$ ${s.receitaAnterior.toFixed(0)}
 Despesas mês anterior: R$ ${s.despesaAnterior.toFixed(0)}
 Variação do lucro: ${s.variacaoLucro.toFixed(1)}%
-Fonte: dados empresariais do mês atual registrados no Atlas Negócios.`;
+Fonte: dados empresariais do mês atual registrados no PeJota Negócios.`;
 
     try {
       const { data: { session } } = await supabase.auth.getSession();
@@ -151,7 +151,7 @@ Fonte: dados empresariais do mês atual registrados no Atlas Negócios.`;
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sparkles className="h-4 w-4 text-primary" />
-            <h3 className="font-heading font-bold text-sm">Diagnóstico do Atlas</h3>
+            <h3 className="font-heading font-bold text-sm">Diagnóstico do PeJota</h3>
           </div>
           {hasData && (
             <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => generateExplanation()} disabled={loading}>
@@ -165,7 +165,7 @@ Fonte: dados empresariais do mês atual registrados no Atlas Negócios.`;
             <Loader2 className="h-4 w-4 animate-spin" /> Carregando dados...
           </div>
         ) : !hasData ? (
-          <p className="text-sm text-muted-foreground">Registre receitas e despesas no Atlas Negócios para receber seu diagnóstico.</p>
+          <p className="text-sm text-muted-foreground">Registre receitas e despesas no PeJota Negócios para receber seu diagnóstico.</p>
         ) : (
           <>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

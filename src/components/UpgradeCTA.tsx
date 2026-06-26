@@ -23,11 +23,11 @@ const UpgradeCTA = () => {
           <div className="flex-1">
             <p className="text-sm font-semibold">
               {isFull
-                ? `Seu Atlas expira em ${daysUntilFullExpires} dia${daysUntilFullExpires !== 1 ? "s" : ""}`
-                : "Seu Atlas expirou recentemente"}
+                ? `Seu PeJota expira em ${daysUntilFullExpires} dia${daysUntilFullExpires !== 1 ? "s" : ""}`
+                : "Seu PeJota expirou recentemente"}
             </p>
             <p className="text-xs text-muted-foreground">
-              Renove agora para manter o acesso completo ao Atlas.
+              Renove agora para manter o acesso completo ao PeJota.
             </p>
           </div>
           <Button size="sm" className="text-xs gap-1.5" onClick={() => navigate("/dashboard/planos")}>
@@ -48,7 +48,7 @@ const UpgradeCTA = () => {
         <CardContent className="p-4 flex flex-col sm:flex-row items-start sm:items-center gap-3">
           <Zap className="h-5 w-5 text-accent flex-shrink-0" />
           <div className="flex-1">
-            <p className="text-sm font-semibold">Desbloqueie o Atlas Pro</p>
+            <p className="text-sm font-semibold">Desbloqueie o PeJota Pro</p>
             <p className="text-xs text-muted-foreground">Acesso total a relatórios, investimentos, aposentadoria e mais.</p>
           </div>
           <Button size="sm" variant="outline" className="text-xs" onClick={() => navigate("/dashboard/planos")}>Ativar Pro</Button>

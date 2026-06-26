@@ -24,7 +24,7 @@ const B3_STEPS = [
   },
   {
     step: "4",
-    title: "Importe aqui no Atlas",
+    title: "Importe aqui no PeJota",
     desc: "Clique em Importar arquivo da B3 abaixo e selecione o .xlsx que você baixou.",
   },
 ];
@@ -43,7 +43,7 @@ const ATLAS_STEPS = [
   {
     step: "3",
     title: "Faça upload aqui",
-    desc: "Selecione o arquivo .xlsx preenchido. O Atlas vai detectar duplicatas com sua carteira atual e permitir editar antes de salvar.",
+    desc: "Selecione o arquivo .xlsx preenchido. O PeJota vai detectar duplicatas com sua carteira atual e permitir editar antes de salvar.",
   },
   {
     step: "4",
@@ -67,7 +67,7 @@ export default function ImportacaoB3() {
         <CardContent className="space-y-4">
           <p className="text-sm text-muted-foreground">
             Baixe o extrato direto do portal investidor.b3.com.br e faça upload aqui.
-            O Atlas detecta ativos novos, atualiza quantidades de duplicatas e
+            O PeJota detecta ativos novos, atualiza quantidades de duplicatas e
             permite ajustar preço médio antes de confirmar.
           </p>
 
@@ -103,7 +103,7 @@ export default function ImportacaoB3() {
           <div className="flex items-start gap-2 p-3 rounded-xl bg-amber-50 border border-amber-200">
             <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5 flex-shrink-0" />
             <p className="text-xs text-amber-900">
-              A B3 não exporta o preço médio de compra. Atlas usa o preço atual de mercado
+              A B3 não exporta o preço médio de compra. PeJota usa o preço atual de mercado
               como preço médio inicial — ajuste depois em cada ativo se quiser histórico
               de rentabilidade correto.
             </p>
@@ -124,12 +124,12 @@ export default function ImportacaoB3() {
         <CardHeader className="pb-2">
           <div className="flex items-center gap-2">
             <FileSpreadsheet className="h-5 w-5 text-primary" />
-            <CardTitle className="font-heading text-base">Importar por planilha Atlas</CardTitle>
+            <CardTitle className="font-heading text-base">Importar por planilha PeJota</CardTitle>
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-3">
-            <p className="text-sm font-medium">Como importar com a planilha Atlas:</p>
+            <p className="text-sm font-medium">Como importar com a planilha PeJota:</p>
             {ATLAS_STEPS.map(item => (
               <div
                 key={item.step}

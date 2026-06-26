@@ -6,11 +6,11 @@
 
 @layer base {
   :root {
-    /* Método Atlas — Paleta da marca (Atlas brand palette)
+    /* PeJota — Paleta da marca (brand palette)
        Azul #1a5e91 = 206 70% 34% · Verde #1e613e = 149 53% 25% · Vermelho #a82f26 = 4 63% 40%
        Dourado #f2ab0c = 41 91% 50% · Creme #faf4e8 = 40 64% 95% · Tinta #040c11 = 204 62% 5% */
-    --background: 40 44% 96%;
-    --foreground: 204 24% 14%;
+    --background: 43 24% 94%;
+    --foreground: 209 46% 9%;
 
     --card: 30 20% 99%;
     --card-foreground: 220 15% 20%;
@@ -27,7 +27,7 @@
     --muted: 40 12% 93%;
     --muted-foreground: 204 8% 46%;
 
-    --accent: 41 88% 50%;
+    --accent: 213 100% 59%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 4 63% 45%;
@@ -46,14 +46,14 @@
     --info: 206 70% 38%;
     --info-foreground: 0 0% 100%;
 
-    --sidebar-background: 40 30% 96%;
-    --sidebar-foreground: 204 24% 15%;
-    --sidebar-primary: 206 70% 34%;
+    --sidebar-background: 209 57% 18%;
+    --sidebar-foreground: 43 24% 94%;
+    --sidebar-primary: 213 100% 59%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 206 18% 94%;
-    --sidebar-accent-foreground: 204 24% 15%;
-    --sidebar-border: 206 15% 90%;
-    --sidebar-ring: 206 70% 34%;
+    --sidebar-accent: 209 46% 26%;
+    --sidebar-accent-foreground: 43 30% 96%;
+    --sidebar-border: 209 40% 28%;
+    --sidebar-ring: 213 100% 59%;
 
     --gradient-hero: linear-gradient(135deg, hsl(206 65% 22%), hsl(206 62% 15%));
     --gradient-accent: linear-gradient(135deg, hsl(41 91% 52%), hsl(38 80% 44%));
@@ -84,7 +84,7 @@
     --muted: 204 16% 14%;
     --muted-foreground: 204 8% 56%;
 
-    --accent: 41 84% 52%;
+    --accent: 213 100% 62%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 4 58% 50%;
@@ -101,14 +101,14 @@
     --input: 204 16% 16%;
     --ring: 206 60% 50%;
 
-    --sidebar-background: 220 15% 6%;
-    --sidebar-foreground: 30 10% 88%;
-    --sidebar-primary: 206 60% 50%;
+    --sidebar-background: 209 52% 13%;
+    --sidebar-foreground: 43 24% 92%;
+    --sidebar-primary: 213 100% 62%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 204 16% 12%;
-    --sidebar-accent-foreground: 40 12% 88%;
-    --sidebar-border: 204 14% 13%;
-    --sidebar-ring: 206 60% 50%;
+    --sidebar-accent: 209 44% 22%;
+    --sidebar-accent-foreground: 43 24% 94%;
+    --sidebar-border: 209 38% 24%;
+    --sidebar-ring: 213 100% 62%;
 
     --glass-bg: hsl(220 12% 10% / 0.7);
     --glass-border: hsl(220 10% 16% / 0.5);
@@ -127,11 +127,11 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Outfit', 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Instrument Serif', Georgia, serif;
   }
 }
 
@@ -161,7 +161,7 @@
   }
 }
 
-/* ── Atlas PDF Export Rules ── */
+/* ── PeJota PDF Export Rules ── */
 /* Elements with atlas-hide-pdf are hidden when inside .atlas-pdf-export */
 .atlas-pdf-export .atlas-hide-pdf {
   display: none !important;

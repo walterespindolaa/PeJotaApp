@@ -86,7 +86,7 @@ export default function SidebarFooter({
 
       {/* Footer */}
       <div className="mt-1">
-        <p className="text-[10px] text-sidebar-foreground/40 text-center leading-tight">Atlas © 2026</p>
+        <p className="text-[10px] text-sidebar-foreground/40 text-center leading-tight">PeJota © 2026</p>
       </div>
     </div>
   );

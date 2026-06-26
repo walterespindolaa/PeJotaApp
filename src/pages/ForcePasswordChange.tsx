@@ -126,7 +126,7 @@ const ForcePasswordChange = () => {
     }
 
     setSuccess(true);
-    toast({ title: "Senha definida!", description: "Bem-vindo ao Atlas!" });
+    toast({ title: "Senha definida!", description: "Bem-vindo ao PeJota!" });
 
     setTimeout(() => {
       navigate("/dashboard", { replace: true });
@@ -177,7 +177,7 @@ const ForcePasswordChange = () => {
         <div className="text-center animate-fade-in">
           <CheckCircle2 className="h-12 w-12 mx-auto mb-4" style={{ color: "#6B8F71" }} />
           <h2 className="text-lg font-heading font-bold mb-2" style={{ color: "#3D3428" }}>
-            {isInitialMode ? "Bem-vindo ao Atlas!" : "Senha definida com sucesso!"}
+            {isInitialMode ? "Bem-vindo ao PeJota!" : "Senha definida com sucesso!"}
           </h2>
           <p className="text-sm font-body" style={{ color: "#8B7D6B" }}>Redirecionando…</p>
         </div>
@@ -196,13 +196,13 @@ const ForcePasswordChange = () => {
 
       <div className="relative z-10 w-full max-w-sm mx-6 animate-fade-in">
         <div className="text-center mb-10">
-          <img src="/logo.png" alt="Atlas" className="w-14 h-14 mx-auto mb-6 rounded-2xl object-contain" style={{ filter: "drop-shadow(0 4px 12px rgba(74,64,53,0.08))" }} />
+          <img src="/logo.png" alt="PeJota" className="w-14 h-14 mx-auto mb-6 rounded-2xl object-contain" style={{ filter: "drop-shadow(0 4px 12px rgba(74,64,53,0.08))" }} />
           <h1 className="text-xl md:text-2xl font-heading font-bold leading-snug mb-2" style={{ color: "#3D3428" }}>
             {isInitialMode ? "Crie sua senha de acesso" : "Defina sua nova senha"}
           </h1>
           <p className="text-sm font-body" style={{ color: "#8B7D6B" }}>
             {isInitialMode
-              ? <>Última etapa: crie uma senha pessoal para acessar o Atlas.</>
+              ? <>Última etapa: crie uma senha pessoal para acessar o PeJota.</>
               : <>Por segurança, você precisa criar uma senha <strong>pessoal</strong> antes de acessar a plataforma.</>
             }
           </p>

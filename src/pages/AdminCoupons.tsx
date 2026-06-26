@@ -35,9 +35,9 @@ const PRICING_MODELS = [
 
 const PLAN_OPTIONS = [
   { value: "__none", label: "Nenhum (manter padrão)" },
-  { value: "atlas_essencial", label: "Atlas Essencial" },
-  { value: "atlas_pro", label: "Atlas Pro" },
-  { value: "atlas_elite", label: "Atlas Elite" },
+  { value: "atlas_essencial", label: "PeJota Essencial" },
+  { value: "atlas_pro", label: "PeJota Pro" },
+  { value: "atlas_elite", label: "PeJota Elite" },
 ];
 
 const DISCOUNT_TYPES = [

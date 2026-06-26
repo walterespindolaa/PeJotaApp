@@ -62,7 +62,7 @@ export default function AssistenteAtlasCard({ onOpenChat }: Props) {
       <CardContent className="pt-4 pb-4 px-4 space-y-3">
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-primary" />
-          <span className="text-sm font-heading font-semibold">Assistente Atlas</span>
+          <span className="text-sm font-heading font-semibold">Assistente PeJota</span>
         </div>
 
         <p className="text-xs text-muted-foreground">

@@ -126,7 +126,7 @@ export default function SegurancaAuditoria() {
             ))}
           </div>
           <p className="text-xs text-muted-foreground mt-3">
-            Origem: tabela <code>audit_logs</code> (já existe no Atlas). Registra criação, edição e exclusão por usuário, com data e IP.
+            Origem: tabela <code>audit_logs</code> (já existe no PeJota). Registra criação, edição e exclusão por usuário, com data e IP.
           </p>
         </CardContent>
       </Card>
