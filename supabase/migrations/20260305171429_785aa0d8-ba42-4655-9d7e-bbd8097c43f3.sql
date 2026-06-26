@@ -1,0 +1,1 @@
+ALTER TABLE public.allocation_rules ADD COLUMN IF NOT EXISTS category_ids uuid[] DEFAULT '{}'::uuid[];

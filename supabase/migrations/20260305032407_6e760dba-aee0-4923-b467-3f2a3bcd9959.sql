@@ -1,0 +1,2 @@
+ALTER TABLE public.ai_inference_cache ADD COLUMN IF NOT EXISTS statement_id uuid DEFAULT NULL;
+CREATE INDEX IF NOT EXISTS idx_ai_inference_cache_statement_id ON public.ai_inference_cache(statement_id);

@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Anyone can read active coupons" ON public.partner_coupons;

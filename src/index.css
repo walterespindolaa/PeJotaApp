@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap&text=');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Método Atlas — Paleta da marca (Atlas brand palette)
+       Azul #1a5e91 = 206 70% 34% · Verde #1e613e = 149 53% 25% · Vermelho #a82f26 = 4 63% 40%
+       Dourado #f2ab0c = 41 91% 50% · Creme #faf4e8 = 40 64% 95% · Tinta #040c11 = 204 62% 5% */
+    --background: 40 44% 96%;
+    --foreground: 204 24% 14%;
+
+    --card: 30 20% 99%;
+    --card-foreground: 220 15% 20%;
+
+    --popover: 30 20% 99%;
+    --popover-foreground: 220 15% 20%;
+
+    --primary: 206 70% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 14% 93%;
+    --secondary-foreground: 204 24% 14%;
+
+    --muted: 40 12% 93%;
+    --muted-foreground: 204 8% 46%;
+
+    --accent: 41 88% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 4 63% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 12% 89%;
+    --input: 40 12% 89%;
+    --ring: 206 70% 34%;
+
+    --radius: 0.875rem;
+
+    --success: 149 48% 32%;
+    --success-foreground: 0 0% 100%;
+    --warning: 41 91% 50%;
+    --warning-foreground: 204 30% 14%;
+    --info: 206 70% 38%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 40 30% 96%;
+    --sidebar-foreground: 204 24% 15%;
+    --sidebar-primary: 206 70% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 206 18% 94%;
+    --sidebar-accent-foreground: 204 24% 15%;
+    --sidebar-border: 206 15% 90%;
+    --sidebar-ring: 206 70% 34%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(206 65% 22%), hsl(206 62% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(41 91% 52%), hsl(38 80% 44%));
+    --gradient-warm: linear-gradient(180deg, hsl(30 15% 96%), hsl(30 12% 94%));
+    --shadow-soft: 0 1px 8px -1px hsl(220 15% 20% / 0.04);
+    --shadow-card: 0 2px 16px -4px hsl(220 15% 20% / 0.06);
+    --shadow-elevated: 0 8px 32px -8px hsl(220 15% 20% / 0.1);
+    --glass-bg: hsl(30 20% 99% / 0.7);
+    --glass-border: hsl(30 10% 90% / 0.5);
+  }
+
+  .dark {
+    --background: 204 45% 7%;
+    --foreground: 40 14% 90%;
+
+    --card: 220 12% 10%;
+    --card-foreground: 30 10% 90%;
+
+    --popover: 220 12% 10%;
+    --popover-foreground: 30 10% 90%;
+
+    --primary: 206 60% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 204 16% 14%;
+    --secondary-foreground: 40 14% 90%;
+
+    --muted: 204 16% 14%;
+    --muted-foreground: 204 8% 56%;
+
+    --accent: 41 84% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 4 58% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 149 42% 44%;
+    --success-foreground: 0 0% 100%;
+    --warning: 41 88% 54%;
+    --warning-foreground: 204 30% 12%;
+    --info: 206 62% 52%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 204 16% 16%;
+    --input: 204 16% 16%;
+    --ring: 206 60% 50%;
+
+    --sidebar-background: 220 15% 6%;
+    --sidebar-foreground: 30 10% 88%;
+    --sidebar-primary: 206 60% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 204 16% 12%;
+    --sidebar-accent-foreground: 40 12% 88%;
+    --sidebar-border: 204 14% 13%;
+    --sidebar-ring: 206 60% 50%;
+
+    --glass-bg: hsl(220 12% 10% / 0.7);
+    --glass-border: hsl(220 10% 16% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    background-color: hsl(var(--background));
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+}
+
+/* ── Atlas PDF Export Rules ── */
+/* Elements with atlas-hide-pdf are hidden when inside .atlas-pdf-export */
+.atlas-pdf-export .atlas-hide-pdf {
+  display: none !important;
+}
+/* Elements with atlas-show-pdf are hidden normally, shown in PDF export */
+.atlas-show-pdf {
+  display: none !important;
+}
+.atlas-pdf-export .atlas-show-pdf {
+  display: block !important;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--sidebar-foreground) / 0.2) transparent;
+}
+.scrollbar-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-sidebar::-webkit-scrollbar-thumb {
+  background: hsl(var(--sidebar-foreground) / 0.2);
+  border-radius: 4px;
+}
+.scrollbar-sidebar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--sidebar-foreground) / 0.35);
+}
+
+/* iOS Safari auto-zooms inputs with computed font-size < 16px on focus and
+   does not auto-unzoom on blur. Force >=16px on mobile to suppress it.
+   Outside @layer base so it overrides Tailwind utility classes like text-sm. */
+@media (max-width: 767px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}

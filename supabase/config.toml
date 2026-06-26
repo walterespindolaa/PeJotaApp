@@ -1,0 +1,53 @@
+project_id = "zscnhrnsfsrxbjiuuvtm"
+
+[functions]
+  [functions.admin-users]
+    verify_jwt = false
+  [functions.auth-email-hook]
+    verify_jwt = false
+  [functions.confirm-password-reset]
+    verify_jwt = false
+  [functions.request-password-reset]
+    verify_jwt = false
+  [functions.send-email]
+    verify_jwt = false
+  [functions.register-trial]
+    verify_jwt = false
+  [functions.webhook-cakto]
+    verify_jwt = false
+  [functions.webhook-kiwify]
+    verify_jwt = false
+  [functions.billing-notifier]
+    verify_jwt = false
+  [functions.ai-test]
+    verify_jwt = false
+  [functions.ai-categorize-transactions]
+    verify_jwt = false
+  [functions.ai-extract-transactions-from-text]
+    verify_jwt = false
+  [functions.atlas-chat]
+    verify_jwt = false
+  [functions.weekly-email]
+    verify_jwt = false
+  [functions.life-report]
+    verify_jwt = false
+  [functions.financial-report]
+    verify_jwt = false
+  [functions.advisor-report]
+    verify_jwt = false
+  [functions.send-push]
+    verify_jwt = false
+  [functions.vapid-public-key]
+    verify_jwt = false
+  [functions.smart-notifications]
+    verify_jwt = false
+  [functions.create-checkout]
+    verify_jwt = false
+  [functions.virada-mes]
+    verify_jwt = false
+  [functions.indicadores-economicos]
+    verify_jwt = false
+  [functions.admin-create-advisor-coupon]
+    verify_jwt = false
+  [functions.admin-manage-advisor-coupon]
+    verify_jwt = false
