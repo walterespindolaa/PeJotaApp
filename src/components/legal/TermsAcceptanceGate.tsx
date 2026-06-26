@@ -36,6 +36,15 @@ export default function TermsAcceptanceGate() {
     const check = async () => {
       setState("loading");
 
+      // Curto-circuito local: se já aceitou neste dispositivo, não pergunta de novo.
+      try {
+        if (localStorage.getItem("pejota_terms_accepted") === TERMS_VERSION) {
+          acceptedRef.current = true;
+          setState("accepted");
+          return;
+        }
+      } catch { /* localStorage indisponível — segue pro banco */ }
+
       try {
         const { data, error } = await supabase
           .from("user_terms_acceptance")
@@ -88,6 +97,9 @@ export default function TermsAcceptanceGate() {
     } catch (err) {
       logError("[TermsGate] Erro inesperado (seguindo mesmo assim):", err);
     }
+
+    // Marca localmente (à prova de falha de banco) — não volta a pedir neste dispositivo.
+    try { localStorage.setItem("pejota_terms_accepted", TERMS_VERSION); } catch { /* ignore */ }
 
     // Libera o acesso após o aceite, mesmo se o registro falhar (não trava o usuário).
     acceptedRef.current = true;
