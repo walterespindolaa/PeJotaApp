@@ -24,62 +24,48 @@ export interface PlanFeatureGroup {
 }
 
 export const PLAN_FEATURES: PlanFeatureGroup[] = [
-  { group: "Controle Financeiro", items: [
-    { label: "Planejamento e Controle", essencial: true, pro: true, elite: true },
-    { label: "Lançamentos", essencial: true, pro: true, elite: true },
-    { label: "Calendário de Pagamentos", essencial: true, pro: true, elite: true },
-    { label: "Análises", essencial: true, pro: true, elite: true },
+  { group: "Controle financeiro", items: [
+    { label: "Dashboard do negócio", essencial: true, pro: true, elite: true },
+    { label: "Fluxo de caixa", essencial: true, pro: true, elite: true },
+    { label: "Contas a pagar", essencial: true, pro: true, elite: true },
+    { label: "Contas a receber", essencial: true, pro: true, elite: true },
+    { label: "Clientes (CRM)", essencial: true, pro: true, elite: true },
     { label: "Assistente PeJota (IA)", essencial: true, pro: true, elite: true },
   ]},
-  { group: "Automação Financeira", items: [
-    { label: "Fatura do Cartão", essencial: false, pro: true, elite: true },
-    { label: "Importar Extrato Bancário", essencial: false, pro: true, elite: true },
-    { label: "Importar OFX", essencial: false, pro: true, elite: true },
-    { label: "Importar Planilha", essencial: false, pro: true, elite: true },
+  { group: "Vendas", items: [
+    { label: "Funil de vendas (Kanban)", essencial: false, pro: true, elite: true },
+    { label: "Propostas com link público", essencial: false, pro: true, elite: true },
+    { label: "Metas de vendas", essencial: false, pro: true, elite: true },
   ]},
-  { group: "Planejamento Estratégico", items: [
-    { label: "Planejamento de Vida", essencial: false, pro: true, elite: true },
-    { label: "Simulação de Objetivos", essencial: false, pro: true, elite: true },
-    { label: "Projeções Financeiras", essencial: false, pro: true, elite: true },
-    { label: "Planejamento de Aposentadoria", essencial: false, pro: true, elite: true },
-    { label: "Simulador de Decisão", essencial: false, pro: true, elite: true },
-    { label: "Simulador de Financiamento", essencial: false, pro: true, elite: true },
+  { group: "Operação", items: [
+    { label: "Estoque + ficha técnica", essencial: false, pro: true, elite: true },
+    { label: "Precificação", essencial: false, pro: true, elite: true },
+    { label: "Conciliação bancária (OFX)", essencial: false, pro: true, elite: true },
+    { label: "Impostos (DAS, ISSQN…)", essencial: false, pro: true, elite: true },
+    { label: "Projeção de caixa", essencial: false, pro: true, elite: true },
   ]},
-  { group: "Planejamento de Futuro", items: [
-    { label: "Mapa do Futuro", essencial: false, pro: true, elite: true },
-    { label: "Vista da Montanha", essencial: false, pro: true, elite: true },
-    { label: "Eventos da Vida na linha do tempo", essencial: false, pro: true, elite: true },
-    { label: "Simulação de cenários patrimoniais", essencial: false, pro: true, elite: true },
+  { group: "Relatórios", items: [
+    { label: "DRE gerencial", essencial: false, pro: true, elite: true },
+    { label: "Análises por período", essencial: false, pro: true, elite: true },
+    { label: "Exportações (PDF/Excel)", essencial: false, pro: false, elite: true },
   ]},
-  { group: "Patrimônio e Investimentos", items: [
-    { label: "Controle Patrimonial", essencial: false, pro: true, elite: true },
-    { label: "Controle de Investimentos", essencial: false, pro: true, elite: true },
-    { label: "Evolução Patrimonial", essencial: false, pro: true, elite: true },
-    { label: "Proteção & Seguros", essencial: false, pro: true, elite: true },
-    { label: "Bens e Imóveis", essencial: false, pro: true, elite: true },
-    { label: "Renda Passiva com FIIs (em breve)", essencial: false, pro: false, elite: true },
+  { group: "Multiempresa e equipe", items: [
+    { label: "Multiempresa", essencial: false, pro: false, elite: true },
+    { label: "Colaboradores / folha", essencial: false, pro: false, elite: true },
+    { label: "Equipe e permissões por papel", essencial: false, pro: false, elite: true },
+    { label: "Segurança e auditoria avançada", essencial: false, pro: false, elite: true },
   ]},
-  { group: "PeJota Negócios", items: [
-    { label: "Controle Financeiro Empresarial", essencial: false, pro: true, elite: true },
-    { label: "Fluxo de Caixa Empresarial", essencial: false, pro: true, elite: true },
-    { label: "Análise Financeira do Negócio", essencial: false, pro: true, elite: true },
-  ]},
-  { group: "Relatórios Inteligentes", items: [
-    { label: "Relatório de Vida Financeira", essencial: false, pro: true, elite: true },
-  ]},
-  { group: "Educação Financeira", items: [
-    { label: "Organização na Prática", essencial: true, pro: true, elite: true },
-    { label: "Manual do Dinheiro", essencial: false, pro: true, elite: true },
-    { label: "Planejamento Financeiro (curso)", essencial: false, pro: true, elite: true },
-    { label: "Plano da Liberdade", essencial: false, pro: false, elite: true },
-    { label: "Conteúdos exclusivos (em breve)", essencial: false, pro: false, elite: true },
+  { group: "PeJota Academy", items: [
+    { label: "Fluxo de caixa na prática", essencial: false, pro: true, elite: true },
+    { label: "Precificação que dá lucro", essencial: false, pro: true, elite: true },
+    { label: "Conteúdos avançados (em breve)", essencial: false, pro: false, elite: true },
   ]},
 ];
 
 const plans = [
-  { slug: "essencial", name: "PeJota Essencial", price: "R$ 15,90", icon: Zap, color: "text-success", desc: "Controle financeiro e organização da vida financeira.", url: STRIPE_ESSENCIAL_URL },
-  { slug: "pro", name: "PeJota Pro", price: "R$ 24,90", icon: Sparkles, color: "text-primary", desc: "Planejamento financeiro completo + automações + PeJota Negócios + Mapa do Futuro.", url: STRIPE_PRO_URL },
-  { slug: "elite", name: "PeJota Elite", price: "R$ 32,90", icon: Crown, color: "text-amber-500", desc: "Tudo do Pro + educação financeira premium e conteúdos exclusivos.", highlight: "Inclui acesso ao Plano da Liberdade e conteúdos educacionais exclusivos", url: STRIPE_ELITE_URL },
+  { slug: "essencial", name: "PeJota Essencial", price: "R$ 15,90", icon: Zap, color: "text-primary", desc: "Organize o caixa do seu negócio: fluxo, contas a pagar e receber.", url: STRIPE_ESSENCIAL_URL },
+  { slug: "pro", name: "PeJota Pro", price: "R$ 24,90", icon: Sparkles, color: "text-accent", desc: "Tudo do Essencial + vendas, estoque, impostos e relatórios.", url: STRIPE_PRO_URL },
+  { slug: "elite", name: "PeJota Elite", price: "R$ 32,90", icon: Crown, color: "text-primary", desc: "Tudo do Pro + multiempresa, equipe e segurança avançada.", highlight: "Multiempresa, colaboradores e permissões por papel", url: STRIPE_ELITE_URL },
 ];
 
 const PlanoComparacao = () => {
@@ -112,7 +98,7 @@ const PlanoComparacao = () => {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${session.access_token}`,
           },
-          body: JSON.stringify({ return_url: "https://app.useatlasapp.com/dashboard/planos" }),
+          body: JSON.stringify({ return_url: "https://pejotaapp.vercel.app/dashboard/planos" }),
         }
       );
 
@@ -153,7 +139,7 @@ const PlanoComparacao = () => {
     <div className="space-y-6 animate-fade-in">
       <div className="text-center">
         <h1 className="text-2xl font-heading font-bold">Comparação de Planos</h1>
-        <p className="text-muted-foreground text-sm mt-1">Escolha o plano ideal para o seu momento financeiro.</p>
+        <p className="text-muted-foreground text-sm mt-1">Escolha o plano ideal para o seu negócio.</p>
       </div>
 
       {/* Plan cards */}
