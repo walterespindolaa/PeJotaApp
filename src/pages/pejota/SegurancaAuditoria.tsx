@@ -1,13 +1,27 @@
+import { useEffect, useState, useCallback } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useCompanies } from "@/hooks/useCompanies";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Shield, KeyRound, Smartphone, History, Check, Minus } from "lucide-react";
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 /**
  * Segurança e auditoria — prioridade do PeJota (o caixa é o dado mais sensível).
- * Estrutura pronta; o wiring usa company_members (papéis), audit_logs (trilha)
- * e Supabase Auth (2FA/sessão). Por enquanto com dados de exemplo.
+ * Trilha = business_audit_logs (real, via triggers). 2FA/sessão/permissões
+ * seguem estruturais (dependem de Supabase Auth e da matriz por papel).
  */
+
+const db = supabase as any;
+type AuditRow = { id: string; user_id: string | null; action: string; entity: string; summary: string | null; created_at: string };
+
+const ENTITY_LABEL: Record<string, string> = {
+  business_transactions: "Caixa", business_bills: "Conta", business_taxes: "Imposto",
+  business_payouts: "Colaborador", business_goals: "Meta", business_planned_events: "Evento", business_cashflow_budget: "Orçamento",
+};
+const ACTION_LABEL: Record<string, string> = { INSERT: "Criou", UPDATE: "Editou", DELETE: "Excluiu" };
 
 const PAPEIS = ["Dono", "Editor", "Visualizador"] as const;
 
@@ -23,13 +37,6 @@ const PERMISSOES: { modulo: string; valores: ("V" | "L" | "-")[] }[] = [
   { modulo: "Configuração e segurança", valores: ["V", "-", "-"] },
 ];
 
-const AUDITORIA = [
-  { quando: "Hoje 09:41", quem: "walter@padaria", acao: "Editou lançamento de R$ 1.200 (Fornecedor Beta)", ip: "187.×.×.10" },
-  { quando: "Ontem 18:03", quem: "ana@padaria", acao: "Marcou imposto DAS como pago", ip: "187.×.×.22" },
-  { quando: "Ontem 14:20", quem: "walter@padaria", acao: "Convidou novo membro (visualizador)", ip: "187.×.×.10" },
-  { quando: "23/06 10:12", quem: "sistema", acao: "Conciliação bancária importou 48 transações", ip: "—" },
-];
-
 function PermCell({ v }: { v: "V" | "L" | "-" }) {
   if (v === "V") return <Check className="w-4 h-4 text-emerald-600 mx-auto" />;
   if (v === "L") return <span className="text-[11px] text-amber-600 font-medium">leitura</span>;
@@ -37,6 +44,27 @@ function PermCell({ v }: { v: "V" | "L" | "-" }) {
 }
 
 export default function SegurancaAuditoria() {
+  const { selected } = useCompanies();
+  const [logs, setLogs] = useState<AuditRow[]>([]);
+  const [loadingLogs, setLoadingLogs] = useState(false);
+
+  const loadLogs = useCallback(async () => {
+    if (!selected) { setLogs([]); return; }
+    setLoadingLogs(true);
+    const { data } = await db.from("business_audit_logs").select("id, user_id, action, entity, summary, created_at").eq("company_id", selected.id).order("created_at", { ascending: false }).limit(50);
+    setLogs((data || []) as AuditRow[]);
+    setLoadingLogs(false);
+  }, [selected]);
+  useEffect(() => { loadLogs(); }, [loadLogs]);
+
+  const quando = (iso: string) => { try { return formatDistanceToNow(new Date(iso), { addSuffix: true, locale: ptBR }); } catch { return iso; } };
+  const descreve = (l: AuditRow) => {
+    const ent = ENTITY_LABEL[l.entity] || l.entity;
+    const act = ACTION_LABEL[l.action] || l.action;
+    const extra = (l.summary || "").replace(/^(INSERT|UPDATE|DELETE)\s*·?\s*/, "").trim();
+    return `${act} · ${ent}${extra ? ` · ${extra}` : ""}`;
+  };
+
   return (
     <div className="max-w-5xl mx-auto p-4 sm:p-6 space-y-5">
       <div className="flex items-start gap-3">
@@ -114,19 +142,25 @@ export default function SegurancaAuditoria() {
           <CardTitle className="text-base flex items-center gap-2"><History className="w-4 h-4" /> Trilha de auditoria</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-2">
-            {AUDITORIA.map((a, i) => (
-              <div key={i} className="flex items-start gap-3 text-sm border-b last:border-0 pb-2 last:pb-0">
-                <span className="text-xs text-muted-foreground w-24 flex-shrink-0 pt-0.5">{a.quando}</span>
-                <div className="flex-1">
-                  <p>{a.acao}</p>
-                  <p className="text-xs text-muted-foreground">{a.quem} · IP {a.ip}</p>
+          {loadingLogs ? (
+            <p className="text-sm text-muted-foreground py-4 text-center">Carregando…</p>
+          ) : logs.length === 0 ? (
+            <p className="text-sm text-muted-foreground py-4 text-center">Nenhum registro ainda. Toda criação, edição ou exclusão de dado financeiro aparece aqui.</p>
+          ) : (
+            <div className="space-y-2">
+              {logs.map((l) => (
+                <div key={l.id} className="flex items-start gap-3 text-sm border-b last:border-0 pb-2 last:pb-0">
+                  <span className="text-xs text-muted-foreground w-28 flex-shrink-0 pt-0.5">{quando(l.created_at)}</span>
+                  <div className="flex-1">
+                    <p>{descreve(l)}</p>
+                  </div>
+                  <Badge variant="outline" className="text-[10px]">{l.action}</Badge>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
           <p className="text-xs text-muted-foreground mt-3">
-            Origem: tabela <code>audit_logs</code> (já existe no PeJota). Registra criação, edição e exclusão por usuário, com data e IP.
+            Origem: <code>business_audit_logs</code> (gravada automaticamente por triggers). Registra criação, edição e exclusão por usuário, com data — isolada por empresa (RLS).
           </p>
         </CardContent>
       </Card>
