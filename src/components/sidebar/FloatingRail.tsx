@@ -65,6 +65,7 @@ const GROUPS: RailGroup[] = [
     kind: "flyout", key: "relatorios", label: "Relatórios", icon: FileBarChart, items: [
       { to: "/dashboard/dre", label: "DRE gerencial", icon: FileText },
       { to: "/dashboard/fluxo-caixa", label: "Projetado × Realizado", icon: TrendingUp },
+      { to: "/dashboard/categorias-grupos", label: "Categorias e grupos", icon: Tag },
       { to: "/dashboard/analises", label: "Análises", icon: PieChart },
       { to: "/dashboard/exportacoes", label: "Exportações", icon: Download },
     ],

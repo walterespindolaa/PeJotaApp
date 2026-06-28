@@ -176,6 +176,7 @@ const DashboardLayout = () => {
     { title: "Relatórios", dot: "bg-primary", items: [
       { to: "/dashboard/dre", icon: FileText, label: "DRE gerencial" },
       { to: "/dashboard/fluxo-caixa", icon: TrendingUp, label: "Projetado × Realizado" },
+      { to: "/dashboard/categorias-grupos", icon: Tag, label: "Categorias e grupos" },
       { to: "/dashboard/analises", icon: PieChart, label: "Análises" },
       { to: "/dashboard/exportacoes", icon: Download, label: "Exportações" },
     ]},
