@@ -45,7 +45,7 @@ import {
   HeartHandshake, Receipt, Globe, CreditCard,
 } from "lucide-react";
 import {
-  Filter, ArrowDownCircle, ArrowUpCircle, ArrowLeftRight, UserCog,
+  Filter, ArrowDownCircle, ArrowUpCircle, ArrowLeftRight, UserCog, Repeat,
   Boxes, ClipboardList, Repeat, Tag, CalendarRange, Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -156,6 +156,7 @@ const DashboardLayout = () => {
       { to: "/dashboard/negocios", icon: LineChart, label: "Fluxo de caixa" },
       { to: "/dashboard/contas-pagar", icon: ArrowDownCircle, label: "Contas a pagar" },
       { to: "/dashboard/contas-receber", icon: ArrowUpCircle, label: "Contas a receber" },
+      { to: "/dashboard/recorrentes", icon: Repeat, label: "Contas recorrentes" },
       { to: "/dashboard/conciliacao", icon: ArrowLeftRight, label: "Conciliação bancária" },
       { to: "/dashboard/impostos", icon: Receipt, label: "Impostos" },
       { to: "/dashboard/colaboradores", icon: UserCog, label: "Colaboradores" },

@@ -13,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowUpCircle, ArrowDownCircle, Plus, Pencil, Trash2, Check, Building2, QrCode, Copy, ExternalLink, Loader2 } from "lucide-react";
 import { format, parseISO } from "date-fns";
 import { statusVencimento } from "@/lib/pejota/businessFinance";
+import { ensureRecurringBills } from "@/lib/pejota/recurringBills";
 
 const db = supabase as any;
 type Bill = {
@@ -62,6 +63,7 @@ export default function BillsPage({ kind }: { kind: "receber" | "pagar" }) {
   const fetchBills = useCallback(async () => {
     if (!selected) { setBills([]); return; }
     setLoading(true);
+    try { await ensureRecurringBills(selected.id, kind); } catch { /* segue mesmo se recorrência falhar */ }
     const { data, error } = await db.from("business_bills").select("*").eq("company_id", selected.id).eq("kind", kind).order("due_date", { ascending: true });
     if (error) toast({ title: "Erro ao carregar", description: error.message, variant: "destructive" });
     setBills((data || []) as Bill[]); setLoading(false);
