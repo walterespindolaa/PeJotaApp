@@ -37,7 +37,7 @@ const GROUPS: RailGroup[] = [
   {
     kind: "flyout", key: "financeiro", label: "Financeiro", icon: Wallet, items: [
       { to: "/dashboard/negocios", label: "Fluxo de caixa", icon: LineChart },
-      { to: "/dashboard/negocios", label: "Contas a pagar", icon: ArrowDownCircle },
+      { to: "/dashboard/contas-pagar", label: "Contas a pagar", icon: ArrowDownCircle },
       { to: "/dashboard/contas-receber", label: "Contas a receber", icon: ArrowUpCircle },
       { to: "/dashboard/importar-ofx", label: "Conciliação bancária", icon: ArrowLeftRight },
       { to: "/dashboard/impostos", label: "Impostos", icon: Receipt },

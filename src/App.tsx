@@ -26,6 +26,7 @@ const AuthReset = lazy(() => import("./pages/AuthReset"));
 const AdminRoute = lazy(() => import("./components/AdminRoute"));
 const AcceptInvite = lazy(() => import("./pages/AcceptInvite"));
 const DashboardHome = lazy(() => import("./pages/DashboardHome"));
+const PejotaDashboard = lazy(() => import("./pages/pejota/PejotaDashboard"));
 const RendaDespesasLayout = lazy(() => import("./pages/renda-despesas/RendaDespesasLayout"));
 const RendaDespesasGerais = lazy(() => import("./pages/renda-despesas/Gerais"));
 const RendaDespesasOrcamento = lazy(() => import("./pages/renda-despesas/Orcamento"));
@@ -111,6 +112,7 @@ const Comprar = lazy(() => import("./pages/Comprar"));
 const ComprarSucesso = lazy(() => import("./pages/ComprarSucesso"));
 // PeJota — módulos PJ novos (carcaça)
 const ContasReceber = lazy(() => import("./pages/pejota/ContasReceber"));
+const ContasPagar = lazy(() => import("./pages/pejota/ContasPagar"));
 const ImpostosPJ = lazy(() => import("./pages/pejota/Impostos"));
 const ColaboradoresPJ = lazy(() => import("./pages/pejota/Colaboradores"));
 const ProjecaoCaixaPJ = lazy(() => import("./pages/pejota/ProjecaoCaixa"));
@@ -175,7 +177,7 @@ const App = () => (
                 </ProtectedRoute>
               }
             >
-              <Route index element={<DashboardHome />} />
+              <Route index element={<PejotaDashboard />} />
               <Route path="renda-despesas" element={<RendaDespesasLayout />}>
                 <Route index element={<Navigate to="gerais" replace />} />
                 <Route path="gerais" element={<RendaDespesasGerais />} />
@@ -234,6 +236,7 @@ const App = () => (
               <Route path="simulador-financiamento" element={<SimuladorFinanciamento />} />
               {/* PeJota — rotas dos módulos PJ (carcaça, preenchidas parte por parte) */}
               <Route path="contas-receber" element={<ContasReceber />} />
+              <Route path="contas-pagar" element={<ContasPagar />} />
               <Route path="impostos" element={<ImpostosPJ />} />
               <Route path="colaboradores" element={<ColaboradoresPJ />} />
               <Route path="projecao-caixa" element={<ProjecaoCaixaPJ />} />

@@ -154,7 +154,7 @@ const DashboardLayout = () => {
     ]},
     { title: "Financeiro", dot: "bg-success", items: [
       { to: "/dashboard/negocios", icon: LineChart, label: "Fluxo de caixa" },
-      { to: "/dashboard/negocios", icon: ArrowDownCircle, label: "Contas a pagar" },
+      { to: "/dashboard/contas-pagar", icon: ArrowDownCircle, label: "Contas a pagar" },
       { to: "/dashboard/contas-receber", icon: ArrowUpCircle, label: "Contas a receber" },
       { to: "/dashboard/importar-ofx", icon: ArrowLeftRight, label: "Conciliação bancária" },
       { to: "/dashboard/impostos", icon: Receipt, label: "Impostos" },
@@ -371,7 +371,7 @@ const DashboardLayout = () => {
                         <span className="truncate">{canopyName}</span>
                         <GreetingEmojiButton greetingEmoji={greetingEmoji} onEmojiSelect={setGreetingEmoji} />
                       </h1>
-                      <p className="text-sm text-[#F5F1E8]/70 mt-0.5">Clareza para planejar, decidir e construir patrimônio.</p>
+                      <p className="text-sm text-[#F5F1E8]/70 mt-0.5">Visão do seu negócio em tempo real.</p>
                     </div>
                   </div>
                   {canopyScore && (
