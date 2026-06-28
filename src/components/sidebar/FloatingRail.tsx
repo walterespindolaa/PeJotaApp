@@ -64,6 +64,7 @@ const GROUPS: RailGroup[] = [
   {
     kind: "flyout", key: "relatorios", label: "Relatórios", icon: FileBarChart, items: [
       { to: "/dashboard/dre", label: "DRE gerencial", icon: FileText },
+      { to: "/dashboard/fluxo-caixa", label: "Projetado × Realizado", icon: TrendingUp },
       { to: "/dashboard/analises", label: "Análises", icon: PieChart },
       { to: "/dashboard/exportacoes", label: "Exportações", icon: Download },
     ],
@@ -79,6 +80,7 @@ const GROUPS: RailGroup[] = [
   {
     kind: "flyout", key: "config", label: "Configuração", icon: Settings, items: [
       { to: "/dashboard/empresa", label: "Empresa", icon: Building2 },
+      { to: "/dashboard/cobrancas", label: "Cobranças (Asaas)", icon: CreditCard },
       { to: "/dashboard/equipe", label: "Equipe e acessos", icon: Users },
       { to: "/dashboard/seguranca", label: "Segurança e auditoria", icon: Shield },
       { to: "/dashboard/planos", label: "Plano e cobrança", icon: CreditCard },

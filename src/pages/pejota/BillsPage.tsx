@@ -9,12 +9,19 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
-import { ArrowUpCircle, ArrowDownCircle, Plus, Pencil, Trash2, Check, Building2 } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { ArrowUpCircle, ArrowDownCircle, Plus, Pencil, Trash2, Check, Building2, QrCode, Copy, ExternalLink, Loader2 } from "lucide-react";
 import { format, parseISO } from "date-fns";
 import { statusVencimento } from "@/lib/pejota/businessFinance";
 
 const db = supabase as any;
-type Bill = { id: string; company_id: string; kind: "receber" | "pagar"; description: string; amount: number; due_date: string | null; status: string; paid_date: string | null; tx_id: string | null; notes: string | null };
+type Bill = {
+  id: string; company_id: string; kind: "receber" | "pagar"; description: string; amount: number;
+  due_date: string | null; status: string; paid_date: string | null; tx_id: string | null; notes: string | null;
+  payer_name?: string | null; payer_doc?: string | null;
+  asaas_charge_id?: string | null; asaas_invoice_url?: string | null; asaas_bank_slip_url?: string | null;
+  asaas_pix_payload?: string | null; asaas_status?: string | null;
+};
 const brl = (v: number) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 const fmtDate = (d: string | null) => (d ? format(parseISO(d), "dd/MM/yyyy") : "—");
 const toMoney = (s: string) => parseInt(s.replace(/\D/g, "") || "0", 10) / 100;
@@ -39,6 +46,14 @@ export default function BillsPage({ kind }: { kind: "receber" | "pagar" }) {
   const [fAmount, setFAmount] = useState("");
   const [fDue, setFDue] = useState(today());
   const [saving, setSaving] = useState(false);
+  // Cobrança Asaas
+  const [chargeBill, setChargeBill] = useState<Bill | null>(null);
+  const [billingType, setBillingType] = useState("UNDEFINED");
+  const [payerName, setPayerName] = useState("");
+  const [payerDoc, setPayerDoc] = useState("");
+  const [payerEmail, setPayerEmail] = useState("");
+  const [charging, setCharging] = useState(false);
+  const [chargeRes, setChargeRes] = useState<any>(null);
 
   const titulo = kind === "receber" ? "Contas a receber" : "Contas a pagar";
   const Icon = kind === "receber" ? ArrowUpCircle : ArrowDownCircle;
@@ -95,6 +110,31 @@ export default function BillsPage({ kind }: { kind: "receber" | "pagar" }) {
     if (!error) fetchBills();
   };
 
+  const openCharge = (b: Bill) => {
+    setChargeBill(b); setChargeRes(null); setBillingType("UNDEFINED");
+    setPayerName(b.payer_name || ""); setPayerDoc(b.payer_doc || ""); setPayerEmail("");
+  };
+  const gerarCobranca = async () => {
+    if (!chargeBill) return;
+    if (!payerName.trim() || payerDoc.replace(/\D/g, "").length < 11) { toast({ title: "Informe nome e CPF/CNPJ do pagador", variant: "destructive" }); return; }
+    setCharging(true);
+    const { data, error } = await supabase.functions.invoke("asaas-charge", {
+      body: { bill_id: chargeBill.id, billingType, payer: { name: payerName.trim(), cpfCnpj: payerDoc, email: payerEmail.trim() || undefined } },
+    });
+    setCharging(false);
+    if (error || data?.error) {
+      const msg = data?.error === "asaas_nao_configurado"
+        ? "Conecte sua conta Asaas em Configuração → Cobranças (Asaas)."
+        : (data?.error || error?.message || "Erro ao gerar cobrança");
+      toast({ title: "Não foi possível gerar", description: msg, variant: "destructive" });
+      return;
+    }
+    setChargeRes(data);
+    toast({ title: "Cobrança gerada", description: "Envie o link/PIX ao cliente." });
+    fetchBills();
+  };
+  const copy = (txt: string, label: string) => { navigator.clipboard.writeText(txt); toast({ title: `${label} copiado` }); };
+
   const pendentes = bills.filter(b => b.status === "pendente");
   const totalPend = pendentes.reduce((s, b) => s + Number(b.amount || 0), 0);
   const totalLiq = bills.filter(b => b.status === "liquidado").reduce((s, b) => s + Number(b.amount || 0), 0);
@@ -143,6 +183,11 @@ export default function BillsPage({ kind }: { kind: "receber" | "pagar" }) {
                   <td className={`p-3 text-right font-medium ${accent}`}>{brl(Number(b.amount || 0))}</td>
                   <td className="p-3 text-center"><Badge variant="secondary" className={badge.cls}>{badge.label}</Badge></td>
                   <td className="p-3"><div className="flex items-center justify-end gap-1">
+                    {kind === "receber" && b.status === "pendente" && (
+                      b.asaas_invoice_url
+                        ? <a href={b.asaas_invoice_url} target="_blank" rel="noreferrer"><Button size="sm" variant="ghost" className="h-8 gap-1.5 text-primary"><ExternalLink className="w-3.5 h-3.5" /> Cobrança</Button></a>
+                        : <Button size="sm" variant="ghost" className="h-8 gap-1.5 text-primary" onClick={() => openCharge(b)}><QrCode className="w-3.5 h-3.5" /> Cobrar</Button>
+                    )}
                     {b.status === "pendente"
                       ? <Button size="sm" variant="ghost" className="h-8 gap-1.5" onClick={() => liquidar(b)}><Check className="w-3.5 h-3.5" /> {kind === "receber" ? "Receber" : "Pagar"}</Button>
                       : <Button size="sm" variant="ghost" className="h-8" onClick={() => reabrir(b)}>Reabrir</Button>}
@@ -165,6 +210,49 @@ export default function BillsPage({ kind }: { kind: "receber" | "pagar" }) {
           </div>
         </div>
         <DialogFooter><Button variant="ghost" onClick={() => setOpen(false)}>Cancelar</Button><Button onClick={save} disabled={saving}>{saving ? "Salvando…" : "Salvar"}</Button></DialogFooter>
+      </DialogContent></Dialog>
+
+      {/* Cobrança Asaas (boleto/PIX) */}
+      <Dialog open={!!chargeBill} onOpenChange={(o) => { if (!o) { setChargeBill(null); setChargeRes(null); } }}><DialogContent>
+        <DialogHeader><DialogTitle>Gerar cobrança · {chargeBill ? brl(Number(chargeBill.amount || 0)) : ""}</DialogTitle></DialogHeader>
+        {!chargeRes ? (
+          <div className="space-y-4 py-2">
+            <p className="text-xs text-muted-foreground">Boleto/PIX emitido pela sua conta Asaas. O dinheiro cai direto na sua conta; ao ser pago, a conta é baixada e lançada no caixa.</p>
+            <div><Label className="text-xs">Forma de pagamento</Label>
+              <Select value={billingType} onValueChange={setBillingType}>
+                <SelectTrigger><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="UNDEFINED">Boleto + PIX (cliente escolhe)</SelectItem>
+                  <SelectItem value="PIX">Somente PIX</SelectItem>
+                  <SelectItem value="BOLETO">Somente boleto</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div><Label className="text-xs">Nome do pagador</Label><Input value={payerName} onChange={e => setPayerName(e.target.value)} placeholder="Cliente" /></div>
+            <div className="grid grid-cols-2 gap-3">
+              <div><Label className="text-xs">CPF/CNPJ</Label><Input value={payerDoc} onChange={e => setPayerDoc(e.target.value)} placeholder="Só números" inputMode="numeric" /></div>
+              <div><Label className="text-xs">E-mail (opcional)</Label><Input value={payerEmail} onChange={e => setPayerEmail(e.target.value)} placeholder="cliente@email" /></div>
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-3 py-2">
+            {chargeRes.pixImage && <img src={`data:image/png;base64,${chargeRes.pixImage}`} alt="QR PIX" className="w-44 h-44 mx-auto border rounded-lg" />}
+            {chargeRes.pixPayload && (
+              <div><Label className="text-xs">PIX copia-e-cola</Label>
+                <div className="flex gap-2"><Input readOnly value={chargeRes.pixPayload} className="font-mono text-xs" /><Button size="icon" variant="outline" onClick={() => copy(chargeRes.pixPayload, "PIX")}><Copy className="w-4 h-4" /></Button></div>
+              </div>
+            )}
+            <div className="flex flex-wrap gap-2 pt-1">
+              {chargeRes.invoiceUrl && <a href={chargeRes.invoiceUrl} target="_blank" rel="noreferrer" className="flex-1"><Button variant="outline" className="w-full gap-2"><ExternalLink className="w-4 h-4" /> Página de pagamento</Button></a>}
+              {chargeRes.bankSlipUrl && <a href={chargeRes.bankSlipUrl} target="_blank" rel="noreferrer" className="flex-1"><Button variant="outline" className="w-full gap-2"><ExternalLink className="w-4 h-4" /> Boleto (PDF)</Button></a>}
+            </div>
+          </div>
+        )}
+        <DialogFooter>
+          {!chargeRes
+            ? <><Button variant="ghost" onClick={() => setChargeBill(null)}>Cancelar</Button><Button onClick={gerarCobranca} disabled={charging} className="gap-2">{charging && <Loader2 className="w-4 h-4 animate-spin" />}{charging ? "Gerando…" : "Gerar cobrança"}</Button></>
+            : <Button onClick={() => { setChargeBill(null); setChargeRes(null); }}>Concluir</Button>}
+        </DialogFooter>
       </DialogContent></Dialog>
     </div>
   );

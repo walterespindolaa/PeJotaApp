@@ -51,3 +51,5 @@ project_id = "zscnhrnsfsrxbjiuuvtm"
     verify_jwt = false
   [functions.admin-manage-advisor-coupon]
     verify_jwt = false
+  [functions.asaas-webhook]
+    verify_jwt = false

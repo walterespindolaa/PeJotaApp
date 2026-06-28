@@ -175,6 +175,7 @@ const DashboardLayout = () => {
     ]},
     { title: "Relatórios", dot: "bg-primary", items: [
       { to: "/dashboard/dre", icon: FileText, label: "DRE gerencial" },
+      { to: "/dashboard/fluxo-caixa", icon: TrendingUp, label: "Projetado × Realizado" },
       { to: "/dashboard/analises", icon: PieChart, label: "Análises" },
       { to: "/dashboard/exportacoes", icon: Download, label: "Exportações" },
     ]},
@@ -186,6 +187,7 @@ const DashboardLayout = () => {
     ]},
     { title: "Configuração", dot: "bg-warning", items: [
       { to: "/dashboard/empresa", icon: Building2, label: "Empresa" },
+      { to: "/dashboard/cobrancas", icon: CreditCard, label: "Cobranças (Asaas)" },
       { to: "/dashboard/equipe", icon: Users, label: "Equipe e acessos" },
       { to: "/dashboard/seguranca", icon: Shield, label: "Segurança e auditoria" },
       { to: "/dashboard/planos", icon: CreditCard, label: "Plano e cobrança" },

@@ -118,6 +118,8 @@ const ColaboradoresPJ = lazy(() => import("./pages/pejota/Colaboradores"));
 const ProjecaoCaixaPJ = lazy(() => import("./pages/pejota/ProjecaoCaixa"));
 const MetasVendas = lazy(() => import("./pages/pejota/MetasVendas"));
 const DRE = lazy(() => import("./pages/pejota/DRE"));
+const FluxoCaixa = lazy(() => import("./pages/pejota/FluxoCaixa"));
+const IntegracaoAsaas = lazy(() => import("./pages/pejota/IntegracaoAsaas"));
 const Exportacoes = lazy(() => import("./pages/pejota/Exportacoes"));
 const SegurancaAuditoria = lazy(() => import("./pages/pejota/SegurancaAuditoria"));
 const EquipeAcessos = lazy(() => import("./pages/pejota/EquipeAcessos"));
@@ -242,6 +244,8 @@ const App = () => (
               <Route path="projecao-caixa" element={<ProjecaoCaixaPJ />} />
               <Route path="metas-vendas" element={<MetasVendas />} />
               <Route path="dre" element={<DRE />} />
+              <Route path="fluxo-caixa" element={<FluxoCaixa />} />
+              <Route path="cobrancas" element={<IntegracaoAsaas />} />
               <Route path="exportacoes" element={<Exportacoes />} />
               <Route path="seguranca" element={<SegurancaAuditoria />} />
               <Route path="equipe" element={<EquipeAcessos />} />
