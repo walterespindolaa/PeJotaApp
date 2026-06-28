@@ -87,6 +87,21 @@ export default function BusinessPropostas({ companyId, controlsStock = true, onP
       onConfirmed: async () => { await supabase.from("business_proposals" as any).update({ revenue_done: true } as any).eq("id", p.id); await refetchProposals(); },
     });
   };
+  // Gera conta a receber a partir da proposta (liga Vendas → Financeiro → Asaas)
+  const gerarConta = async (p: Proposal) => {
+    const amount = totalProp(p);
+    if (!amount) { toast({ title: "Proposta sem valor", variant: "destructive" }); return; }
+    const due = p.valid_until || new Date(Date.now() + 7 * 864e5).toISOString().slice(0, 10);
+    const { data, error } = await supabase.from("business_bills" as any).insert({
+      company_id: companyId, user_id: user?.id, kind: "receber",
+      description: p.titulo || "Venda (proposta)", amount, due_date: due,
+      status: "pendente", payer_name: targetName(p),
+    } as any).select("id").single();
+    if (error) { toast({ title: "Erro ao gerar conta", description: error.message, variant: "destructive" }); return; }
+    await supabase.from("business_proposals" as any).update({ bill_id: (data as any).id } as any).eq("id", p.id);
+    await refetchProposals();
+    toast({ title: "Conta a receber gerada", description: "Veja em Financeiro → Contas a receber (com cobrança Asaas)." });
+  };
   // Lança o custo de produção — pré-preenchido
   const lancarCusto = (p: Proposal) => {
     onPrefillLancamento?.({ dir: "out", amount: custoProducaoProp(p.id), description: `Custo de produção — ${p.titulo || "proposta"}`, clientId: p.client_id });
@@ -202,6 +217,12 @@ export default function BusinessPropostas({ companyId, controlsStock = true, onP
             p.revenue_done
               ? <p className="text-[11px] text-success flex items-center gap-1"><CheckCircle2 className="h-3 w-3" />Receita lançada no Financeiro</p>
               : <Button size="sm" className="w-full h-7 text-xs gap-1" onClick={() => lancarReceita(p)}><DollarSign className="h-3.5 w-3.5" />Lançar receita ({fmt(totalProp(p))})</Button>
+          )}
+
+          {(p.status === "aceita" || p.status === "entregue") && (
+            p.bill_id
+              ? <p className="text-[11px] text-success flex items-center gap-1"><CheckCircle2 className="h-3 w-3" />Conta a receber gerada</p>
+              : <Button size="sm" variant="outline" className="w-full h-7 text-xs gap-1" onClick={() => gerarConta(p)}><CreditCard className="h-3.5 w-3.5" />Gerar conta a receber</Button>
           )}
         </CardContent>
       </Card>

@@ -23,6 +23,7 @@ export interface Proposal {
   desconto: number;
   stock_done: boolean;
   revenue_done?: boolean;
+  bill_id?: string | null;
   created_at: string;
 }
 
