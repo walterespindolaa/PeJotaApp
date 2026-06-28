@@ -39,7 +39,7 @@ const GROUPS: RailGroup[] = [
       { to: "/dashboard/negocios", label: "Fluxo de caixa", icon: LineChart },
       { to: "/dashboard/contas-pagar", label: "Contas a pagar", icon: ArrowDownCircle },
       { to: "/dashboard/contas-receber", label: "Contas a receber", icon: ArrowUpCircle },
-      { to: "/dashboard/importar-ofx", label: "Conciliação bancária", icon: ArrowLeftRight },
+      { to: "/dashboard/conciliacao", label: "Conciliação bancária", icon: ArrowLeftRight },
       { to: "/dashboard/impostos", label: "Impostos", icon: Receipt },
       { to: "/dashboard/colaboradores", label: "Colaboradores", icon: UserCog },
     ],
