@@ -29,9 +29,9 @@ const GROUPS: RailGroup[] = [
   { kind: "direct", key: "dashboard", label: "Dashboard", icon: Home, to: "/dashboard" },
   {
     kind: "flyout", key: "vendas", label: "Vendas", icon: Target, items: [
-      { to: "/dashboard/negocios/funil", label: "Funil de vendas", icon: Filter },
-      { to: "/dashboard/negocios/clientes", label: "Clientes (CRM)", icon: Users },
-      { to: "/dashboard/negocios/propostas", label: "Propostas", icon: FileText },
+      { to: "/dashboard/funil", label: "Funil de vendas", icon: Filter },
+      { to: "/dashboard/clientes", label: "Clientes (CRM)", icon: Users },
+      { to: "/dashboard/propostas", label: "Propostas", icon: FileText },
     ],
   },
   {
@@ -40,6 +40,7 @@ const GROUPS: RailGroup[] = [
       { to: "/dashboard/contas-pagar", label: "Contas a pagar", icon: ArrowDownCircle },
       { to: "/dashboard/contas-receber", label: "Contas a receber", icon: ArrowUpCircle },
       { to: "/dashboard/recorrentes", label: "Contas recorrentes", icon: Repeat },
+      { to: "/dashboard/notas-fiscais", label: "Notas fiscais", icon: FileText },
       { to: "/dashboard/conciliacao", label: "Conciliação bancária", icon: ArrowLeftRight },
       { to: "/dashboard/impostos", label: "Impostos", icon: Receipt },
       { to: "/dashboard/colaboradores", label: "Colaboradores", icon: UserCog },
@@ -47,10 +48,10 @@ const GROUPS: RailGroup[] = [
   },
   {
     kind: "flyout", key: "estoque", label: "Estoque", icon: Package, items: [
-      { to: "/dashboard/negocios/estoque", label: "Produtos e insumos", icon: Boxes },
-      { to: "/dashboard/negocios/estoque", label: "Ficha técnica", icon: ClipboardList },
-      { to: "/dashboard/negocios/estoque", label: "Movimentações", icon: Repeat },
-      { to: "/dashboard/negocios/estoque", label: "Precificação", icon: Tag },
+      { to: "/dashboard/estoque", label: "Produtos e insumos", icon: Boxes },
+      { to: "/dashboard/estoque", label: "Ficha técnica", icon: ClipboardList },
+      { to: "/dashboard/estoque", label: "Movimentações", icon: Repeat },
+      { to: "/dashboard/estoque", label: "Precificação", icon: Tag },
     ],
   },
   {
@@ -83,8 +84,10 @@ const GROUPS: RailGroup[] = [
     kind: "flyout", key: "config", label: "Configuração", icon: Settings, items: [
       { to: "/dashboard/empresa", label: "Empresa", icon: Building2 },
       { to: "/dashboard/cobrancas", label: "Cobranças (Asaas)", icon: CreditCard },
+      { to: "/dashboard/nota-fiscal", label: "Nota fiscal (NFS-e)", icon: FileText },
       { to: "/dashboard/equipe", label: "Equipe e acessos", icon: Users },
       { to: "/dashboard/seguranca", label: "Segurança e auditoria", icon: Shield },
+      { to: "/dashboard/configuracoes", label: "Aparência / Temas", icon: Palette },
       { to: "/dashboard/planos", label: "Plano e cobrança", icon: CreditCard },
       { to: "/dashboard/perfil", label: "Perfil", icon: User },
     ],

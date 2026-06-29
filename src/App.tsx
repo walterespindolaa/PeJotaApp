@@ -102,7 +102,7 @@ const NovoMapaDinheiro = lazy(() => import("./pages/NovoMapaDinheiro"));
 const CursoDetalhe = lazy(() => import("./pages/CursoDetalhe"));
 const CursoAula = lazy(() => import("./pages/CursoAula"));
 const ComecarPorAqui = lazy(() => import("./pages/ComecarPorAqui"));
-const SimuladorDecisao = lazy(() => import("./pages/SimuladorDecisao"));
+const SimuladorPJ = lazy(() => import("./pages/pejota/SimuladorPJ"));
 const SimuladorFinanciamento = lazy(() => import("./pages/SimuladorFinanciamento"));
 const ProjecaoPatrimonial = lazy(() => import("./pages/ProjecaoPatrimonial"));
 const TermosDeUso = lazy(() => import("./pages/TermosDeUso"));
@@ -123,6 +123,12 @@ const IntegracaoAsaas = lazy(() => import("./pages/pejota/IntegracaoAsaas"));
 const CategoriasGrupos = lazy(() => import("./pages/pejota/CategoriasGrupos"));
 const ConciliacaoBancaria = lazy(() => import("./pages/pejota/ConciliacaoBancaria"));
 const ContasRecorrentes = lazy(() => import("./pages/pejota/ContasRecorrentes"));
+const NotaFiscalConfig = lazy(() => import("./pages/pejota/NotaFiscalConfig"));
+const NotasFiscais = lazy(() => import("./pages/pejota/NotasFiscais"));
+const FunilPage = lazy(() => import("./pages/pejota/FunilPage"));
+const ClientesPage = lazy(() => import("./pages/pejota/ClientesPage"));
+const PropostasPage = lazy(() => import("./pages/pejota/PropostasPage"));
+const EstoquePage = lazy(() => import("./pages/pejota/EstoquePage"));
 const Exportacoes = lazy(() => import("./pages/pejota/Exportacoes"));
 const SegurancaAuditoria = lazy(() => import("./pages/pejota/SegurancaAuditoria"));
 const EquipeAcessos = lazy(() => import("./pages/pejota/EquipeAcessos"));
@@ -237,7 +243,7 @@ const App = () => (
               <Route path="importar-ofx" element={<ImportOFX />} />
               <Route path="importar-planilha" element={<ImportSpreadsheet />} />
               <Route path="extrato-bancario" element={<ExtratoBancario />} />
-              <Route path="simulador-decisao" element={<SimuladorDecisao />} />
+              <Route path="simulador-decisao" element={<SimuladorPJ />} />
               <Route path="simulador-financiamento" element={<SimuladorFinanciamento />} />
               {/* PeJota — rotas dos módulos PJ (carcaça, preenchidas parte por parte) */}
               <Route path="contas-receber" element={<ContasReceber />} />
@@ -252,6 +258,12 @@ const App = () => (
               <Route path="categorias-grupos" element={<CategoriasGrupos />} />
               <Route path="conciliacao" element={<ConciliacaoBancaria />} />
               <Route path="recorrentes" element={<ContasRecorrentes />} />
+              <Route path="notas-fiscais" element={<NotasFiscais />} />
+              <Route path="nota-fiscal" element={<NotaFiscalConfig />} />
+              <Route path="funil" element={<FunilPage />} />
+              <Route path="clientes" element={<ClientesPage />} />
+              <Route path="propostas" element={<PropostasPage />} />
+              <Route path="estoque" element={<EstoquePage />} />
               <Route path="exportacoes" element={<Exportacoes />} />
               <Route path="seguranca" element={<SegurancaAuditoria />} />
               <Route path="equipe" element={<EquipeAcessos />} />

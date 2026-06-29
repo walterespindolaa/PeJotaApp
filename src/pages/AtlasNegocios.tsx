@@ -53,7 +53,6 @@ import PrevisaoCaixa from "@/components/dashboard/PrevisaoCaixa";
 import DetectorProblemas from "@/components/dashboard/DetectorProblemas";
 import DiagnosticoInteligente from "@/components/dashboard/DiagnosticoInteligente";
 import AssistenteAtlasCard from "@/components/dashboard/AssistenteAtlasCard";
-import { getShowNegociosNav, setShowNegociosNav } from "@/lib/navPrefs";
 
 // ── PJ→PF categories that trigger cross-ledger ──
 const PJ_PF_CATEGORIES = ["pró-labore", "pro-labore", "distribuição de lucros", "transferência pessoal"];
@@ -116,19 +115,6 @@ const PF_CATEGORIES = [
 ];
 
 // Toggle discreto de preferência (atalho de Negócios na barra inferior).
-function NegociosNavToggle() {
-  const [on, setOn] = useState(getShowNegociosNav());
-  return (
-    <div className="flex items-center justify-between gap-3 rounded-2xl border border-border/60 bg-card/60 px-4 py-3">
-      <div className="min-w-0">
-        <Label htmlFor="negocios-nav" className="text-sm font-medium">Mostrar atalho de Negócios na barra</Label>
-        <p className="text-[11px] text-muted-foreground">Adiciona um ícone de Negócios na barra inferior (mobile).</p>
-      </div>
-      <Switch id="negocios-nav" checked={on} onCheckedChange={(v) => { setOn(v); setShowNegociosNav(v); }} />
-    </div>
-  );
-}
-
 const AtlasNegocios = () => {
   const { user } = useAuth();
   const { toast } = useToast();
@@ -555,21 +541,9 @@ const AtlasNegocios = () => {
         </div>
       </div>
 
-      <NegociosNavToggle />
-
-      {/* Seletor de visão: Financeiro × Funil */}
-      <div className="flex items-center gap-1 bg-muted/50 rounded-lg p-0.5 text-xs w-full sm:w-auto sm:inline-flex">
-        {([{ k: "financeiro", label: "Financeiro" }, { k: "funil", label: "Funil" }, ...(controlsStock ? [{ k: "estoque", label: "Estoque" }] as const : []), { k: "clientes", label: "Clientes" }, { k: "propostas", label: "Propostas" }] as const).map(o => (
-          <button
-            key={o.k}
-            type="button"
-            onClick={() => setView(o.k)}
-            className={`flex-1 sm:flex-none px-4 py-1.5 rounded-md transition-colors ${view === o.k ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
-          >
-            {o.label}
-          </button>
-        ))}
-      </div>
+      {/* Hub fatiado: Vendas/Estoque agora são telas próprias no menu lateral.
+          Esta tela é só o Caixa (financeiro). As views abaixo seguem acessíveis
+          por deep-link antigo, mas o seletor interno foi removido. */}
 
       {view === "funil" && (
         selected
