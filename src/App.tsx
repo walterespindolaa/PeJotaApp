@@ -129,6 +129,7 @@ const FunilPage = lazy(() => import("./pages/pejota/FunilPage"));
 const ClientesPage = lazy(() => import("./pages/pejota/ClientesPage"));
 const PropostasPage = lazy(() => import("./pages/pejota/PropostasPage"));
 const EstoquePage = lazy(() => import("./pages/pejota/EstoquePage"));
+const Processos = lazy(() => import("./pages/pejota/Processos"));
 const Exportacoes = lazy(() => import("./pages/pejota/Exportacoes"));
 const SegurancaAuditoria = lazy(() => import("./pages/pejota/SegurancaAuditoria"));
 const EquipeAcessos = lazy(() => import("./pages/pejota/EquipeAcessos"));
@@ -264,6 +265,7 @@ const App = () => (
               <Route path="clientes" element={<ClientesPage />} />
               <Route path="propostas" element={<PropostasPage />} />
               <Route path="estoque" element={<EstoquePage />} />
+              <Route path="processos" element={<Processos />} />
               <Route path="exportacoes" element={<Exportacoes />} />
               <Route path="seguranca" element={<SegurancaAuditoria />} />
               <Route path="equipe" element={<EquipeAcessos />} />

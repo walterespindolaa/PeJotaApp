@@ -67,7 +67,7 @@ export default function PejotaDashboard() {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto p-4 sm:p-6 space-y-5">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 space-y-5">
       <div>
         <h1 className="text-xl font-heading font-semibold">Dashboard</h1>
         <p className="text-sm text-muted-foreground capitalize">{selected.name} · {format(new Date(), "MMMM yyyy")}</p>

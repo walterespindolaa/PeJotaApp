@@ -34,7 +34,7 @@ export default function PejotaModuleShell({
   children,
 }: Props) {
   return (
-    <div className="max-w-5xl mx-auto p-4 sm:p-6 space-y-5">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 space-y-5">
       <div className="flex items-start gap-3">
         {Icon && (
           <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary grid place-items-center flex-shrink-0">

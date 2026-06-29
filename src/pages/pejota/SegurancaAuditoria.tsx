@@ -66,7 +66,7 @@ export default function SegurancaAuditoria() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto p-4 sm:p-6 space-y-5">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 space-y-5">
       <div className="flex items-start gap-3">
         <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 grid place-items-center flex-shrink-0">
           <Shield className="w-5 h-5" />

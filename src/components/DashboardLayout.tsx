@@ -190,6 +190,7 @@ const DashboardLayout = () => {
     ]},
     { title: "Configuração", dot: "bg-warning", items: [
       { to: "/dashboard/empresa", icon: Building2, label: "Empresa" },
+      { to: "/dashboard/processos", icon: BookOpen, label: "Processos / Manual" },
       { to: "/dashboard/cobrancas", icon: CreditCard, label: "Cobranças (Asaas)" },
       { to: "/dashboard/nota-fiscal", icon: FileText, label: "Nota fiscal (NFS-e)" },
       { to: "/dashboard/equipe", icon: Users, label: "Equipe e acessos" },
@@ -220,7 +221,8 @@ const DashboardLayout = () => {
           {/* Hambúrguer movido para a barra inferior (MobileBottomNav). */}
           {/* Logo centralizado de forma absoluta — fica no meio real da tela, independente da largura dos lados */}
           <button type="button" onClick={() => { navigate("/dashboard"); scrollToTop(); }} aria-label="Ir para o dashboard" className="absolute left-1/2 -translate-x-1/2 focus:outline-none">
-            <img src={isHome ? "/logo.png" : "/logo.png"} alt="PeJota" className="w-7 h-7 rounded-lg object-contain" />
+            <img src="/logo.png" alt="PeJota" className="w-7 h-7 rounded-lg object-contain dark:hidden" />
+            <img src="/logo-branca.png" alt="PeJota" className="w-7 h-7 rounded-lg object-contain hidden dark:block" />
           </button>
           <div className="flex-1" />
           <PlanBadge />
@@ -408,7 +410,8 @@ const DashboardLayout = () => {
           {!isHome && (
           <div onDoubleClick={scrollToTop} className="hidden lg:flex items-center gap-3 px-6 py-2 border-b border-border/30 flex-shrink-0 relative z-10">
             <button type="button" onClick={() => { if (isHome) scrollToTop(); else navigate("/dashboard"); }} aria-label="Ir para o dashboard" className="focus:outline-none">
-              <img src="/logo.png" alt="PeJota" className="w-6 h-6 rounded-md object-contain mr-2" />
+              <img src="/logo.png" alt="PeJota" className="w-6 h-6 rounded-md object-contain mr-2 dark:hidden" />
+              <img src="/logo-branca.png" alt="PeJota" className="w-6 h-6 rounded-md object-contain mr-2 hidden dark:block" />
             </button>
             <HouseholdViewSelector />
             {primaryCompany && (

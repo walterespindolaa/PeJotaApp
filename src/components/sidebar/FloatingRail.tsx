@@ -83,6 +83,7 @@ const GROUPS: RailGroup[] = [
   {
     kind: "flyout", key: "config", label: "Configuração", icon: Settings, items: [
       { to: "/dashboard/empresa", label: "Empresa", icon: Building2 },
+      { to: "/dashboard/processos", label: "Processos / Manual", icon: BookOpen },
       { to: "/dashboard/cobrancas", label: "Cobranças (Asaas)", icon: CreditCard },
       { to: "/dashboard/nota-fiscal", label: "Nota fiscal (NFS-e)", icon: FileText },
       { to: "/dashboard/equipe", label: "Equipe e acessos", icon: Users },
@@ -197,7 +198,9 @@ export default function FloatingRail({ isAdmin, featureLoading, hasFeature, requ
             expanded ? "gap-2.5 px-4" : "justify-center px-2",
           )}
         >
-          <img src="/logo-branca.png" alt="PeJota" className="w-8 h-8 rounded-lg object-contain flex-shrink-0" />
+          {/* Logo adapta ao tema: preta no claro, branca no escuro */}
+          <img src="/logo.png" alt="PeJota" className="w-8 h-8 rounded-lg object-contain flex-shrink-0 dark:hidden" />
+          <img src="/logo-branca.png" alt="PeJota" className="w-8 h-8 rounded-lg object-contain flex-shrink-0 hidden dark:block" />
           {expanded && <span className="font-heading font-bold text-lg tracking-tight truncate">PeJota</span>}
         </button>
 

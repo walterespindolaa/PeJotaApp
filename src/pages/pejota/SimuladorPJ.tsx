@@ -87,7 +87,7 @@ export default function SimuladorPJ() {
   );
 
   if (!companiesLoading && !selected) return (
-    <div className="max-w-3xl mx-auto p-6"><Card><CardContent className="py-12 text-center">
+    <div className="max-w-5xl mx-auto p-6"><Card><CardContent className="py-12 text-center">
       <Building2 className="w-8 h-8 mx-auto mb-3 text-muted-foreground/50" />
       <p className="text-sm text-muted-foreground mb-4">Selecione ou crie uma empresa para simular decisões.</p>
       <Link to="/dashboard/negocios"><Button>Ir para o negócio</Button></Link>
@@ -95,7 +95,7 @@ export default function SimuladorPJ() {
   );
 
   return (
-    <div className="max-w-4xl mx-auto p-4 sm:p-6 space-y-5">
+    <div className="max-w-6xl mx-auto p-4 sm:p-6 space-y-5">
       <div className="flex items-start gap-3">
         <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary grid place-items-center flex-shrink-0"><Calculator className="w-5 h-5" /></div>
         <div><h1 className="text-xl font-heading font-semibold">Simulador de decisão (empresa)</h1>

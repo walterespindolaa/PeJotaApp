@@ -27,7 +27,7 @@ export default function ClientesPage() {
   }, [selected]);
 
   if (!loading && !selected) return (
-    <div className="max-w-3xl mx-auto p-6"><Card><CardContent className="py-12 text-center">
+    <div className="max-w-5xl mx-auto p-6"><Card><CardContent className="py-12 text-center">
       <Building2 className="w-8 h-8 mx-auto mb-3 text-muted-foreground/50" />
       <p className="text-sm text-muted-foreground mb-4">Selecione ou crie uma empresa para ver os clientes.</p>
       <Link to="/dashboard/negocios"><Button>Ir para o negócio</Button></Link>
