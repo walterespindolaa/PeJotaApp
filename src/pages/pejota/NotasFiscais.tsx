@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
-import { FileText, Building2, Plus, ExternalLink, RefreshCw, Loader2, AlertTriangle } from "lucide-react";
+import { FileText, Building2, Plus, ExternalLink, RefreshCw, Loader2, AlertTriangle, Sparkles } from "lucide-react";
 import { format, parseISO } from "date-fns";
 
 const db = supabase as any;
@@ -39,6 +39,17 @@ export default function NotasFiscais() {
   const [desc, setDesc] = useState("");
   const [emitindo, setEmitindo] = useState(false);
   const [syncing, setSyncing] = useState(false);
+  const [sugerindo, setSugerindo] = useState(false);
+
+  const sugerirDescricao = async () => {
+    setSugerindo(true);
+    const { data, error } = await supabase.functions.invoke("pejota-ai-write", {
+      body: { instrucao: `Escreva uma descrição curta e profissional do serviço prestado para uma nota fiscal de serviço (NFS-e). Tomador: ${nome || "cliente"}. Valor: ${valor || "—"}. Responda só com a descrição, 1 a 2 frases.` },
+    });
+    setSugerindo(false);
+    if (error || data?.error) { toast({ title: "IA indisponível", variant: "destructive" }); return; }
+    setDesc((data.text || "").trim());
+  };
 
   const load = useCallback(async () => {
     if (!selected) { setInvs([]); return; }
@@ -142,7 +153,12 @@ export default function NotasFiscais() {
             <div><Label className="text-xs">CPF/CNPJ</Label><Input value={doc} onChange={e => setDoc(e.target.value)} placeholder="Só números" inputMode="numeric" /></div>
             <div><Label className="text-xs">Valor (R$)</Label><Input inputMode="numeric" placeholder="0,00" value={valor} onChange={e => setValor(toMoney(e.target.value).toLocaleString("pt-BR", { minimumFractionDigits: 2 }))} /></div>
           </div>
-          <div><Label className="text-xs">Descrição do serviço (opcional)</Label><Input value={desc} onChange={e => setDesc(e.target.value)} placeholder="Usa a descrição padrão se vazio" /></div>
+          <div>
+            <div className="flex items-center justify-between"><Label className="text-xs">Descrição do serviço (opcional)</Label>
+              <button type="button" onClick={sugerirDescricao} disabled={sugerindo} className="text-[11px] text-primary inline-flex items-center gap-1 hover:underline disabled:opacity-50">{sugerindo ? <Loader2 className="w-3 h-3 animate-spin" /> : <Sparkles className="w-3 h-3" />} Sugerir com IA</button>
+            </div>
+            <Input value={desc} onChange={e => setDesc(e.target.value)} placeholder="Usa a descrição padrão se vazio" />
+          </div>
         </div>
         <DialogFooter><Button variant="ghost" onClick={() => setOpen(false)}>Cancelar</Button><Button onClick={emitir} disabled={emitindo} className="gap-2">{emitindo && <Loader2 className="w-4 h-4 animate-spin" />}{emitindo ? "Emitindo…" : "Emitir"}</Button></DialogFooter>
       </DialogContent></Dialog>

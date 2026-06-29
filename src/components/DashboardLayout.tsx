@@ -21,6 +21,7 @@ import SmartNotificationsPopover from "@/components/alerts/SmartNotificationsDra
 import AlertsPopup from "@/components/alerts/AlertsPopup";
 import AtlasChatFAB from "@/components/AtlasChatFAB";
 import MobileBottomNav from "@/components/MobileBottomNav";
+import CopilotPeJota from "@/components/pejota/CopilotPeJota";
 import { QuickAddProvider } from "@/contexts/QuickAddContext";
 import { AtlasChatVisibilityProvider } from "@/contexts/AtlasChatVisibilityContext";
 import FeedbackButton from "@/components/feedback/FeedbackButton";
@@ -468,6 +469,7 @@ const DashboardLayout = () => {
       <AssistantNudge chatOpen={!!chatInitialQuestion} onOpenChat={() => handleOpenChat()} />
       <AtlasChatFAB initialQuestion={chatInitialQuestion} />
       <MobileBottomNav onOpenChat={() => handleOpenChat()} hasCompany={!!primaryCompany} menuGroups={visibleGroups} onSignOut={handleSignOut} hasFeature={hasFeature} requiredPlanFor={requiredPlanFor} featureLoading={featureLoading} isAdmin={isAdmin} />
+      <CopilotPeJota />
       <PushPermissionPrompt />
       <PwaInstallNudge />
       <FeatureGateModal

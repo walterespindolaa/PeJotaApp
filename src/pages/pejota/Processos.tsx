@@ -10,10 +10,29 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
-import { BookOpen, Building2, Save, Sparkles, Pencil, Eye } from "lucide-react";
+import { BookOpen, Building2, Save, Sparkles, Pencil, Eye, Loader2 } from "lucide-react";
 import RichText from "@/components/pejota/RichText";
 
 const db = supabase as any;
+
+// Converte texto/markdown simples da IA em HTML para o editor
+function textoParaHtml(t: string): string {
+  const linhas = t.split("\n");
+  let html = "", emLista = false;
+  for (const raw of linhas) {
+    const l = raw.trim();
+    const bullet = /^([-•*]|\d+[.)])\s+/.test(l);
+    if (bullet) {
+      if (!emLista) { html += "<ul>"; emLista = true; }
+      html += `<li>${l.replace(/^([-•*]|\d+[.)])\s+/, "").replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</li>`;
+    } else {
+      if (emLista) { html += "</ul>"; emLista = false; }
+      if (l) html += `<p>${l.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</p>`;
+    }
+  }
+  if (emLista) html += "</ul>";
+  return html;
+}
 
 export default function Processos() {
   const { user } = useAuth();
@@ -24,8 +43,24 @@ export default function Processos() {
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
   const [updatedAt, setUpdatedAt] = useState<string | null>(null);
+  const [aiBusy, setAiBusy] = useState(false);
 
   const isAdmin = selected?.user_id === user?.id;
+
+  const organizarIA = async () => {
+    setAiBusy(true);
+    const rascunho = content.replace(/<[^>]+>/g, "\n").replace(/\n{2,}/g, "\n").trim();
+    const { data, error } = await supabase.functions.invoke("pejota-ai-write", {
+      body: {
+        instrucao: "Organize o rascunho abaixo em um manual de processos claro para a equipe seguir: use títulos curtos e passos numerados ou tópicos. Se estiver vazio, crie um modelo de processo para um pequeno negócio (vendas, financeiro, atendimento). Responda só com o texto.",
+        contexto: rascunho || "(vazio)",
+      },
+    });
+    setAiBusy(false);
+    if (error || data?.error) { toast({ title: "IA indisponível", description: data?.error || error?.message, variant: "destructive" }); return; }
+    setContent(textoParaHtml(data.text || ""));
+    toast({ title: "Rascunho organizado pela IA", description: "Revise e ajuste antes de salvar." });
+  };
 
   const load = useCallback(async () => {
     if (!selected) return;
@@ -81,7 +116,11 @@ export default function Processos() {
           <p className="text-sm text-muted-foreground">O passo a passo do seu negócio, para a equipe seguir sem se perder {selected ? `· ${selected.name}` : ""}.</p></div>
         </div>
         {isAdmin && (editing
-          ? <div className="flex gap-2"><Button variant="ghost" onClick={() => load()}>Cancelar</Button><Button onClick={salvar} disabled={saving} className="gap-2"><Save className="w-4 h-4" />{saving ? "Salvando…" : "Salvar"}</Button></div>
+          ? <div className="flex gap-2 flex-wrap">
+              <Button variant="outline" onClick={organizarIA} disabled={aiBusy} className="gap-2">{aiBusy ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />} Organizar com IA</Button>
+              <Button variant="ghost" onClick={() => load()}>Cancelar</Button>
+              <Button onClick={salvar} disabled={saving} className="gap-2"><Save className="w-4 h-4" />{saving ? "Salvando…" : "Salvar"}</Button>
+            </div>
           : <Button variant="outline" onClick={() => setEditing(true)} className="gap-2"><Pencil className="w-4 h-4" /> Editar</Button>
         )}
       </div>

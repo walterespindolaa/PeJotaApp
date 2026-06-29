@@ -5,7 +5,7 @@ import { useCompanies } from "@/hooks/useCompanies";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Wallet, ArrowUpCircle, ArrowDownCircle, TrendingUp, Receipt, Filter, FileText, Building2, AlertTriangle } from "lucide-react";
+import { Wallet, ArrowUpCircle, ArrowDownCircle, TrendingUp, Receipt, Filter, FileText, Building2, AlertTriangle, Sparkles, Loader2 } from "lucide-react";
 import { format } from "date-fns";
 import { resumoMes, saldoCaixa, totaisReceberPagar, statusVencimento, type Tx, type Bill } from "@/lib/pejota/businessFinance";
 
@@ -20,6 +20,18 @@ export default function PejotaDashboard() {
   const [txs, setTxs] = useState<Tx[]>([]);
   const [bills, setBills] = useState<(Bill & { description: string; due_date: string | null })[]>([]);
   const [loading, setLoading] = useState(false);
+  const [insights, setInsights] = useState<string>("");
+  const [loadingInsights, setLoadingInsights] = useState(false);
+
+  const gerarInsights = useCallback(async () => {
+    if (!selected) return;
+    setLoadingInsights(true);
+    const { data, error } = await supabase.functions.invoke("pejota-copilot", {
+      body: { company_id: selected.id, messages: [{ role: "user", content: "Analise a saúde financeira da empresa com os dados que você tem e me dê de 2 a 4 insights curtos e acionáveis, cada um começando com '• '. Foque em caixa, contas a vencer/atrasadas, margem e tendência. Seja específico com números e não invente dados." }] },
+    });
+    setLoadingInsights(false);
+    setInsights(error || data?.error ? "Não consegui gerar agora. Verifique se a IA está configurada." : (data.reply || ""));
+  }, [selected]);
 
   const load = useCallback(async () => {
     if (!selected) { setTxs([]); setBills([]); return; }
@@ -88,6 +100,20 @@ export default function PejotaDashboard() {
           return k.to ? <Link key={k.label} to={k.to} className="block hover:opacity-90 transition-opacity">{inner}</Link> : <div key={k.label}>{inner}</div>;
         })}
       </div>
+
+      {/* Insights da IA */}
+      <Card><CardContent className="p-5">
+        <div className="flex items-center justify-between gap-3 mb-2">
+          <p className="text-sm font-medium flex items-center gap-2"><Sparkles className="w-4 h-4 text-primary" /> Insights da IA</p>
+          <Button size="sm" variant="outline" onClick={gerarInsights} disabled={loadingInsights} className="gap-2">
+            {loadingInsights ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Sparkles className="w-3.5 h-3.5" />}
+            {insights ? "Atualizar" : "Gerar insights"}
+          </Button>
+        </div>
+        {insights
+          ? <p className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed">{insights}</p>
+          : <p className="text-sm text-muted-foreground">Clique em “Gerar insights” para a IA analisar o caixa, contas e margem da empresa e sugerir os próximos passos.</p>}
+      </CardContent></Card>
 
       {/* Receita x Despesa do mês */}
       <Card><CardContent className="p-5">
